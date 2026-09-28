@@ -126,7 +126,7 @@
 {
     FSItem *fsItem = ( item == nil ? [self rootItem] : item );
 
-    unsigned childCount = [fsItem childCount];
+    NSUInteger childCount = [fsItem childCount];
 	
 	//items representing other space and free space
 	if ( fsItem == [self rootItem] )
@@ -138,7 +138,8 @@
 			childCount ++;
 	}
 	
-	return childCount;
+	//the TreeMapView data source protocol uses 32 bit counts
+	return (unsigned) childCount;
 }
 
 - (unsigned long long) treeMapView: (TreeMapView*) view weightByItem: (id) item

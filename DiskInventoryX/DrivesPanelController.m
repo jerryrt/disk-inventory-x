@@ -15,6 +15,7 @@
 
 #import "DrivesPanelController.h"
 #import "NSBundle-Extensions.h"
+#import "MyDocumentController.h"
 #import "FileSizeFormatter.h"
 #import "VolumeNameTransformer.h"
 #import "VolumeUsageTransformer.h"
@@ -271,7 +272,7 @@
 
 #pragma mark --------NSTableView delegates-----------------
 
-- (void) tableView:(NSTableView *) tableView willDisplayCell:(id) cell forTableColumn:(NSTableColumn *) tableColumn row:(int) row
+- (void) tableView:(NSTableView *) tableView willDisplayCell:(id) cell forTableColumn:(NSTableColumn *) tableColumn row:(NSInteger) row
 {
 	if ( [[tableColumn identifier] isEqualToString: @"usagePercent"] )
 	{
@@ -281,7 +282,7 @@
 		if ( [progrInd superview] != tableView )
 			[tableView addSubview: progrInd];
 		
-		int colIndex = [tableView columnWithIdentifier: [tableColumn identifier]];
+		NSInteger colIndex = [tableView columnWithIdentifier: [tableColumn identifier]];
 		NSRect cellRect = [tableView frameOfCellAtColumn: colIndex row: row];
 		
 		const CGFloat progrIndThickness = MIN( [progrInd intrinsicContentSize].height, NSHeight(cellRect) - 2 );

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 NSMutableDictionary<NSURL*, NSURL*> * g_Firmlinks = nil;
 NSString *firmlinkListFile = @"/usr/share/firmlinks";
 
-void LoadFirmlinks()
+void LoadFirmlinks(void)
 {
     if ( g_Firmlinks != nil )
         return;

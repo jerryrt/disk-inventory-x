@@ -374,13 +374,12 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 #define SET_TITLE_AND_IMAGE( condition, string1, string2 )	\
 	SET_TITLE( (condition), string1, string2 );				\
 	if ( [menuItem isKindOfClass: [NSToolbarItemValidationAdapter class]] )\
-		 [menuItem setState: (condition) ? NSOffState : NSOnState];
+		 [menuItem setState: (condition) ? NSControlStateValueOff : NSControlStateValueOn];
 	
-    if ( menuAction == @selector(openFile:)
-		 || menuAction == @selector(openFileWith:) )
+    if ( menuAction == @selector(openFile:) )
     {
         if ( selectedItem == nil )
-			NO;
+			return NO;
 		
 		AppsForItem *apps = [AppsForItem appsForItemURL: [selectedItem fileURL]];
 		return [apps defaultAppURL] != nil;
@@ -598,7 +597,7 @@ static const CGFloat ContentMinimumSize = 200;
 	}
 	
 	//remove any supernumerary menu items (removed all items if is there is no app which can open this file)
-	unsigned removeMenuItemsFromIndex = ([apps defaultAppURL] != nil) ? [[apps additionalAppURLs] count] +2 : 0;
+	NSUInteger removeMenuItemsFromIndex = ([apps defaultAppURL] != nil) ? [[apps additionalAppURLs] count] +2 : 0;
 	
 	while ( ((unsigned) [_openWithSubMenu numberOfItems]) > removeMenuItemsFromIndex )
 		[_openWithSubMenu removeItemAtIndex: [_openWithSubMenu numberOfItems] -1];

@@ -4,7 +4,7 @@
 #import <mach/mach_time.h>
 
 
-uint64_t getTime() {
+uint64_t getTime(void) {
 	return mach_absolute_time();
 }
 

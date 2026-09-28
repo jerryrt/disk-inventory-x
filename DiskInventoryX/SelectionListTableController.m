@@ -86,7 +86,7 @@
 - (void) tableView: (NSTableView *) tableView
    willDisplayCell: (id) cell
 	forTableColumn: (NSTableColumn *) tableColumn
-			   row: (int) row
+			   row: (NSInteger) row
 {
     if ( [[tableColumn identifier] isEqualToString: @"displayName"] )
     {
