@@ -14,7 +14,6 @@
 //
 
 #import "FSItemIndex.h"
-#import <OmniFoundation/NSString-OFExtensions.h>
 
 @interface NSMutableDictionary(Indexing)
 - (void) addObject: (id) object forTerm: (id) term; 
@@ -277,7 +276,7 @@
 - (FSItem*) itemForDocument: (SKDocumentRef) document
 {
 	NSString *name = (NSString*) SKDocumentGetName( document );
-	NSAssert( ![NSString isEmptyString: name], @"can't get name of SearchKit document" );
+	NSAssert( [name length] > 0, @"can't get name of SearchKit document" );
 	
 	FSItem *item = [_indexedItems objectForKey: name];
 	NSAssert1( item != nil, @"FSItem object for name '%@' does not exist in set of indexed items", name );

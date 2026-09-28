@@ -15,7 +15,7 @@
 //
 
 #import "TreeMapViewController.h"
-#import <TreeMapView/TreeMapView.h>
+#import "TreeMapView.h"
 #import "MainWindowController.h"
 #import "FileSizeFormatter.h"
 #import "FSItem-Utilities.h"

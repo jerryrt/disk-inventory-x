@@ -16,7 +16,6 @@
 
 #import "FSItem.h"
 #import "NSURL-Extensions.h"
-#import <OmniFoundation/NSMutableArray-OFExtensions.h>
 #import "NTFilePasteboardSource.h"
 
 //for debugging and logging purposes
@@ -349,7 +348,13 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 	[newChild setParent: self];
 	
 	//insert child sorted by size
-	[_childs insertObject: newChild inArraySortedUsingSelector: @selector(compareSizeDescendingly:)];
+	NSUInteger index = [_childs indexOfObject: newChild
+								 inSortedRange: NSMakeRange( 0, [_childs count] )
+									   options: NSBinarySearchingInsertionIndex
+							   usingComparator: ^NSComparisonResult(FSItem *item1, FSItem *item2) {
+								   return [item1 compareSizeDescendingly: item2];
+							   }];
+	[_childs insertObject: newChild atIndex: index];
 	
 	[self setSizeValue: [self sizeValue] + [newChild sizeValue]];
 	

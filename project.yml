@@ -37,7 +37,7 @@ targets:
         INFOPLIST_FILE: Info.plist
         CODE_SIGN_ENTITLEMENTS: Disk Inventory X.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        HEADER_SEARCH_PATHS: ["$(SRCROOT)/TreeMapView"]
+        HEADER_SEARCH_PATHS: ["$(SRCROOT)", "$(SRCROOT)/TreeMapView", "$(SRCROOT)/CocoaTech-Depreciated", "$(SRCROOT)/Foundation Extensions"]
     sources:
       - path: .
         name: Sources
@@ -56,6 +56,8 @@ targets:
           - "*.m"
       - path: Disk Inventory X/Images.xcassets
       - path: MainWindowToolbar.toolbar
+        buildPhase: resources
+      - path: Defaults.plist
         buildPhase: resources
       - path: .
         name: Resources

@@ -6,6 +6,7 @@
 //  Copyright (c) 2003 __MyCompanyName__. All rights reserved.
 //
 
+#import <sys/stat.h>
 #import "NTInfoView.h"
 #import "NTTitledInfoPair.h"
 #import "AppsForItem.h"
@@ -418,8 +419,6 @@
     }
 }
 
-
-#import <sys/stat.h>
 
 + (NSString*) permissionStringForURL: (NSURL*) URL
 {

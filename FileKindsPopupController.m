@@ -13,8 +13,8 @@
 //
 
 #import "FileKindsPopupController.h"
-#import <TreeMapView/TMVCushionRenderer.h>
-#import <TreeMapView/NSBitmapImageRep-CreationExtensions.h>
+#import "TMVCushionRenderer.h"
+#import "NSBitmapImageRep-CreationExtensions.h"
 
 
 @implementation FileKindStatistic(AllKinds)
