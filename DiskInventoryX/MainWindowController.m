@@ -654,6 +654,23 @@ static const CGFloat ContentMinimumSize = 200;
 
 @implementation MainWindowController(Private)
 
+//Scroll views moved into a new superview or laid out while hidden keep
+//their first row under the table header (which floats over the content on
+//current macOS), so scroll every table below "view" to its first row.
+static void ScrollTablesToTop( NSView *view )
+{
+	if ( [view isKindOfClass: [NSTableView class]] )
+	{
+		NSTableView *tableView = (NSTableView*) view;
+		if ( [tableView numberOfRows] > 0 )
+			[tableView scrollRowToVisible: 0];
+		return;
+	}
+	
+	for ( NSView *subview in [view subviews] )
+		ScrollTablesToTop( subview );
+}
+
 static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
 {
 	NSSplitView *splitView = [[NSSplitView alloc] initWithFrame: frame];
@@ -715,6 +732,8 @@ static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
 	
 	if ( [self isSelectionListVisible] )
 		[[NSNotificationCenter defaultCenter] postNotificationName: MainWindowControllerSelectionListWillShowNotification object: self];
+	
+	ScrollTablesToTop( _selectionListSplitter );
 }
 
 - (void) growWindowBy: (CGFloat) delta forPaneInSplitView: (NSSplitView*) splitView
@@ -783,6 +802,9 @@ static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
 	//when the split view is resized, the window's size change goes to them.
 	CGFloat delta = size + [splitView dividerThickness];
 	[self growWindowBy: visible ? delta : -delta forPaneInSplitView: splitView];
+	
+	if ( visible )
+		ScrollTablesToTop( pane );
 	
 	if ( !visible && isSelectionList )
 		[[NSNotificationCenter defaultCenter] postNotificationName: MainWindowControllerSelectionListDidHideNotification object: self];
