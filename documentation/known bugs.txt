@@ -1,3 +1,10 @@
+- file sizes on APFS: hard links and cloned files are counted once for
+  every link or copy, so folder sizes can be larger than the space
+  actually used; snapshots and purgeable space are not taken into account
+
+- Full Disk Access is not detected: without it, protected folders are
+  skipped and the sizes shown are too small
+
 - directories which can not be listed (e.g. due to no permissions) are shown with size 0
 
 - put the focus ring on the graphic area (hit <tab> key

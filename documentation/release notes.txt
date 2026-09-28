@@ -1,6 +1,33 @@
 release notes
 =============
 
+1.4 (unreleased)
+----------------
+new:
+- macOS 15 Sequoia or later is required; the application runs natively
+  on Apple silicon (arm64 only)
+- the file kind statistic and the selection list are shown as panes of
+  the main window instead of drawers; their sizes and visibility are
+  remembered
+- "Open With" and dragging files to other applications or the Finder
+  use the current macOS services (dragging provides the file itself)
+- the "Help" menu opens the help page in the web browser (Help Viewer
+  no longer shows this kind of help book)
+
+bug fix:
+- the "show logical file size" preference was ignored right after a
+  folder was scanned
+- the info panel showed the setuid, setgid and sticky bits in the wrong
+  places of the permission string
+
+internal:
+- the Omni frameworks are no longer used; the TreeMapView framework is
+  built from source as a git submodule
+- the project file is generated with XcodeGen, interface files are xibs
+- automatic reference counting, deprecated AppKit and Carbon API
+  replaced
+
+
 1.2 (2019-02-28)
 ----------------
 new:
