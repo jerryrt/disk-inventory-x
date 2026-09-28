@@ -170,7 +170,7 @@
 		if ( _loadingPanelModalSession != 0 )
 		{
 			if ( [[NSApplication sharedApplication] runModalSession: _loadingPanelModalSession]
-																			!= NSRunContinuesResponse )
+																			!= NSModalResponseContinue )
 			{
 				NSAssert( NO, @"run loop stopped by unknown party" );
 			}

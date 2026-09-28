@@ -197,10 +197,10 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
     FSItem *item = [[self document] selectedItem];
 
 	id selectionListSelection = [_selectionListArrayController selection];
-	if ( selectionListSelection == NSNoSelectionMarker )
+	if ( selectionListSelection == NSBindingSelectionMarker.noSelectionMarker )
 		selectionListSelection = nil;
 	
-	//NSNotApplicableMarker or NSMultipleValuesMarker?
+	//NSBindingSelectionMarker.notApplicableSelectionMarker or NSBindingSelectionMarker.multipleValuesSelectionMarker?
 	NSAssert( !NSIsControllerMarker( selectionListSelection ), @"unsupported controller marker detected" );
 	
 	if ( item != selectionListSelection )
@@ -235,10 +235,10 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	FileSystemDoc *doc = [self document];
 	
 	id selectionListSelection = [_selectionListArrayController selection];
-	if ( selectionListSelection == NSNoSelectionMarker )
+	if ( selectionListSelection == NSBindingSelectionMarker.noSelectionMarker )
 		selectionListSelection = nil;
 	
-	//NSNotApplicableMarker or NSMultipleValuesMarker?
+	//NSBindingSelectionMarker.notApplicableSelectionMarker or NSBindingSelectionMarker.multipleValuesSelectionMarker?
 	NSAssert( !NSIsControllerMarker( selectionListSelection ), @"unsupported controller marker detected" );
 	
 	if ( selectionListSelection != [doc selectedItem] )

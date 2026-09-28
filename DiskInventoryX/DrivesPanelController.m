@@ -222,7 +222,7 @@
 		if ( i >= [_progressIndicators count] )
 		{
 			progrInd = [[[NSProgressIndicator alloc] init] autorelease];
-			[progrInd setStyle: NSProgressIndicatorBarStyle];
+			[progrInd setStyle: NSProgressIndicatorStyleBar];
 			[progrInd setIndeterminate: NO];
 			
 			[_progressIndicators addObject: progrInd];
@@ -285,7 +285,7 @@
 		int colIndex = [tableView columnWithIdentifier: [tableColumn identifier]];
 		NSRect cellRect = [tableView frameOfCellAtColumn: colIndex row: row];
 		
-		const float progrIndThickness = NSProgressIndicatorPreferredLargeThickness; 
+		const CGFloat progrIndThickness = MIN( [progrInd intrinsicContentSize].height, NSHeight(cellRect) - 2 );
 		const float extraSpace = 16; //space before and after progress indicator (relative to left and right side of cell)
 		
 		//center it vertically in cell
