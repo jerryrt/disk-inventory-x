@@ -1,0 +1,3 @@
+[submodule "TreeMapView"]
+	path = TreeMapView
+	url = https://gitlab.com/tderlien/treemapview-framework.git
