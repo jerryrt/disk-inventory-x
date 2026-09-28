@@ -43,6 +43,7 @@
 		8AF8C6C163CF0EBBC323A69F /* Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F077FAE6F5209ACE7F9DFDA8 /* Preferences.tiff */; };
 		8F595C368183ABFD33CD7204 /* DrivesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159FD1F5C8C9A4F06DA54021 /* DrivesPanelController.m */; };
 		96D5B1CDD6EFA0270E86EC87 /* ZoomIn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CA1594093D83D9CCA7DAE /* ZoomIn.tiff */; };
+		982E4FC2BA2F5BB9565BD8D2 /* NSAlert-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA36ED3718B156C2729DD45 /* NSAlert-Extensions.m */; };
 		993EB42329537E6C80B1127F /* TMVCushionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A671861EDEF3E75A5CF7181 /* TMVCushionRenderer.m */; };
 		9A257E9A517F55B58EA92E59 /* TreeMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639D0504284E0BC2BEF532C1 /* TreeMap.xib */; };
 		9AE93DC5AD2F61513941022E /* NTTitledInfoPair.m in Sources */ = {isa = PBXBuildFile; fileRef = AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */; };
@@ -197,6 +198,7 @@
 		A794FE687AA833796431B64D /* MainWindowToolbar.toolbar */ = {isa = PBXFileReference; path = MainWindowToolbar.toolbar; sourceTree = "<group>"; };
 		A888E8B94F70C555B9A7E763 /* FileKindsTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileKindsTableController.m; sourceTree = "<group>"; };
 		AACB08D77F697A6386B73712 /* fr */ = {isa = PBXFileReference; name = fr; path = fr.lproj/Help; sourceTree = "<group>"; };
+		ACF66F9B358AD3F87AB78B38 /* NSAlert-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAlert-Extensions.h"; sourceTree = "<group>"; };
 		AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTitledInfoPair.m; sourceTree = "<group>"; };
 		AE79E51C77252460BDEA7F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DonationPanel.xib; sourceTree = "<group>"; };
 		B3E32B5CBF9C022910E197DE /* NTFilePasteboardSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTFilePasteboardSource.h; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		C8816ECAE18F51DFBEF77004 /* ShowPackageContentsOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowPackageContentsOpen.png; sourceTree = "<group>"; };
 		C8E9AA728B2ADD95BCF67216 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/InfoPanel.xib; sourceTree = "<group>"; };
 		CB05FB6928228EE4E0073B81 /* FileSystemDoc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemDoc.m; sourceTree = "<group>"; };
+		CCA36ED3718B156C2729DD45 /* NSAlert-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAlert-Extensions.m"; sourceTree = "<group>"; };
 		CD39776115D44B81730992B5 /* NSURL-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL-Extensions.m"; sourceTree = "<group>"; };
 		CD3C2EE9D0C449546AB23FEF /* NSURL-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL-Extensions.h"; sourceTree = "<group>"; };
 		CDFC072B5A69D03EE87444AE /* FileSystemDoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemDoc.h; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 				67C8B3F73F03F8B690A0337A /* MainWindowController.m */,
 				A33532E80D989D19413E52EC /* MyDocumentController.h */,
 				78734D6F07C6F747DEE4F67F /* MyDocumentController.m */,
+				ACF66F9B358AD3F87AB78B38 /* NSAlert-Extensions.h */,
+				CCA36ED3718B156C2729DD45 /* NSAlert-Extensions.m */,
 				CD3C2EE9D0C449546AB23FEF /* NSURL-Extensions.h */,
 				CD39776115D44B81730992B5 /* NSURL-Extensions.m */,
 				1871FEE5D4F41A364BF24A76 /* Preferences.h */,
@@ -586,6 +591,7 @@
 				E33BA08D1AD56F332B4969E5 /* MainWindow.m in Sources */,
 				46F66801BF8CCCE52170BBE1 /* MainWindowController.m in Sources */,
 				2C9FA0C877860C5EC2E87AD6 /* MyDocumentController.m in Sources */,
+				982E4FC2BA2F5BB9565BD8D2 /* NSAlert-Extensions.m in Sources */,
 				EB89AEE4A3DE9E35ACF58346 /* NSBitmapImageRep-CreationExtensions.m in Sources */,
 				3F3B9DA761B6246C179EFD1C /* NSFileManager-Extensions.m in Sources */,
 				FBE7FE2074FD59595AC62D7A /* NSURL-Extensions.m in Sources */,

@@ -49,11 +49,7 @@
 	if ( ![NSBundle loadNibNamed: @"LoadingPanel" owner: self] )
 		NSAssert( NO, @"couldn't load LoadingPanel.nib" );
 	
-	[NSApp beginSheet: _loadingPanel
-	   modalForWindow: window
-		modalDelegate: self
-	   didEndSelector: nil
-		  contextInfo: NULL];
+	[window beginSheet: _loadingPanel completionHandler: nil];
 	
 	[_loadingPanel setWorksWhenModal: YES];
 	
@@ -82,7 +78,7 @@
 {
 	if ( [_loadingPanel isSheet] )
 	{
-		[NSApp endSheet: _loadingPanel];
+		[[_loadingPanel sheetParent] endSheet: _loadingPanel];
 		[_loadingPanel close]; //will be released (panel has style "release when close")
 		
 		_loadingPanel = nil;

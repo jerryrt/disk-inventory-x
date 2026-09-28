@@ -23,8 +23,6 @@ extern NSString *MainWindowControllerSelectionListDidHideNotification;
 
 + (FileSystemDoc*) documentForView: (NSView*) view;
 
-+ (void) poofEffectInView: (NSView*)view inRect: (NSRect) rect; //rect in view coords
-
 - (BOOL) isKindStatisticsVisible;
 - (void) setKindStatisticsVisible: (BOOL) visible;
 

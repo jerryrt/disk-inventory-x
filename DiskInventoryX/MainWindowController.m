@@ -22,12 +22,13 @@
 #import "FileSizeTransformer.h"
 #import "AppsForItem.h"
 #import "NSURL-Extensions.h"
+#import "NSAlert-Extensions.h"
 
 NSString *MainWindowControllerSelectionListWillShowNotification = @"MainWindowControllerSelectionListWillShow";
 NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowControllerSelectionListDidHide";
 
 @interface MainWindowController(Private)
-- (void) moveToTrashSheetDidDismiss: (NSWindow*) sheet returnCode: (int) returnCode contextInfo: (void*) contextInfo;
+- (void) moveItemToTrash: (FSItem*) item;
 - (void) setUpPanes;
 - (void) setPane: (NSView*) pane visible: (BOOL) visible;
 - (void) growWindowBy: (CGFloat) delta forPaneInSplitView: (NSSplitView*) splitView;
@@ -84,31 +85,6 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 	NSAssert( [doc isKindOfClass: [FileSystemDoc class]], @"document object is not of expected kind 'FileSystemDoc'" );
 
     return doc;
-}
-
-+ (void) poofEffectInView: (NSView*)view inRect: (NSRect) rect //rect in view coords
-{
-	//center poof antimation in the rect
-	NSPoint poofEffectPoint = NSMakePoint( NSMinX(rect) + NSWidth(rect)/2,
-										   NSMinY(rect) + NSHeight(rect)/2);
-	
-	//coordinates for the poof effect must be in screen coordidates, so...
-	//convert view to window coords
-	poofEffectPoint = [view convertPoint: poofEffectPoint toView: nil];
-	
-	//convert window to screen coords
-	poofEffectPoint = [[view window] convertBaseToScreen: poofEffectPoint];
-	
-	NSSize size = NSMakeSize(NSWidth(rect), NSHeight(rect));
-	
-	//make sure the rect is not too small nor too large
-	if ( fminf(size.width, size.height) <= 25 || ( size.width + size.height ) <= 80 )
-		size = NSZeroSize;	//default size
-	
-	size.width = fminf( size.width, 200 );
-	size.height = fminf( size.height, 200 );
-	
-	NSShowAnimationEffect(NSAnimationEffectPoof, poofEffectPoint, size, nil, (SEL)0, nil);
 }
 
 - (void) awakeFromNib
@@ -268,22 +244,21 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 		NSString *msg = [NSString stringWithFormat: NSLocalizedString(@"The item \"%@\" could not be moved to the trash.",@""),
 													[selectedItem displayName]];
 
-		NSBeginAlertSheet( msg,
-                          NSLocalizedString(@"No",@""),
-                          NSLocalizedString(@"Yes",@""),
-						  nil,
-						  [self window],
-						  self,
-						  nil,
-						  @selector(moveToTrashSheetDidDismiss: returnCode: contextInfo:),
-						  selectedItem,
-						  @"%@", NSLocalizedString(@"Would you like to delete it immediately?",@""));
+		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+		[alert setAlertStyle: NSAlertStyleWarning];
+		[alert setMessageText: msg];
+		[alert setInformativeText: NSLocalizedString(@"Would you like to delete it immediately?",@"")];
+		[alert addButtonWithTitle: NSLocalizedString(@"No",@"")];
+		[[alert addButtonWithTitle: NSLocalizedString(@"Yes",@"")] setHasDestructiveAction: YES];
+		
+		[alert beginSheetModalForWindow: [self window] completionHandler: ^(NSModalResponse returnCode) {
+			if ( returnCode == NSAlertSecondButtonReturn )
+				[self moveItemToTrash: selectedItem];
+		}];
 	}
 	else
 	{
-		[self moveToTrashSheetDidDismiss: nil
-							  returnCode: NSAlertAlternateReturn
-							 contextInfo: selectedItem];
+		[self moveItemToTrash: selectedItem];
 	}
 }
 
@@ -368,7 +343,7 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 	uint64_t doneTime = getTime();
 	
 	NSString *msg = [NSString stringWithFormat: @"rendering %u times took %.2f seconds", count, subtractTime(doneTime, startTime)];
-	NSBeginInformationalAlertSheet( msg, nil, nil, nil, [_splitter window], nil, nil, nil, nil, @"" );
+	[NSAlert showInformationalAlertWithMessage: msg informativeText: nil forWindow: [self window]];
 }
 
 - (IBAction) performLayoutBenchmark:(id)sender
@@ -382,7 +357,7 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 	uint64_t doneTime = getTime();
 	
 	NSString *msg = [NSString stringWithFormat: @"layout calculation %u times took %.2f seconds", count, subtractTime(doneTime, startTime)];
-	NSBeginInformationalAlertSheet( msg, nil, nil, nil, [_splitter window], nil, nil, nil, nil, @"" );
+	[NSAlert showInformationalAlertWithMessage: msg informativeText: nil forWindow: [self window]];
 }
 
 #pragma mark -----------------UI elment validation-----------------------
@@ -810,55 +785,27 @@ static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
 		[[NSNotificationCenter defaultCenter] postNotificationName: MainWindowControllerSelectionListDidHideNotification object: self];
 }
 
-- (void) moveToTrashSheetDidDismiss: (NSWindow *) sheet
-						 returnCode: (int) returnCode
-						contextInfo: (void*) contextInfo
+- (void) moveItemToTrash: (FSItem*) item
 {
-	if ( returnCode != NSAlertAlternateReturn )
-		return;
-	
 	FileSystemDoc *doc = [self document];
-	FSItem *selectedItem = (FSItem*) contextInfo;
 	
-	NSParameterAssert(	selectedItem != nil
-						&& selectedItem != [doc zoomedItem] 
-						&& ![selectedItem isSpecialItem] );
+	NSParameterAssert(	item != nil
+						&& item != [doc zoomedItem] 
+						&& ![item isSpecialItem] );
 	
-	//before we move the file/folder to trash, we need to calculate the position of the poof effect
-	NSRect cellRect;
-	NSView *view = nil;
-	if ( [[self window] firstResponder] == _filesOutlineView )
-	{
-		view = _filesOutlineView;
-		cellRect = [_filesOutlineView frameOfCellAtColumn: 0 row: [_filesOutlineView selectedRow]];
-	}
-	else
-	{
-		view = _treeMapView;
-		cellRect = [_treeMapView itemRectByPathToItem: [selectedItem fsItemPathFromAncestor: [doc zoomedItem]]];
-	}
-	
-	//now we can do it
     NSError *error = nil;
-    if ( [doc moveItemToTrash: selectedItem error:&error] )
+    if ( [doc moveItemToTrash: item error:&error] )
 	{
-		[[self class] poofEffectInView: view inRect: cellRect];
-		
         [self synchronizeWindowTitleWithDocumentName];
 	}
 	else
 	{
 		//failed
-        NSString *msg = [NSString stringWithFormat: NSLocalizedString(@"\"%@\" cannot be moved to the trash by Disk Inventory X.",@""), [selectedItem displayName] ];
-        NSString *subMsg = error.localizedFailureReason; //NSLocalizedString( @"Maybe you do not have sufficient access privileges.", @"" );
+        NSString *msg = [NSString stringWithFormat: NSLocalizedString(@"\"%@\" cannot be moved to the trash by Disk Inventory X.",@""), [item displayName] ];
         
-        NSBeginInformationalAlertSheet( msg,
-                                       NSLocalizedString(@"OK",@""),
-                                       nil, nil,
-                                       [self window],
-                                       nil, NULL, NULL, nil,
-                                       @"%@",
-                                       subMsg );
+		[NSAlert showInformationalAlertWithMessage: msg
+								   informativeText: [error localizedFailureReason]
+										 forWindow: [self window]];
  	}
 }
 
