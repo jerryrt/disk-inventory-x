@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AnimatedZooming</key>
+	<true/>
+	<key>DontShowDonationMessage</key>
+	<false/>
+	<key>EnableLogging</key>
+	<false/>
+	<key>IgnoreCreatorCode</key>
+	<false/>
+	<key>ShareKindColors</key>
+	<true/>
+	<key>ShowFreeSpace</key>
+	<false/>
+	<key>ShowOtherSpace</key>
+	<false/>
+	<key>ShowPackageContents</key>
+	<false/>
+	<key>ShowPhysicalFileSize</key>
+	<true/>
+	<key>SplitWindowHorizontally</key>
+	<false/>
+	<key>UseSmallFontInFilesView</key>
+	<false/>
+	<key>UseSmallFontInKindStatisticView</key>
+	<false/>
+	<key>UseSmallFontInSelectionList</key>
+	<false/>
+</dict>
+</plist>

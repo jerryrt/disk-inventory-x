@@ -19,7 +19,6 @@
 #import "Preferences.h"
 #import "PrefsPanelController.h"
 #import "FileSystemDoc.h"
-#import "AppController.h"
 
 //global variable which enables/disables logging
 BOOL g_EnableLogging;
@@ -204,7 +203,7 @@ BOOL g_EnableLogging;
 
 - (void) menuNeedsUpdate: (NSMenu*) zoomStackMenu
 {
-	OBPRECONDITION( _zoomStackMenu == zoomStackMenu );
+	NSAssert( _zoomStackMenu == zoomStackMenu, @"precondition failed" );
 	
 	FileSystemDoc *doc = [self currentDocument];
 	NSArray *zoomStack = [doc zoomStack];

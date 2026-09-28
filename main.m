@@ -15,8 +15,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Preferences.h"
 
 int main(int argc, const char *argv[])
 {
+    RegisterDefaultPreferences();
+
     return NSApplicationMain(argc, argv);
 }

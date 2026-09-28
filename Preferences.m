@@ -8,8 +8,6 @@
  */
 
 #include "Preferences.h"
-#import <OmniFoundation/NSDictionary-OFExtensions.h>
-#import <OmniFoundation/NSMutableDictionary-OFExtensions.h>
 
 //keys for preference values
 NSString *ShowPackageContents			= @"ShowPackageContents";
@@ -27,6 +25,15 @@ NSString *DontShowDonationMessage        = @"DontShowDonationMessage";
 NSString *DontShowPrivacyWarningMessage        = @"DontShowPrivacyWarningMessage";
 NSString *ShareKindColors				= @"ShareKindColors";
 
+
+void RegisterDefaultPreferences(void)
+{
+	NSURL *url = [[NSBundle mainBundle] URLForResource: @"Defaults" withExtension: @"plist"];
+	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfURL: url];
+	NSCAssert( defaults != nil, @"Defaults.plist missing from main bundle" );
+	
+	[[NSUserDefaults standardUserDefaults] registerDefaults: defaults];
+}
 
 #pragma mark ----------------- NSUserDefaults(VersionDepedantValues) -------------------
 
@@ -75,6 +82,32 @@ NSString *ShareKindColors				= @"ShareKindColors";
 @end
 
 #pragma mark ----------------- NSMutableDictionary(PreferencesValues) -------------------
+
+@interface NSDictionary(BoolValues)
+- (BOOL) boolForKey: (NSString*) key;
+@end
+
+@implementation NSDictionary(BoolValues)
+
+- (BOOL) boolForKey: (NSString*) key
+{
+	return [[self objectForKey: key] boolValue];
+}
+
+@end
+
+@interface NSMutableDictionary(BoolValues)
+- (void) setBoolValue: (BOOL) value forKey: (NSString*) key;
+@end
+
+@implementation NSMutableDictionary(BoolValues)
+
+- (void) setBoolValue: (BOOL) value forKey: (NSString*) key
+{
+	[self setObject: [NSNumber numberWithBool: value] forKey: key];
+}
+
+@end
 
 @interface NSMutableDictionary(DocumentPreferences_Private)
 - (void) copyValuesFromSharedDefaults;

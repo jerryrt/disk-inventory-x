@@ -25,6 +25,9 @@ extern NSString *DontShowDonationMessage;
 extern NSString *DontShowPrivacyWarningMessage;
 extern NSString *ShareKindColors;
 
+// registers the factory defaults from Defaults.plist in the main bundle
+void RegisterDefaultPreferences(void);
+
 @interface NSUserDefaults(VersionDepedantValues)
 
 - (bool) boolForVersionDependantKey: (NSString*) key;
