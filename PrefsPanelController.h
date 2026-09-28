@@ -11,16 +11,17 @@
 //  as published by the Free Software Foundation; either version 3
 //  of the License, or any later version.
 
-//
-
 #import <Cocoa/Cocoa.h>
-#import <OmniAppKit/OAPreferenceController.h>
 
-
-@interface PrefsPanelController : OAPreferenceController {
-
+// Preferences window with one toolbar button per preference page.
+@interface PrefsPanelController : NSWindowController <NSToolbarDelegate>
+{
+	NSArray<NSDictionary*> *_pageDescriptions;
+	NSMutableDictionary *_pages;
 }
 
 + (PrefsPanelController*) sharedPreferenceController;
+
+- (IBAction) showPreferencesPanel: (id) sender;
 
 @end

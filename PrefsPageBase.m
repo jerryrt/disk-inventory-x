@@ -11,58 +11,35 @@
 //  as published by the Free Software Foundation; either version 3
 //  of the License, or any later version.
 
-//
-
 #import "PrefsPageBase.h"
-#import <OmniFoundation/OFNull.h>
 
 @implementation PrefsPageBase
 
-- (void)restoreDefaultsNoPrompt;
+@synthesize controlBox;
+@synthesize initialFirstResponder;
+@synthesize lastKeyView;
+
+- (instancetype) initWithNibName: (NSString *) nibName
 {
-    [super restoreDefaultsNoPrompt];
-#pragma warning "code diabled"
-    /*
-	//the preferences shown in each page must be declared in info.plist proberly!
-	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	
-    unsigned int preferenceIndex = [preferences count];
-    while (preferenceIndex--)
+	self = [super init];
+	if ( self != nil )
 	{
-        NSString *aKey = [[preferences objectAtIndex: preferenceIndex] key];
-		
-		//removeObjectForKey isn't Key-Value-Observing (KVO) compliant,
-		//so make sure all observers get notified
-		[prefs willChangeValueForKey: aKey];
-		[prefs removeObjectForKey: aKey];
-		[prefs didChangeValueForKey: aKey];
+		NSArray *topLevelObjects = nil;
+		if ( ![[NSBundle mainBundle] loadNibNamed: nibName owner: self topLevelObjects: &topLevelObjects] )
+		{
+			[self release];
+			return nil;
+		}
+		_topLevelObjects = [topLevelObjects retain];
 	}
-     */
+	return self;
 }
 
-- (BOOL)haveAnyDefaultsChanged;
+- (void) dealloc
 {
-    return [super haveAnyDefaultsChanged];
-#pragma warning "code diabled"
-/*
-    //the preferences shown in each page and their default values must be declared in info.plist proberly!
- 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	NSDictionary *defaultValues = [prefs volatileDomainForName: NSRegistrationDomain];
-	
-    unsigned int preferenceIndex = [preferences count];
-    while (preferenceIndex--)
-	{
-        NSString *key = [[preferences objectAtIndex: preferenceIndex] key];
-		
-		id defValue = [defaultValues objectForKey: key];
-		id prefValue = [prefs objectForKey: key];
-		
-		if ( OFNOTEQUAL( prefValue, defValue ) )
-			return YES;
-	}
-	
-	return NO;
- */
+	[controlBox release];
+	[_topLevelObjects release];
+	[super dealloc];
 }
 
 @end
