@@ -7,284 +7,375 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B9E76470BF384926C5E0DB8 /* NTTitledInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4377EC2A5C0A626110C6BB /* NTTitledInfoView.m */; };
-		0C358583A1610416B03C1380 /* InfoPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_0F26D493-4032-4FB8-8968-DDCB732FEA74" /* InfoPanelController.m */; };
-		1337A336C4A8B344F2ED34DB /* NTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4108E2C3F3A7C77B93973585 /* NTInfoView.m */; };
-		15D76E1799CA4F05E7696A86 /* FSItem-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_E4164301-C343-4C90-9543-E8539DBCA6F3" /* FSItem-Utilities.m */; };
-		15E10975082CB3DAA242724F /* NTFilePasteboardSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E5249BBA00CB50551A3E0A76 /* NTFilePasteboardSource.m */; };
-		1A6EAB4BEEE8C87C99C1B7B4 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6E8F1E31C66AC0CF0DE8C17 /* Defaults.plist */; };
-		21052AB88B1304CBD5C7F40A /* GeneralPreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_A60E2659-3068-41A4-A8AB-C44066AC746F" /* GeneralPreferences.tiff */; };
-		21F2B9DFA2EEDE15EF29203C /* NSFileManager-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D890B3BDBE8F0489E1F6E7 /* NSFileManager-Extensions.m */; };
-		278BFFEFA39C7EEDA8F2A272 /* TreeMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_72583CE3-9557-44A4-9331-FB7F6778B94C" /* TreeMap.xib */; };
-		2AE62825F81D04977813A1C9 /* DIXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_9E8B90B2-19A5-4829-AC51-62833C5378CF" /* DIXTableView.m */; };
-		2BCD557F017A2B9611E54FDD /* GenericArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_F13CE94A-78EA-452F-B4A4-FB88144A6706" /* GenericArrayController.m */; };
-		2CC3D00F658AC25EC097CC61 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_F53144DC-8781-4EE9-8ACF-B8F43670B7CF" /* Preferences.m */; };
-		33B9E19DFF66E091198BA9B4 /* GeneralPreferencesPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_31C3A08B-3BE0-4799-A966-74E4A6331B0D" /* GeneralPreferencesPage.xib */; };
-		33C32BD1FC5C7DF896E16663 /* AppsForItem.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_12E96A5D-6BA5-4CB2-B93B-69C2BDD60178" /* AppsForItem.m */; };
-		34997A3FB58A33BBA6CBF9EF /* TreeMapPrefPage.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_16A7992F-1E9F-475D-8826-832F7032F5AC" /* TreeMapPrefPage.m */; };
-		393C4F48A92B45AF23EC726B /* FileKindsPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_3B6D1AD4-4B62-4FA8-8621-2045FFB5FEE1" /* FileKindsPopupController.m */; };
-		3A8F4BF04754E8FB191CF578 /* FileSizeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_7B885235-D148-4CF4-84CF-A26947901801" /* FileSizeFormatter.m */; };
+		01C507D739001DA8CEB42E6A /* DIXOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E479A1227A8818AC3224D65 /* DIXOutlineView.m */; };
+		021B34E569085213194E68D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B3FA12BC6A0518CA5406 /* main.m */; };
+		05BAAE4B8BD75508E2EE9FAC /* FSItem-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E23B0341CC165D3896627 /* FSItem-Utilities.m */; };
+		0617A0A4C52333DB2B9C6E2D /* TreeMapPrefPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 704A2FC06CD9F66F0051B903 /* TreeMapPrefPage.m */; };
+		0D5F18FD0480BD4C936C496F /* AppsForItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A0D3251CFE1E183A0F7DC /* AppsForItem.m */; };
+		15D70C880DE4DE551AB0E494 /* VolumesPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787816960D9E8B1C4F8CE23C /* VolumesPanel.xib */; };
+		1AE7B14E21F7E17D5A5D111C /* FileSizeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6F10072E3A3C6545AA6E4F /* FileSizeFormatter.m */; };
+		1E1E5A09949211B7D106A4F4 /* SelectionListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6267F40B05EBC345C24D8B96 /* SelectionListTableController.m */; };
+		222EEC82C6EC941367125097 /* InfoPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE0C0484DF601A25EADA40 /* InfoPanelController.m */; };
+		2A069423D1FCDA78DECB5FA8 /* ZoomOut.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 080E06A52A42A816865F6F1E /* ZoomOut.tiff */; };
+		2C600AC3925793E78ABF187D /* MainWindowToolbar.toolbar in Resources */ = {isa = PBXBuildFile; fileRef = A794FE687AA833796431B64D /* MainWindowToolbar.toolbar */; };
+		2C9FA0C877860C5EC2E87AD6 /* MyDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78734D6F07C6F747DEE4F67F /* MyDocumentController.m */; };
+		2F4688CCFBA433D25BE04114 /* KindsStatisticDrawer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = B748869A45C9D21177C9D5A9 /* KindsStatisticDrawer.tiff */; };
+		30BBF186820AEB354B729347 /* LoadingPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872D6C6834D88A3458F8D072 /* LoadingPanel.xib */; };
+		34B074839183017CDFAB273B /* GeneralPreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A6694454FF09FBD41F85DFA /* GeneralPreferences.tiff */; };
+		34BC2DF7FE51C66DB6BECE9B /* NTTitledInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F772DAB3AD69181A3905E983 /* NTTitledInfoView.m */; };
 		3C6AD07896169886C77FE4FB /* TreeMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC86D2B525DD2DE78A0057 /* TreeMapView.m */; };
-		4056697FCB2ECEA216CE47D4 /* GeneralPrefPage.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_1BAB5D05-2EB3-44EA-A558-96CFA29CF287" /* GeneralPrefPage.m */; };
-		41C8426C3B3EE1F7F0B05284 /* RefreshSelection.png in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_B2EBD097-A479-4ABE-8094-EA649B2D5296" /* RefreshSelection.png */; };
-		42459D58D5FF0D6846F4565E /* Inspector.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_E1F9A3A9-9571-4CF0-84DC-265D2899D5E7" /* Inspector.tiff */; };
-		4E54E3E586338A5183AF03BF /* KindsStatisticDrawer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_8CAB50DA-BD68-45BA-8D97-F503F284A0DB" /* KindsStatisticDrawer.tiff */; };
-		56A1BBBE3DA4C1A5BC07E1DE /* InfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_BD9E229E-4D34-467E-9BE4-2D7FA347230E" /* InfoPanel.xib */; };
-		5C82BACDE16D518A82F3F4B8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_AFD2834F-5FB0-46DC-9586-3663C2F5DF50" /* MainMenu.xib */; };
-		6175034A7A35AA43444620B3 /* MyDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_1E641A84-6774-4E43-8E56-3E4EBC19375A" /* MyDocumentController.m */; };
-		688016472D877C299516DBBE /* Timing.c in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_580D4B28-956D-44A6-B02F-EABCB29B0082" /* Timing.c */; };
-		70506F01F19C49B6A2D7CFE2 /* DIXOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_9FF2BF7B-B048-42ED-B628-DB8A1B6933FA" /* DIXOutlineView.m */; };
-		7242651458463292DC73542C /* MoveToTrash.png in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_F7B58757-C001-4F2B-A0B7-D263C5637516" /* MoveToTrash.png */; };
-		7B13060B62A51D4EFF94F934 /* DrivesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_6DD8F325-48EC-41B6-9CF8-1BC1C8B87A02" /* DrivesPanelController.m */; };
-		7BCAE4FFCBD592B393A187D0 /* Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_61C9C68C-9C65-45BF-87AD-B09F2231D5C5" /* Preferences.tiff */; };
-		7E87BD88FD325013CA8AA2DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_E0CE947C-82DA-4AF2-8B11-340C887B8856" /* InfoPlist.strings */; };
-		820A34EAE4224B507B115A0A /* DonationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_7960D137-EE8C-4442-9159-8967FF7EBF8D" /* DonationPanel.xib */; };
-		828EB16D449C6E817866E3E7 /* VolumesPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_F535AEE5-B585-4421-9C0F-A84E70CE69A3" /* VolumesPanel.xib */; };
-		85C0BC026BD2870A7AD3C39E /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_2D945D08-A028-47F3-ABAD-30368BED2DFD" /* ImageAndTextCell.m */; };
+		3D14EE5B2BFA45119943FADC /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = C85B98C5B4F1CCF64F480DB9 /* Defaults.plist */; };
+		3F3B9DA761B6246C179EFD1C /* NSFileManager-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9749B1EBB6026A3B1987BC1D /* NSFileManager-Extensions.m */; };
+		46F66801BF8CCCE52170BBE1 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C8B3F73F03F8B690A0337A /* MainWindowController.m */; };
+		493A7DE1E0A3DD46ACECBA06 /* DIXFileInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E98FDEEB4827CE3CD521862E /* DIXFileInfoView.m */; };
+		537DC3F2708A7EC76F4038B4 /* DIXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B15614CB98A3BD5C9B793 /* DIXTableView.m */; };
+		5D40C99B0A575C649C61AFBB /* PrefsPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 934461062A44CB54D8624F5E /* PrefsPanelController.m */; };
+		6274E7B067CE74FA65F2E985 /* InfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402941E395B3B5D0B8617830 /* InfoPanel.xib */; };
+		663EBDADAF73FE781090F87C /* VolumeUsageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D98C903B9B9CDB5B6D406C /* VolumeUsageTransformer.m */; };
+		6F8583E6A7842BE3F6BACA39 /* TreeMapPreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DB1617B1FA895FFF26253894 /* TreeMapPreferences.tiff */; };
+		77F8E151A0CB126F62413DC3 /* FileKindsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A888E8B94F70C555B9A7E763 /* FileKindsTableController.m */; };
+		796BB37DD7BEEA7D74F9ED64 /* VolumeNameTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6107A2BCAC3CB8436B37E9FC /* VolumeNameTransformer.m */; };
+		80A8A4080CB1D46933E15A56 /* FileKindsPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDD7EF87459DD2AEB65654 /* FileKindsPopupController.m */; };
+		82C5388C36B3D2290FC3E777 /* TreeMapPreferencesPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963C731E4D9418B1535A4052 /* TreeMapPreferencesPage.xib */; };
+		88802D398F9EE444E5404FEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C79F5E083C04A7E7327CF96B /* InfoPlist.strings */; };
 		891CD86A644339D8EEEDC188 /* ZoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE1E7B07E52794858E8C165 /* ZoomInfo.m */; };
-		89D646FEBB4D23D805E2D767 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_02C3743C-D906-458C-9CA8-40D8FBBACDC8" /* MainWindowController.m */; };
-		89D88785F30DC66646CCCABD /* FilesOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_568A296A-F9DB-45D7-A346-6D80B77AF53A" /* FilesOutlineViewController.m */; };
-		8A31B8681683F9CEF52DBAA9 /* MainWindowToolbar.toolbar in Resources */ = {isa = PBXBuildFile; fileRef = 61794FEF992727B4F801E368 /* MainWindowToolbar.toolbar */; };
-		928B0AD024AB0B5AF09BEE3E /* LoadingPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_A1C17E85-7F7D-4EB3-AAA3-4002DBD2E698" /* LoadingPanel.xib */; };
+		89D35C6A39A73AFFF8890356 /* GeneralPrefPage.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAB9180334198843630150B /* GeneralPrefPage.m */; };
+		8AF8C6C163CF0EBBC323A69F /* Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F077FAE6F5209ACE7F9DFDA8 /* Preferences.tiff */; };
+		8F595C368183ABFD33CD7204 /* DrivesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159FD1F5C8C9A4F06DA54021 /* DrivesPanelController.m */; };
+		96D5B1CDD6EFA0270E86EC87 /* ZoomIn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CA1594093D83D9CCA7DAE /* ZoomIn.tiff */; };
 		993EB42329537E6C80B1127F /* TMVCushionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A671861EDEF3E75A5CF7181 /* TMVCushionRenderer.m */; };
-		9F1B92927A3F2BD70DC565AF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_42DA06F8-C8D9-4327-87B2-8D498C19C236" /* Credits.rtf */; };
-		A1ED1E5F2E9549249A79BE69 /* LoadingPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_EAE50F3B-313B-49B6-93C4-9BDB17F07699" /* LoadingPanelController.m */; };
-		A3BCE55797C281300A6B9F10 /* ZoomOut.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_71DC165D-74E2-4820-AA1E-98CE12F66994" /* ZoomOut.tiff */; };
-		A67C15B9963252F447FE4835 /* Help in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_774E50FB-99DD-40B3-8F53-6813C34F6DDC" /* Help */; };
-		A841F7982948DCD0B66F268D /* DIXFileInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_2B32EB1C-544A-4C7E-AA30-DA7723F25824" /* DIXFileInfoView.m */; };
-		A86DE2F966F666D616260AA2 /* FileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_4B61B2A0-0656-4DF4-A7B5-4698DE4782FD" /* FileSizeTransformer.m */; };
-		AA16AD406C49DA408655E121 /* ZoomIn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_89B997E0-DA91-4B42-B45D-4ED1D8774BBA" /* ZoomIn.tiff */; };
-		AEE88E11140A469C7B587F96 /* RefreshAll.png in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_1699C290-2AA8-4D8B-9C6E-E01AE96A2C18" /* RefreshAll.png */; };
-		B162316CD29F9C7C772EDFC8 /* TreeMapPreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_974889FC-5FA2-4C82-AB23-F2CD989F9C4F" /* TreeMapPreferences.tiff */; };
-		B2EEEDA111174C3FECFF937D /* NSURL-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_F66A6F03-1345-42EB-B506-B3B03E095516" /* NSURL-Extensions.m */; };
+		9A257E9A517F55B58EA92E59 /* TreeMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639D0504284E0BC2BEF532C1 /* TreeMap.xib */; };
+		9AE93DC5AD2F61513941022E /* NTTitledInfoPair.m in Sources */ = {isa = PBXBuildFile; fileRef = AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */; };
+		9E9CCBBD30DED1024FBE0034 /* LoadingPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40086F6C5DA460AA6D574881 /* LoadingPanelController.m */; };
+		A164E3EB30BF92E642BF6510 /* PrefsPageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5659B5926CF6CFFA9416BB /* PrefsPageBase.m */; };
+		A417DBF7D122249D671EE6FE /* ShowPackageContentsClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4092F39AEE80AF1AF6670A /* ShowPackageContentsClosed.png */; };
+		A92B5E738FEDA17490B71FDD /* DonationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A436E3A8EB3B12C5591CFF /* DonationPanel.xib */; };
+		A9BC06F5A175E91B35D52E20 /* RefreshSelection.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B0D48301D1585F45838CD1 /* RefreshSelection.png */; };
+		B1C1B29743232AF53EB7EE48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFEF25C54DBDDB75CE3373FD /* Localizable.strings */; };
 		B45170ED803EA1360A5AF7CC /* TMVItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4825AACE3502DDC9B37ADC83 /* TMVItem.m */; };
-		B4E2B4DF19347D1178D6BDF5 /* SelectionListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_5731E9A6-D1E1-4FFA-A457-3B09252EEC0A" /* SelectionListTableController.m */; };
-		B601EB8773D0E0FDD7205066 /* TreeMapPreferencesPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_77F30240-B68E-477E-B1A9-17C0BCFD718A" /* TreeMapPreferencesPage.xib */; };
-		BC600408CF26537D52A3E8A6 /* ShowPackageContentsClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_85FED90C-8BC7-416D-950E-181FD6E5524B" /* ShowPackageContentsClosed.png */; };
-		C2BC5CC692202C2B2026DCBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_4F3A2A41-17BC-4886-B53D-11494ED31BC9" /* Localizable.strings */; };
-		C8F35C7B5A86D6CC110B859F /* VolumeNameTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_B0B57BC2-0BC0-4D42-9FB6-C4E1B38D3933" /* VolumeNameTransformer.m */; };
-		CB426BDC47DCC3D7F0D4C9FC /* Preferences.strings in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_EB61B945-2FAC-4E83-8C78-8A437CD763A4" /* Preferences.strings */; };
-		CD91BE1329FD9A77B07E02BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_DA91E54B-07D8-466B-9229-A01F70EAD5B2" /* main.m */; };
-		D0C4882A5668DB26636B4DBA /* SelectionListController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_3BDEB263-9A21-46F6-87B6-582B7CA6AAB1" /* SelectionListController.m */; };
-		D3388F98310C8F1DDECAE6DA /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_FE6E744A-CDFC-475C-9D66-A84268E2E68C" /* MainWindow.m */; };
-		D5EB5F74F196276EFD028DCC /* FSItemIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_E8D385ED-E0F3-4459-B3CF-95FE400E6A98" /* FSItemIndex.m */; };
-		D602EC2DD8C23AD75804A18B /* FileSystemDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_01665791-1A5D-4861-942B-EB6583DD306B" /* FileSystemDoc.m */; };
-		DAB8F2B67AD9E9260F027040 /* ShowPackageContentsOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_83547AA2-F3D6-4815-AC52-2E336B136149" /* ShowPackageContentsOpen.png */; };
+		B5447C88E59C2AC634ADF6D6 /* Preferences.strings in Resources */ = {isa = PBXBuildFile; fileRef = 084A4C5955960C1873E1F912 /* Preferences.strings */; };
+		B5E1879D0D6F5414200BAFF0 /* FSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3540470D54103A57CD9627C7 /* FSItem.m */; };
+		BDA60F993BCFA89979C25875 /* Inspector.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1463007A80159D127000D331 /* Inspector.tiff */; };
+		BF75B5F3A8C5D51DDFF255AD /* FileSystemDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05FB6928228EE4E0073B81 /* FileSystemDoc.m */; };
+		C2C1C7D63E0C01AD90E9D5FB /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6009E28CCEDF076A5B76366E /* ImageAndTextCell.m */; };
+		C45F9ED3B65F620A0B81D6D9 /* FilesOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E9875ECE6D4F4B959C084A /* FilesOutlineViewController.m */; };
+		C7D58CD4B33B9A6FAB025A93 /* NTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47235EAF92ABE6E558236345 /* NTInfoView.m */; };
+		C91BF51EC616D289F2831083 /* ShowPackageContentsOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = C8816ECAE18F51DFBEF77004 /* ShowPackageContentsOpen.png */; };
+		D0C0853D7A929B8DCA3DF5B0 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DDCA02F157A6C1323CF367 /* Preferences.m */; };
+		D1F99A5ADAFED352CA478DFB /* SelectionListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE71EB2281522D2382EEE8A6 /* SelectionListController.m */; };
+		D4E61790D23CBA651FF9913E /* FSItemIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C534ADF433E432C10967F /* FSItemIndex.m */; };
+		D50A28F190F3F3750C4A4F5A /* Timing.c in Sources */ = {isa = PBXBuildFile; fileRef = F1FFBD21E15CB3D3D236383E /* Timing.c */; };
+		D5F4F4949D2D2D9E4B8D90BB /* GeneralPreferencesPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D33735FFEE3855BC8DCE4C8 /* GeneralPreferencesPage.xib */; };
+		D84F4004E1008F3C29EB211F /* RefreshAll.png in Resources */ = {isa = PBXBuildFile; fileRef = FC38F1BBF84E6E6EC55942F8 /* RefreshAll.png */; };
+		D912CE59ADD4054D640BDD25 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002BD766F6E54BD7404C7FE4 /* MainMenu.xib */; };
+		DB8C39CDA4E287C43105B0F4 /* GenericArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5FE5058F27A625C9B760D1 /* GenericArrayController.m */; };
+		DEAA16E159F771D4AAC23BF4 /* NTFilePasteboardSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C8234B6DD02C9C6133451 /* NTFilePasteboardSource.m */; };
+		DEB6B4731D5D16764EE8D49C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A174904601F3B0EBBA42BD3 /* Images.xcassets */; };
 		E0A7400BC92ACC214B336C59 /* NSView-BackingCoordsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E05C14DDDCA495A92E952E /* NSView-BackingCoordsHelpers.m */; };
-		E45D2786F3ED566FBFFC5F0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9CA8F5F013636A739D7D1C /* Images.xcassets */; };
-		E4BC2A1462324FC9389CE16D /* TreeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_6781A691-34CD-49B2-B304-3218B3A7C09C" /* TreeMapViewController.m */; };
-		E9DA7D011C94EB5F9FAA51C5 /* PrefsPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_17912757-8CD3-42BD-9967-A289750D6670" /* PrefsPanelController.m */; };
+		E33BA08D1AD56F332B4969E5 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 562FDB77BF399F81FD53377E /* MainWindow.m */; };
+		E49FEBD2BFACBE302DCFD640 /* ToolbarWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861FB6AE9B50060AFFD51F6A /* ToolbarWindowController.m */; };
+		E99116BAE876AA2A399608B2 /* TreeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA91FED37BC67E336A0EB4 /* TreeMapViewController.m */; };
+		EA8F7498B02F6039FCF6E112 /* RevealInFinder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105FB7613CBC16C3D6CD5C2 /* RevealInFinder.png */; };
+		EADA8F85CD647920A664EB3B /* FileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA4C36C4DD0471E942A2F6 /* FileSizeTransformer.m */; };
 		EB89AEE4A3DE9E35ACF58346 /* NSBitmapImageRep-CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A14A2E39C7615F4E936BD04 /* NSBitmapImageRep-CreationExtensions.m */; };
-		ED19A4397398847AE7F6307A /* FileTypeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_ED747A3C-08F4-4211-BDB6-367256BF5D3C" /* FileTypeColors.m */; };
-		EF7449250F436592D0E4A099 /* FileKindsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_B72D3062-E847-4BF3-8F28-BBA2BE1BDE36" /* FileKindsTableController.m */; };
-		F131F9718596E7A68BCCBEBD /* RevealInFinder.png in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_69725C75-C414-474B-A7DD-D0F68EBD535B" /* RevealInFinder.png */; };
-		F534A338C23DB934E0D6C1B3 /* ToolbarWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_96757215-B4F2-4887-9364-582247C2BE5C" /* ToolbarWindowController.m */; };
-		F83266C65095053B2FE83315 /* PrefsPageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_E1CC17DB-6C37-4C2D-ABBA-FE9E769A357F" /* PrefsPageBase.m */; };
-		FC60621BDA5F00520924E006 /* VolumeUsageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_84E8E9C4-2153-40B9-81A0-F99D67B758BD" /* VolumeUsageTransformer.m */; };
-		FEF5FA58FE380B0CF5C4EF8C /* NTTitledInfoPair.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20CFB2A04F31F8B598361C /* NTTitledInfoPair.m */; };
-		FFE8ED415D366432423505BE /* FSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_271C63AD-FA2B-4A18-ADFF-CBBF184651B0" /* FSItem.m */; };
+		EBD11F20000AC83FEBF55062 /* MoveToTrash.png in Resources */ = {isa = PBXBuildFile; fileRef = 464F5C36B806CD98E22E2F35 /* MoveToTrash.png */; };
+		F50EC5EC17E2FD126DC39A0D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73E95BC550CF96FB3F2F90E6 /* Credits.rtf */; };
+		F8500F66A3E2C6991C043F4F /* FileTypeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D50E1E3FF0C79586F39888 /* FileTypeColors.m */; };
+		FBE7FE2074FD59595AC62D7A /* NSURL-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD39776115D44B81730992B5 /* NSURL-Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		049D2743F3C741E48A82B626 /* NTTitledInfoPair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTTitledInfoPair.h; sourceTree = "<group>"; };
+		0046D75782B98451F2957628 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		05D0824DA969FEA58707AA55 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		06205F726B0E5463603112DA /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
+		080E06A52A42A816865F6F1E /* ZoomOut.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ZoomOut.tiff; sourceTree = "<group>"; };
+		085FEF866D0C9992CCFA356B /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/DonationPanel.xib; sourceTree = "<group>"; };
+		0C5659B5926CF6CFFA9416BB /* PrefsPageBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefsPageBase.m; sourceTree = "<group>"; };
+		0E2E0564DB5C57D2EBA19DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/TreeMap.xib; sourceTree = "<group>"; };
+		0E479A1227A8818AC3224D65 /* DIXOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXOutlineView.m; sourceTree = "<group>"; };
+		0E9D903834E797B03E1855A2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0EE34B295A2FF38622E62296 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0F5CA1594093D83D9CCA7DAE /* ZoomIn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ZoomIn.tiff; sourceTree = "<group>"; };
+		0F6C8234B6DD02C9C6133451 /* NTFilePasteboardSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTFilePasteboardSource.m; sourceTree = "<group>"; };
 		0FE1E7B07E52794858E8C165 /* ZoomInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomInfo.m; sourceTree = "<group>"; };
+		115B15614CB98A3BD5C9B793 /* DIXTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXTableView.m; sourceTree = "<group>"; };
+		135E3B3472E166B45AEC653E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
+		13783A78DDCF0D5D3FAD3218 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
+		1463007A80159D127000D331 /* Inspector.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Inspector.tiff; sourceTree = "<group>"; };
+		159FD1F5C8C9A4F06DA54021 /* DrivesPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrivesPanelController.m; sourceTree = "<group>"; };
 		1607A7C78740A39BD630CDE4 /* NSView-BackingCoordsHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSView-BackingCoordsHelpers.h"; sourceTree = "<group>"; };
-		1A6A8DBA4A8CD6E4A0A5D358 /* NTInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTInfoView.h; sourceTree = "<group>"; };
-		1D9CA8F5F013636A739D7D1C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		181C0355B5782EEE280466D5 /* FSItem-Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSItem-Utilities.h"; sourceTree = "<group>"; };
+		1871FEE5D4F41A364BF24A76 /* Preferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		1D4092F39AEE80AF1AF6670A /* ShowPackageContentsClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowPackageContentsClosed.png; sourceTree = "<group>"; };
+		1DA4218583AE81935A754296 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1EBC9B816F802FFA05DB4128 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
+		22EBBE47CED0D7489D026621 /* GeneralPrefPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralPrefPage.h; sourceTree = "<group>"; };
+		273BFAD21222F88F479B9E02 /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		276FFFED11D5D153DEC3EC20 /* NSBitmapImageRep-CreationExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBitmapImageRep-CreationExtensions.h"; sourceTree = "<group>"; };
-		350DECE310083D00E779AB9B /* NTFilePasteboardSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTFilePasteboardSource.h; sourceTree = "<group>"; };
-		39040A1DD74887498B72B54E /* NTTitledInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTTitledInfoView.h; sourceTree = "<group>"; };
+		2BA84BBF693A920EA6A8C357 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2C6EF8B3C90E48908A387549 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CAE0C0484DF601A25EADA40 /* InfoPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoPanelController.m; sourceTree = "<group>"; };
+		2E9A14E2DF4BE975B43A7C5B /* InfoPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPanelController.h; sourceTree = "<group>"; };
+		2F2E23B0341CC165D3896627 /* FSItem-Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSItem-Utilities.m"; sourceTree = "<group>"; };
+		3540470D54103A57CD9627C7 /* FSItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSItem.m; sourceTree = "<group>"; };
+		384880679E6B6091469CFCF5 /* NTTitledInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTTitledInfoView.h; sourceTree = "<group>"; };
+		3B6B946DF982783D41E77E86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E73DB9EA18B690C4D3B3019 /* TMVItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMVItem.h; sourceTree = "<group>"; };
-		4108E2C3F3A7C77B93973585 /* NTInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTInfoView.m; sourceTree = "<group>"; };
+		40086F6C5DA460AA6D574881 /* LoadingPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingPanelController.m; sourceTree = "<group>"; };
 		4203D8F52B03912BFF8A00E1 /* ZoomInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomInfo.h; sourceTree = "<group>"; };
+		42C6A097EDC8912AC19B5F08 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
+		44FFD90741902A92F0E35ADE /* SelectionListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListController.h; sourceTree = "<group>"; };
+		4620111FE4A55A3CCC00DED8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
+		464F5C36B806CD98E22E2F35 /* MoveToTrash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoveToTrash.png; sourceTree = "<group>"; };
+		47235EAF92ABE6E558236345 /* NTInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTInfoView.m; sourceTree = "<group>"; };
 		4825AACE3502DDC9B37ADC83 /* TMVItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMVItem.m; sourceTree = "<group>"; };
 		49FC86D2B525DD2DE78A0057 /* TreeMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeMapView.m; sourceTree = "<group>"; };
 		4A671861EDEF3E75A5CF7181 /* TMVCushionRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMVCushionRenderer.m; sourceTree = "<group>"; };
-		61794FEF992727B4F801E368 /* MainWindowToolbar.toolbar */ = {isa = PBXFileReference; path = MainWindowToolbar.toolbar; sourceTree = "<group>"; };
-		7A4377EC2A5C0A626110C6BB /* NTTitledInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTitledInfoView.m; sourceTree = "<group>"; };
+		4AB608FACDA8746F21B68CE7 /* de */ = {isa = PBXFileReference; name = de; path = de.lproj/Help; sourceTree = "<group>"; };
+		4D1A0D3251CFE1E183A0F7DC /* AppsForItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsForItem.m; sourceTree = "<group>"; };
+		4E6C302938D0B2CD9076880B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
+		512A76EF19ABCDF4E0B3630C /* TreeMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeMapViewController.h; sourceTree = "<group>"; };
+		517E8D2E0DF857A82AFA931F /* ImageAndTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
+		51F0A2CBEFF93E90514468E9 /* DrivesPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrivesPanelController.h; sourceTree = "<group>"; };
+		562FDB77BF399F81FD53377E /* MainWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		57BDD7EF87459DD2AEB65654 /* FileKindsPopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileKindsPopupController.m; sourceTree = "<group>"; };
+		59E9875ECE6D4F4B959C084A /* FilesOutlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesOutlineViewController.m; sourceTree = "<group>"; };
+		5BF7B10CE000E75FD4F207C4 /* NTTitledInfoPair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTTitledInfoPair.h; sourceTree = "<group>"; };
+		5D221962B63A06C295CA903A /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
+		5E093C7C4BD2619E22DA6701 /* LoadingPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingPanelController.h; sourceTree = "<group>"; };
+		5E5B269EEAF6B5F61F4D66A1 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/DonationPanel.xib; sourceTree = "<group>"; };
+		5F62D8DFB43515CF108634A5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Preferences.strings; sourceTree = "<group>"; };
+		6009E28CCEDF076A5B76366E /* ImageAndTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
+		60D50E1E3FF0C79586F39888 /* FileTypeColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTypeColors.m; sourceTree = "<group>"; };
+		6107A2BCAC3CB8436B37E9FC /* VolumeNameTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolumeNameTransformer.m; sourceTree = "<group>"; };
+		6267F40B05EBC345C24D8B96 /* SelectionListTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListTableController.m; sourceTree = "<group>"; };
+		6565FEA758B979B9DA32CC32 /* FSItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSItem.h; sourceTree = "<group>"; };
+		67C8B3F73F03F8B690A0337A /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		6A6694454FF09FBD41F85DFA /* GeneralPreferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = GeneralPreferences.tiff; sourceTree = "<group>"; };
+		6A78E13F2B1677D1D7104DCB /* FileSizeFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSizeFormatter.h; sourceTree = "<group>"; };
+		6B272A03294994196AB8058E /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6B58E7B8CC88BEFA878D1B3D /* ToolbarWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolbarWindowController.h; sourceTree = "<group>"; };
+		6C2365F4CAB2EB8D73EDB110 /* TreeMapPrefPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeMapPrefPage.h; sourceTree = "<group>"; };
+		6DDA4C36C4DD0471E942A2F6 /* FileSizeTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSizeTransformer.m; sourceTree = "<group>"; };
+		704A2FC06CD9F66F0051B903 /* TreeMapPrefPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeMapPrefPage.m; sourceTree = "<group>"; };
+		704FCC7E176B3EBCBE3FC94C /* NSFileManager-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager-Extensions.h"; sourceTree = "<group>"; };
+		7105FB7613CBC16C3D6CD5C2 /* RevealInFinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RevealInFinder.png; sourceTree = "<group>"; };
+		7143C6F94B85FD6658A3B816 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/TreeMap.xib; sourceTree = "<group>"; };
+		71919154A164239BD3F87012 /* DIXFileInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIXFileInfoView.h; sourceTree = "<group>"; };
+		75CB3A1A6A875814175E824B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TreeMap.xib; sourceTree = "<group>"; };
+		784341760B27157607188961 /* VolumeUsageTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeUsageTransformer.h; sourceTree = "<group>"; };
+		78638CB3FF93C1750200E67E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InfoPanel.xib; sourceTree = "<group>"; };
+		78734D6F07C6F747DEE4F67F /* MyDocumentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocumentController.m; sourceTree = "<group>"; };
+		7B5C8C6988B484D476E7C969 /* en */ = {isa = PBXFileReference; name = en; path = en.lproj/Help; sourceTree = "<group>"; };
+		7CAA91FED37BC67E336A0EB4 /* TreeMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeMapViewController.m; sourceTree = "<group>"; };
+		7E214714A4766D8BC9C67027 /* DIXTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIXTableView.h; sourceTree = "<group>"; };
+		7E6977CE55D162D4EA22D9DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8102E3E89FB9296A0E2428F1 /* Disk Inventory X_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Disk Inventory X_Prefix.pch"; sourceTree = "<group>"; };
+		861FB6AE9B50060AFFD51F6A /* ToolbarWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolbarWindowController.m; sourceTree = "<group>"; };
+		87801528576A9448A4DBA7AC /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/TreeMap.xib; sourceTree = "<group>"; };
+		880E7D258BB6E983FB864B11 /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		8AB49D0C14F3F9587C603727 /* FilesOutlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesOutlineViewController.h; sourceTree = "<group>"; };
+		8C9C0795E73C03E2084E8D86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
 		8D32401601A7E9A67B7B0E2A /* TreeMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeMapView.h; sourceTree = "<group>"; };
+		8DB27781960B0AC5CF66BA03 /* es */ = {isa = PBXFileReference; name = es; path = es.lproj/Help; sourceTree = "<group>"; };
+		8E238993EE9747720737CF0C /* FileKindsPopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileKindsPopupController.h; sourceTree = "<group>"; };
+		8FEB4966A330ED5FD3EABE57 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
+		900EAD19803C0D56076D741D /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
+		92A7B3FA12BC6A0518CA5406 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		934461062A44CB54D8624F5E /* PrefsPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefsPanelController.m; sourceTree = "<group>"; };
+		9749B1EBB6026A3B1987BC1D /* NSFileManager-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager-Extensions.m"; sourceTree = "<group>"; };
+		98E051BFE04E811987801183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
 		9A14A2E39C7615F4E936BD04 /* NSBitmapImageRep-CreationExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBitmapImageRep-CreationExtensions.m"; sourceTree = "<group>"; };
+		9A174904601F3B0EBBA42BD3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9F29E1AFEB09619BCEA23AF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		A124B1B82C9CC94291135294 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
+		A21ED9E7FAB2F48698360822 /* GenericArrayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericArrayController.h; sourceTree = "<group>"; };
+		A318AEBB0A6298445ADFA189 /* FSItemIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSItemIndex.h; sourceTree = "<group>"; };
+		A33532E80D989D19413E52EC /* MyDocumentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocumentController.h; sourceTree = "<group>"; };
 		A6E05C14DDDCA495A92E952E /* NSView-BackingCoordsHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSView-BackingCoordsHelpers.m"; sourceTree = "<group>"; };
-		A6E8F1E31C66AC0CF0DE8C17 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Defaults.plist; sourceTree = "<group>"; };
-		B760C840214D458B4E3DCB2D /* NSFileManager-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager-Extensions.h"; sourceTree = "<group>"; };
+		A794FE687AA833796431B64D /* MainWindowToolbar.toolbar */ = {isa = PBXFileReference; path = MainWindowToolbar.toolbar; sourceTree = "<group>"; };
+		A888E8B94F70C555B9A7E763 /* FileKindsTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileKindsTableController.m; sourceTree = "<group>"; };
+		AACB08D77F697A6386B73712 /* fr */ = {isa = PBXFileReference; name = fr; path = fr.lproj/Help; sourceTree = "<group>"; };
+		AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTitledInfoPair.m; sourceTree = "<group>"; };
+		AE79E51C77252460BDEA7F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DonationPanel.xib; sourceTree = "<group>"; };
+		B3E32B5CBF9C022910E197DE /* NTFilePasteboardSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTFilePasteboardSource.h; sourceTree = "<group>"; };
+		B3F0B19120FED48A77F8736C /* Timing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timing.h; sourceTree = "<group>"; };
+		B4A583DAC0492F6CCC706FD0 /* FileSizeTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSizeTransformer.h; sourceTree = "<group>"; };
+		B6D5D6261B91E600C2F3807F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
+		B748869A45C9D21177C9D5A9 /* KindsStatisticDrawer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = KindsStatisticDrawer.tiff; sourceTree = "<group>"; };
+		B8B0D48301D1585F45838CD1 /* RefreshSelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefreshSelection.png; sourceTree = "<group>"; };
 		B9989DFFE184C695057365F2 /* TMVCushionRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMVCushionRenderer.h; sourceTree = "<group>"; };
-		E5249BBA00CB50551A3E0A76 /* NTFilePasteboardSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTFilePasteboardSource.m; sourceTree = "<group>"; };
+		BB3256A06CC80D9CCA35C989 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE3501F6C3B7CCD30A8DE111 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C052D6DDAA9B0A3FA89BAEEE /* NTInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTInfoView.h; sourceTree = "<group>"; };
+		C50084C62B1C90749826E66F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
+		C60CEDD1F87AD98A0A91B654 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Preferences.strings; sourceTree = "<group>"; };
+		C62D7EF3CDC2512918A53920 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoPanel.xib; sourceTree = "<group>"; };
+		C85B98C5B4F1CCF64F480DB9 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Defaults.plist; sourceTree = "<group>"; };
+		C8816ECAE18F51DFBEF77004 /* ShowPackageContentsOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowPackageContentsOpen.png; sourceTree = "<group>"; };
+		C8E9AA728B2ADD95BCF67216 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/InfoPanel.xib; sourceTree = "<group>"; };
+		CB05FB6928228EE4E0073B81 /* FileSystemDoc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemDoc.m; sourceTree = "<group>"; };
+		CD39776115D44B81730992B5 /* NSURL-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL-Extensions.m"; sourceTree = "<group>"; };
+		CD3C2EE9D0C449546AB23FEF /* NSURL-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL-Extensions.h"; sourceTree = "<group>"; };
+		CDFC072B5A69D03EE87444AE /* FileSystemDoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemDoc.h; sourceTree = "<group>"; };
+		CFE6111133A691E6644148F9 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
+		D1FBD52350178D880029C614 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/DonationPanel.xib; sourceTree = "<group>"; };
+		D27DB93A1ED4648B61BB3B3C /* FileTypeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTypeColors.h; sourceTree = "<group>"; };
+		DB1617B1FA895FFF26253894 /* TreeMapPreferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TreeMapPreferences.tiff; sourceTree = "<group>"; };
+		DB8C534ADF433E432C10967F /* FSItemIndex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSItemIndex.m; sourceTree = "<group>"; };
+		DE5FE5058F27A625C9B760D1 /* GenericArrayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericArrayController.m; sourceTree = "<group>"; };
+		DE6F10072E3A3C6545AA6E4F /* FileSizeFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSizeFormatter.m; sourceTree = "<group>"; };
+		E06957005C1A957CEC9E532A /* DIXOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIXOutlineView.h; sourceTree = "<group>"; };
+		E413C0F8729DEA0970B0E973 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
+		E4DDCA02F157A6C1323CF367 /* Preferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		E8E06E39683DEF2D4C0C7D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
+		E8F915DC3CD0DF8D01DA8F3A /* PrefsPageBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefsPageBase.h; sourceTree = "<group>"; };
+		E98FDEEB4827CE3CD521862E /* DIXFileInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXFileInfoView.m; sourceTree = "<group>"; };
+		E9E7FD9AB5933563D8DA275F /* SelectionListTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListTableController.h; sourceTree = "<group>"; };
+		EAA630BD9EEF2D7343210922 /* VolumeNameTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeNameTransformer.h; sourceTree = "<group>"; };
+		ED84F3FF6C093269FD656C30 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
 		EDAF862A99D0E8E600F25157 /* Disk Inventory X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Disk Inventory X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2D890B3BDBE8F0489E1F6E7 /* NSFileManager-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager-Extensions.m"; sourceTree = "<group>"; };
-		FB20CFB2A04F31F8B598361C /* NTTitledInfoPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTitledInfoPair.m; sourceTree = "<group>"; };
-		"TEMP_01665791-1A5D-4861-942B-EB6583DD306B" /* FileSystemDoc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemDoc.m; sourceTree = "<group>"; };
-		"TEMP_02C3743C-D906-458C-9CA8-40D8FBBACDC8" /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
-		"TEMP_05BE4C57-A2B4-4DAD-89AD-0BA595E6376B" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/TreeMap.xib; sourceTree = "<group>"; };
-		"TEMP_06084E52-9A8D-483E-814F-3D3ED77BB41D" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
-		"TEMP_07C816CF-5FB5-4E0C-8919-BE7798563785" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_0DE3AFB8-998C-40E7-8AD0-BF3DAA939D2A" /* DrivesPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrivesPanelController.h; sourceTree = "<group>"; };
-		"TEMP_0EE421CC-70C4-4BD1-ADF4-8F45BA5566EB" /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		"TEMP_0F26D493-4032-4FB8-8968-DDCB732FEA74" /* InfoPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoPanelController.m; sourceTree = "<group>"; };
-		"TEMP_126BDC67-A11F-48B4-B790-D60305D98AA2" /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		"TEMP_127D3433-A515-4E83-84D6-0AAA60A03BB0" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/DonationPanel.xib; sourceTree = "<group>"; };
-		"TEMP_12E96A5D-6BA5-4CB2-B93B-69C2BDD60178" /* AppsForItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsForItem.m; sourceTree = "<group>"; };
-		"TEMP_14B036F9-6098-4FEA-BA1E-D5853CF5F576" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		"TEMP_1699C290-2AA8-4D8B-9C6E-E01AE96A2C18" /* RefreshAll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefreshAll.png; sourceTree = "<group>"; };
-		"TEMP_16A7992F-1E9F-475D-8826-832F7032F5AC" /* TreeMapPrefPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeMapPrefPage.m; sourceTree = "<group>"; };
-		"TEMP_172F1C8B-3E4E-45BE-9991-71D694D897C4" /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		"TEMP_17912757-8CD3-42BD-9967-A289750D6670" /* PrefsPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefsPanelController.m; sourceTree = "<group>"; };
-		"TEMP_186488FF-35C4-4576-B4B6-D761A1090E9B" /* Preferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		"TEMP_1AE70916-9E64-4117-BBE1-396C03027218" /* TreeMapPrefPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeMapPrefPage.h; sourceTree = "<group>"; };
-		"TEMP_1BAB5D05-2EB3-44EA-A558-96CFA29CF287" /* GeneralPrefPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralPrefPage.m; sourceTree = "<group>"; };
-		"TEMP_1E641A84-6774-4E43-8E56-3E4EBC19375A" /* MyDocumentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocumentController.m; sourceTree = "<group>"; };
-		"TEMP_205891F8-FF9F-4357-8B33-71020048013B" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_265BE403-F6A2-40F2-BEC8-73FD5C2F61A6" /* LoadingPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingPanelController.h; sourceTree = "<group>"; };
-		"TEMP_2682B7FC-7C60-4595-A718-1A780BDB945F" /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
-		"TEMP_271C63AD-FA2B-4A18-ADFF-CBBF184651B0" /* FSItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSItem.m; sourceTree = "<group>"; };
-		"TEMP_2B32EB1C-544A-4C7E-AA30-DA7723F25824" /* DIXFileInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXFileInfoView.m; sourceTree = "<group>"; };
-		"TEMP_2D945D08-A028-47F3-ABAD-30368BED2DFD" /* ImageAndTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
-		"TEMP_2F453DF5-38E7-4686-8A56-92A147C5B160" /* FileSizeTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSizeTransformer.h; sourceTree = "<group>"; };
-		"TEMP_32237D80-13A2-484D-8B92-BD3ACB905911" /* SelectionListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListController.h; sourceTree = "<group>"; };
-		"TEMP_322923C5-BF0E-4A78-BE6E-DB5AAEA56E8F" /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		"TEMP_36FBB675-E537-45B3-95EC-F9D54B3F5C00" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/TreeMap.xib; sourceTree = "<group>"; };
-		"TEMP_3A19904C-40B6-4C4D-AF79-AE7A0D208A22" /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Preferences.strings; sourceTree = "<group>"; };
-		"TEMP_3B6D1AD4-4B62-4FA8-8621-2045FFB5FEE1" /* FileKindsPopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileKindsPopupController.m; sourceTree = "<group>"; };
-		"TEMP_3BDEB263-9A21-46F6-87B6-582B7CA6AAB1" /* SelectionListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListController.m; sourceTree = "<group>"; };
-		"TEMP_3FBA907A-DE0B-40EB-9A12-9D31CA524D74" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
-		"TEMP_40B0771A-75D5-4254-8EF7-81E571BA10EC" /* fr */ = {isa = PBXFileReference; name = fr; path = fr.lproj/Help; sourceTree = "<group>"; };
-		"TEMP_42A3CCAB-B07A-4DCA-954F-D1042FE2255C" /* MyDocumentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocumentController.h; sourceTree = "<group>"; };
-		"TEMP_462FEB3F-9EA0-4F87-B94C-FDE1EB0B43B4" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/TreeMap.xib; sourceTree = "<group>"; };
-		"TEMP_4682104C-33B3-4F2B-A0E9-95DB0CF70147" /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
-		"TEMP_482E6524-A0BF-4423-92A7-E1FD4DB61E9C" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
-		"TEMP_4B61B2A0-0656-4DF4-A7B5-4698DE4782FD" /* FileSizeTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSizeTransformer.m; sourceTree = "<group>"; };
-		"TEMP_4FC5A4D5-F899-499F-886F-9E9EB5430586" /* FileKindsTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileKindsTableController.h; sourceTree = "<group>"; };
-		"TEMP_50972411-CFFB-4012-B352-8F70ADD14A00" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
-		"TEMP_518A67F2-013C-4755-BD1D-2C0226D4D839" /* FSItem-Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSItem-Utilities.h"; sourceTree = "<group>"; };
-		"TEMP_568A296A-F9DB-45D7-A346-6D80B77AF53A" /* FilesOutlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesOutlineViewController.m; sourceTree = "<group>"; };
-		"TEMP_56D1572B-8DA9-4A7A-992F-2ED35A159203" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		"TEMP_5731E9A6-D1E1-4FFA-A457-3B09252EEC0A" /* SelectionListTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListTableController.m; sourceTree = "<group>"; };
-		"TEMP_580D4B28-956D-44A6-B02F-EABCB29B0082" /* Timing.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Timing.c; sourceTree = "<group>"; };
-		"TEMP_5B60559D-5572-43CA-AAD9-899AD36825C2" /* VolumeUsageTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeUsageTransformer.h; sourceTree = "<group>"; };
-		"TEMP_5E8D5B7C-0847-4C38-8CE2-BBC08D0D613C" /* es */ = {isa = PBXFileReference; name = es; path = es.lproj/Help; sourceTree = "<group>"; };
-		"TEMP_5F252414-427F-4E35-B286-F3C364EE9A95" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
-		"TEMP_606894FB-4FAC-4AD8-871A-22D95E2E3B5F" /* FileKindsPopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileKindsPopupController.h; sourceTree = "<group>"; };
-		"TEMP_61C9C68C-9C65-45BF-87AD-B09F2231D5C5" /* Preferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Preferences.tiff; sourceTree = "<group>"; };
-		"TEMP_62457075-71AF-4DA4-AAD1-8DAAF811328E" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DonationPanel.xib; sourceTree = "<group>"; };
-		"TEMP_66E2CF3D-616D-4845-A7AF-2244E350C550" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		"TEMP_6781A691-34CD-49B2-B304-3218B3A7C09C" /* TreeMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeMapViewController.m; sourceTree = "<group>"; };
-		"TEMP_69329DD8-A5AE-4BD3-9DAC-6FEEC57C13CD" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/InfoPanel.xib; sourceTree = "<group>"; };
-		"TEMP_69725C75-C414-474B-A7DD-D0F68EBD535B" /* RevealInFinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RevealInFinder.png; sourceTree = "<group>"; };
-		"TEMP_6B7A128B-9000-4EC0-9264-6EBCFC30C7A3" /* FileTypeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTypeColors.h; sourceTree = "<group>"; };
-		"TEMP_6DD8F325-48EC-41B6-9CF8-1BC1C8B87A02" /* DrivesPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrivesPanelController.m; sourceTree = "<group>"; };
-		"TEMP_70CEEBF6-C66A-4311-A985-5381A3E782D9" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_71DB92C7-25E5-4AEF-B2FF-6F108ABB5BDA" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/DonationPanel.xib; sourceTree = "<group>"; };
-		"TEMP_71DC165D-74E2-4820-AA1E-98CE12F66994" /* ZoomOut.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ZoomOut.tiff; sourceTree = "<group>"; };
-		"TEMP_72C5D5B8-914F-4038-9AFE-6961BFBB5FDD" /* ToolbarWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolbarWindowController.h; sourceTree = "<group>"; };
-		"TEMP_73E8DBB3-8CA0-4D13-A052-89AB85981049" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_74C85F01-EC35-429E-BBD3-C6D7FE1686C2" /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		"TEMP_79ACB985-876A-4180-87A0-55A16505C0F3" /* FilesOutlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesOutlineViewController.h; sourceTree = "<group>"; };
-		"TEMP_7B885235-D148-4CF4-84CF-A26947901801" /* FileSizeFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSizeFormatter.m; sourceTree = "<group>"; };
-		"TEMP_806F1C43-19E8-4CEA-8CD5-60378F8510F3" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_83547AA2-F3D6-4815-AC52-2E336B136149" /* ShowPackageContentsOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowPackageContentsOpen.png; sourceTree = "<group>"; };
-		"TEMP_84E8E9C4-2153-40B9-81A0-F99D67B758BD" /* VolumeUsageTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolumeUsageTransformer.m; sourceTree = "<group>"; };
-		"TEMP_854EC534-AC10-4C70-A242-DC940EF25578" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/DonationPanel.xib; sourceTree = "<group>"; };
-		"TEMP_855C1191-92C2-4AE8-83BC-35A20164A1A2" /* TreeMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeMapViewController.h; sourceTree = "<group>"; };
-		"TEMP_85FED90C-8BC7-416D-950E-181FD6E5524B" /* ShowPackageContentsClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowPackageContentsClosed.png; sourceTree = "<group>"; };
-		"TEMP_86312283-C1D0-4E31-B9CA-7F17F36EE89E" /* de */ = {isa = PBXFileReference; name = de; path = de.lproj/Help; sourceTree = "<group>"; };
-		"TEMP_86A59508-9878-49ED-AA25-4D98CA925AD8" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InfoPanel.xib; sourceTree = "<group>"; };
-		"TEMP_86A66873-9FFA-4768-A778-526F10812371" /* VolumeNameTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeNameTransformer.h; sourceTree = "<group>"; };
-		"TEMP_8948CA06-B5FD-40F1-8879-2C9742EFB198" /* FSItemIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSItemIndex.h; sourceTree = "<group>"; };
-		"TEMP_89B997E0-DA91-4B42-B45D-4ED1D8774BBA" /* ZoomIn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ZoomIn.tiff; sourceTree = "<group>"; };
-		"TEMP_8ADA646B-94FD-4E87-97E2-7AC666EC908F" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TreeMap.xib; sourceTree = "<group>"; };
-		"TEMP_8CAB50DA-BD68-45BA-8D97-F503F284A0DB" /* KindsStatisticDrawer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = KindsStatisticDrawer.tiff; sourceTree = "<group>"; };
-		"TEMP_958158F6-58FC-43B0-9C67-77D888118609" /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
-		"TEMP_963C577D-0DDB-409C-9957-97370A1A003C" /* PrefsPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefsPanelController.h; sourceTree = "<group>"; };
-		"TEMP_96757215-B4F2-4887-9364-582247C2BE5C" /* ToolbarWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolbarWindowController.m; sourceTree = "<group>"; };
-		"TEMP_974889FC-5FA2-4C82-AB23-F2CD989F9C4F" /* TreeMapPreferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TreeMapPreferences.tiff; sourceTree = "<group>"; };
-		"TEMP_9BBFF88B-4CEC-4A52-AF66-7ABB59A00DC2" /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		"TEMP_9D33EBA1-C2D9-46FF-8DB3-15C4EF431114" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/GeneralPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_9E8B90B2-19A5-4829-AC51-62833C5378CF" /* DIXTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXTableView.m; sourceTree = "<group>"; };
-		"TEMP_9FF2BF7B-B048-42ED-B628-DB8A1B6933FA" /* DIXOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXOutlineView.m; sourceTree = "<group>"; };
-		"TEMP_A069B385-60D1-4B25-8057-F2FADCA32246" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
-		"TEMP_A2D386AC-A931-4179-B528-ED42908B6DD0" /* AppsForItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppsForItem.h; sourceTree = "<group>"; };
-		"TEMP_A60E2659-3068-41A4-A8AB-C44066AC746F" /* GeneralPreferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = GeneralPreferences.tiff; sourceTree = "<group>"; };
-		"TEMP_A78A3FE4-D3F8-4390-8504-C9A64D134B3E" /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
-		"TEMP_A7F9D221-A92D-44E9-8B3C-7169AF29A6E9" /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
-		"TEMP_ACC18630-F34B-4FDD-8423-751489BC8AC7" /* PrefsPageBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefsPageBase.h; sourceTree = "<group>"; };
-		"TEMP_ACCDAA40-EB9A-407C-A1D5-5DCB6D5D5CFF" /* DIXTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIXTableView.h; sourceTree = "<group>"; };
-		"TEMP_ADEB5C4D-5CD4-41BF-B3A0-51C2F86FECCF" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
-		"TEMP_B0B57BC2-0BC0-4D42-9FB6-C4E1B38D3933" /* VolumeNameTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolumeNameTransformer.m; sourceTree = "<group>"; };
-		"TEMP_B2325F2B-724B-4E19-A0FC-FC35F71D904A" /* InfoPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPanelController.h; sourceTree = "<group>"; };
-		"TEMP_B2EBD097-A479-4ABE-8094-EA649B2D5296" /* RefreshSelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefreshSelection.png; sourceTree = "<group>"; };
-		"TEMP_B72D3062-E847-4BF3-8F28-BBA2BE1BDE36" /* FileKindsTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileKindsTableController.m; sourceTree = "<group>"; };
-		"TEMP_B82F927B-48F8-4952-9D40-DD9786247379" /* GeneralPrefPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralPrefPage.h; sourceTree = "<group>"; };
-		"TEMP_BB416F13-554D-4D88-9E21-5EB65A3626DE" /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
-		"TEMP_BE26C3E9-E885-42B7-84D9-BA7580C643A5" /* FSItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSItem.h; sourceTree = "<group>"; };
-		"TEMP_BEBEB345-72CA-44F8-B5D7-536BE88C24EF" /* GenericArrayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericArrayController.h; sourceTree = "<group>"; };
-		"TEMP_C3AB1188-7F88-4B6A-BC3E-7AFF81E7713B" /* NSURL-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL-Extensions.h"; sourceTree = "<group>"; };
-		"TEMP_C55E470B-6F3E-42AC-80B1-2C6C7714197D" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_C984D513-63D2-49A4-A8DE-62B3B6CA93E1" /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
-		"TEMP_CB4F3D33-C64E-4FF4-A620-D5F2D6C6FC5B" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		"TEMP_CE2EC216-FF33-48E2-A3EF-D18B46F479D7" /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Preferences.strings; sourceTree = "<group>"; };
-		"TEMP_D5B7FC0D-05D5-4C60-9DCB-1E1D55E497DE" /* en */ = {isa = PBXFileReference; name = en; path = en.lproj/Help; sourceTree = "<group>"; };
-		"TEMP_D72926B9-F292-4015-B71C-E0909493201E" /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		"TEMP_D7D021FD-E8FC-4523-9565-0B0D9FF5C88E" /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoPanel.xib; sourceTree = "<group>"; };
-		"TEMP_DA91E54B-07D8-466B-9229-A01F70EAD5B2" /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		"TEMP_DB63B5CC-D9EB-4DF8-A8BE-F6452B2A152D" /* DIXOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIXOutlineView.h; sourceTree = "<group>"; };
-		"TEMP_E0416914-8DBA-49E7-8327-D591E971EE57" /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/TreeMapPreferencesPage.xib; sourceTree = "<group>"; };
-		"TEMP_E0892315-9202-4B36-83A0-2D7F526BE7A7" /* ImageAndTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
-		"TEMP_E1CC17DB-6C37-4C2D-ABBA-FE9E769A357F" /* PrefsPageBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefsPageBase.m; sourceTree = "<group>"; };
-		"TEMP_E1F9A3A9-9571-4CF0-84DC-265D2899D5E7" /* Inspector.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Inspector.tiff; sourceTree = "<group>"; };
-		"TEMP_E4164301-C343-4C90-9543-E8539DBCA6F3" /* FSItem-Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSItem-Utilities.m"; sourceTree = "<group>"; };
-		"TEMP_E8D385ED-E0F3-4459-B3CF-95FE400E6A98" /* FSItemIndex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSItemIndex.m; sourceTree = "<group>"; };
-		"TEMP_EAE50F3B-313B-49B6-93C4-9BDB17F07699" /* LoadingPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingPanelController.m; sourceTree = "<group>"; };
-		"TEMP_EBA65CFC-CD51-4131-B57F-48BC41D03A15" /* FileSystemDoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemDoc.h; sourceTree = "<group>"; };
-		"TEMP_ED747A3C-08F4-4211-BDB6-367256BF5D3C" /* FileTypeColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTypeColors.m; sourceTree = "<group>"; };
-		"TEMP_EDFB9845-3A00-4B24-A24A-74309DF32FD7" /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		"TEMP_F13CE94A-78EA-452F-B4A4-FB88144A6706" /* GenericArrayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericArrayController.m; sourceTree = "<group>"; };
-		"TEMP_F31E4242-0B3D-49C5-9D7E-EFFFEE75F110" /* FileSizeFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSizeFormatter.h; sourceTree = "<group>"; };
-		"TEMP_F3DADFC3-5D9D-439E-B1C5-439C3E7F4A0F" /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/InfoPanel.xib; sourceTree = "<group>"; };
-		"TEMP_F53144DC-8781-4EE9-8ACF-B8F43670B7CF" /* Preferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		"TEMP_F60A9608-FCFC-4139-9F1F-E340212E4FB1" /* SelectionListTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionListTableController.h; sourceTree = "<group>"; };
-		"TEMP_F66A6F03-1345-42EB-B506-B3B03E095516" /* NSURL-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL-Extensions.m"; sourceTree = "<group>"; };
-		"TEMP_F7B58757-C001-4F2B-A0B7-D263C5637516" /* MoveToTrash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoveToTrash.png; sourceTree = "<group>"; };
-		"TEMP_FCD1A71E-AAFB-4C8F-BC19-A2DE50BA141B" /* Timing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timing.h; sourceTree = "<group>"; };
-		"TEMP_FD112E68-619F-4290-9815-E5E88FE3C519" /* DIXFileInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIXFileInfoView.h; sourceTree = "<group>"; };
-		"TEMP_FE6E744A-CDFC-475C-9D66-A84268E2E68C" /* MainWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
-		"TEMP_FF64528C-F69D-4CF9-B9A2-815D01E67232" /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
-		"TEMP_FF91AFE1-5C7D-41FF-90F7-919DC95C416E" /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EE84BB0FD39D4C6421B30035 /* FileKindsTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileKindsTableController.h; sourceTree = "<group>"; };
+		F077FAE6F5209ACE7F9DFDA8 /* Preferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Preferences.tiff; sourceTree = "<group>"; };
+		F0D98C903B9B9CDB5B6D406C /* VolumeUsageTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolumeUsageTransformer.m; sourceTree = "<group>"; };
+		F1CE9076569E5E13F13F3A38 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F1FFBD21E15CB3D3D236383E /* Timing.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Timing.c; sourceTree = "<group>"; };
+		F772DAB3AD69181A3905E983 /* NTTitledInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTitledInfoView.m; sourceTree = "<group>"; };
+		FA05E6D0C2E9F621B0684DF0 /* PrefsPanelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefsPanelController.h; sourceTree = "<group>"; };
+		FA4D11AB0EE58232D062CE24 /* AppsForItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppsForItem.h; sourceTree = "<group>"; };
+		FAD0D8A3091B7A9EF672FF09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FC38F1BBF84E6E6EC55942F8 /* RefreshAll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefreshAll.png; sourceTree = "<group>"; };
+		FDAB9180334198843630150B /* GeneralPrefPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralPrefPage.m; sourceTree = "<group>"; };
+		FE657C53A361F891A4B2B7F3 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/InfoPanel.xib; sourceTree = "<group>"; };
+		FE71EB2281522D2382EEE8A6 /* SelectionListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		1443F34B3026883A1C1A7E71 /* CocoaTech-Depreciated */ = {
-			isa = PBXGroup;
-			children = (
-				350DECE310083D00E779AB9B /* NTFilePasteboardSource.h */,
-				E5249BBA00CB50551A3E0A76 /* NTFilePasteboardSource.m */,
-				1A6A8DBA4A8CD6E4A0A5D358 /* NTInfoView.h */,
-				4108E2C3F3A7C77B93973585 /* NTInfoView.m */,
-				049D2743F3C741E48A82B626 /* NTTitledInfoPair.h */,
-				FB20CFB2A04F31F8B598361C /* NTTitledInfoPair.m */,
-				39040A1DD74887498B72B54E /* NTTitledInfoView.h */,
-				7A4377EC2A5C0A626110C6BB /* NTTitledInfoView.m */,
-			);
-			path = "CocoaTech-Depreciated";
-			sourceTree = "<group>";
-		};
 		50D193E21922E502F14E78F5 = {
 			isa = PBXGroup;
 			children = (
-				A6E8F1E31C66AC0CF0DE8C17 /* Defaults.plist */,
-				61794FEF992727B4F801E368 /* MainWindowToolbar.toolbar */,
-				1443F34B3026883A1C1A7E71 /* CocoaTech-Depreciated */,
-				5503BD7571E84C18A13F440A /* Disk Inventory X */,
-				B1EC96435EC1F47E12ACFD1F /* Foundation Extensions */,
+				65D85F8226BCC70F1DF698E8 /* DiskInventoryX */,
 				9713FC999587FF3643457691 /* TreeMapView */,
 				85780B5BE9BA18F171E9B925 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5503BD7571E84C18A13F440A /* Disk Inventory X */ = {
+		65D85F8226BCC70F1DF698E8 /* DiskInventoryX */ = {
 			isa = PBXGroup;
 			children = (
-				1D9CA8F5F013636A739D7D1C /* Images.xcassets */,
+				FA4D11AB0EE58232D062CE24 /* AppsForItem.h */,
+				4D1A0D3251CFE1E183A0F7DC /* AppsForItem.m */,
+				8102E3E89FB9296A0E2428F1 /* Disk Inventory X_Prefix.pch */,
+				71919154A164239BD3F87012 /* DIXFileInfoView.h */,
+				E98FDEEB4827CE3CD521862E /* DIXFileInfoView.m */,
+				E06957005C1A957CEC9E532A /* DIXOutlineView.h */,
+				0E479A1227A8818AC3224D65 /* DIXOutlineView.m */,
+				7E214714A4766D8BC9C67027 /* DIXTableView.h */,
+				115B15614CB98A3BD5C9B793 /* DIXTableView.m */,
+				51F0A2CBEFF93E90514468E9 /* DrivesPanelController.h */,
+				159FD1F5C8C9A4F06DA54021 /* DrivesPanelController.m */,
+				8E238993EE9747720737CF0C /* FileKindsPopupController.h */,
+				57BDD7EF87459DD2AEB65654 /* FileKindsPopupController.m */,
+				EE84BB0FD39D4C6421B30035 /* FileKindsTableController.h */,
+				A888E8B94F70C555B9A7E763 /* FileKindsTableController.m */,
+				6A78E13F2B1677D1D7104DCB /* FileSizeFormatter.h */,
+				DE6F10072E3A3C6545AA6E4F /* FileSizeFormatter.m */,
+				B4A583DAC0492F6CCC706FD0 /* FileSizeTransformer.h */,
+				6DDA4C36C4DD0471E942A2F6 /* FileSizeTransformer.m */,
+				8AB49D0C14F3F9587C603727 /* FilesOutlineViewController.h */,
+				59E9875ECE6D4F4B959C084A /* FilesOutlineViewController.m */,
+				CDFC072B5A69D03EE87444AE /* FileSystemDoc.h */,
+				CB05FB6928228EE4E0073B81 /* FileSystemDoc.m */,
+				D27DB93A1ED4648B61BB3B3C /* FileTypeColors.h */,
+				60D50E1E3FF0C79586F39888 /* FileTypeColors.m */,
+				181C0355B5782EEE280466D5 /* FSItem-Utilities.h */,
+				2F2E23B0341CC165D3896627 /* FSItem-Utilities.m */,
+				6565FEA758B979B9DA32CC32 /* FSItem.h */,
+				3540470D54103A57CD9627C7 /* FSItem.m */,
+				A318AEBB0A6298445ADFA189 /* FSItemIndex.h */,
+				DB8C534ADF433E432C10967F /* FSItemIndex.m */,
+				22EBBE47CED0D7489D026621 /* GeneralPrefPage.h */,
+				FDAB9180334198843630150B /* GeneralPrefPage.m */,
+				A21ED9E7FAB2F48698360822 /* GenericArrayController.h */,
+				DE5FE5058F27A625C9B760D1 /* GenericArrayController.m */,
+				517E8D2E0DF857A82AFA931F /* ImageAndTextCell.h */,
+				6009E28CCEDF076A5B76366E /* ImageAndTextCell.m */,
+				2E9A14E2DF4BE975B43A7C5B /* InfoPanelController.h */,
+				2CAE0C0484DF601A25EADA40 /* InfoPanelController.m */,
+				5E093C7C4BD2619E22DA6701 /* LoadingPanelController.h */,
+				40086F6C5DA460AA6D574881 /* LoadingPanelController.m */,
+				92A7B3FA12BC6A0518CA5406 /* main.m */,
+				273BFAD21222F88F479B9E02 /* MainWindow.h */,
+				562FDB77BF399F81FD53377E /* MainWindow.m */,
+				880E7D258BB6E983FB864B11 /* MainWindowController.h */,
+				67C8B3F73F03F8B690A0337A /* MainWindowController.m */,
+				A33532E80D989D19413E52EC /* MyDocumentController.h */,
+				78734D6F07C6F747DEE4F67F /* MyDocumentController.m */,
+				CD3C2EE9D0C449546AB23FEF /* NSURL-Extensions.h */,
+				CD39776115D44B81730992B5 /* NSURL-Extensions.m */,
+				1871FEE5D4F41A364BF24A76 /* Preferences.h */,
+				E4DDCA02F157A6C1323CF367 /* Preferences.m */,
+				E8F915DC3CD0DF8D01DA8F3A /* PrefsPageBase.h */,
+				0C5659B5926CF6CFFA9416BB /* PrefsPageBase.m */,
+				FA05E6D0C2E9F621B0684DF0 /* PrefsPanelController.h */,
+				934461062A44CB54D8624F5E /* PrefsPanelController.m */,
+				44FFD90741902A92F0E35ADE /* SelectionListController.h */,
+				FE71EB2281522D2382EEE8A6 /* SelectionListController.m */,
+				E9E7FD9AB5933563D8DA275F /* SelectionListTableController.h */,
+				6267F40B05EBC345C24D8B96 /* SelectionListTableController.m */,
+				F1FFBD21E15CB3D3D236383E /* Timing.c */,
+				B3F0B19120FED48A77F8736C /* Timing.h */,
+				6B58E7B8CC88BEFA878D1B3D /* ToolbarWindowController.h */,
+				861FB6AE9B50060AFFD51F6A /* ToolbarWindowController.m */,
+				6C2365F4CAB2EB8D73EDB110 /* TreeMapPrefPage.h */,
+				704A2FC06CD9F66F0051B903 /* TreeMapPrefPage.m */,
+				512A76EF19ABCDF4E0B3630C /* TreeMapViewController.h */,
+				7CAA91FED37BC67E336A0EB4 /* TreeMapViewController.m */,
+				EAA630BD9EEF2D7343210922 /* VolumeNameTransformer.h */,
+				6107A2BCAC3CB8436B37E9FC /* VolumeNameTransformer.m */,
+				784341760B27157607188961 /* VolumeUsageTransformer.h */,
+				F0D98C903B9B9CDB5B6D406C /* VolumeUsageTransformer.m */,
+				A3AFCB32517B115B6765D922 /* CocoaTech-Depreciated */,
+				E7E5BCD7D4F75156990B4841 /* Foundation Extensions */,
+				79366FEAC11367D4DFE140E7 /* Resources */,
 			);
-			path = "Disk Inventory X";
+			path = DiskInventoryX;
+			sourceTree = "<group>";
+		};
+		79366FEAC11367D4DFE140E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C85B98C5B4F1CCF64F480DB9 /* Defaults.plist */,
+				6A6694454FF09FBD41F85DFA /* GeneralPreferences.tiff */,
+				9A174904601F3B0EBBA42BD3 /* Images.xcassets */,
+				1463007A80159D127000D331 /* Inspector.tiff */,
+				B748869A45C9D21177C9D5A9 /* KindsStatisticDrawer.tiff */,
+				A794FE687AA833796431B64D /* MainWindowToolbar.toolbar */,
+				464F5C36B806CD98E22E2F35 /* MoveToTrash.png */,
+				F077FAE6F5209ACE7F9DFDA8 /* Preferences.tiff */,
+				FC38F1BBF84E6E6EC55942F8 /* RefreshAll.png */,
+				B8B0D48301D1585F45838CD1 /* RefreshSelection.png */,
+				7105FB7613CBC16C3D6CD5C2 /* RevealInFinder.png */,
+				1D4092F39AEE80AF1AF6670A /* ShowPackageContentsClosed.png */,
+				C8816ECAE18F51DFBEF77004 /* ShowPackageContentsOpen.png */,
+				DB1617B1FA895FFF26253894 /* TreeMapPreferences.tiff */,
+				0F5CA1594093D83D9CCA7DAE /* ZoomIn.tiff */,
+				080E06A52A42A816865F6F1E /* ZoomOut.tiff */,
+				73E95BC550CF96FB3F2F90E6 /* Credits.rtf */,
+				39A436E3A8EB3B12C5591CFF /* DonationPanel.xib */,
+				9D33735FFEE3855BC8DCE4C8 /* GeneralPreferencesPage.xib */,
+				C75BB0F8DBEFD95B88625057 /* Help */,
+				402941E395B3B5D0B8617830 /* InfoPanel.xib */,
+				C79F5E083C04A7E7327CF96B /* InfoPlist.strings */,
+				872D6C6834D88A3458F8D072 /* LoadingPanel.xib */,
+				BFEF25C54DBDDB75CE3373FD /* Localizable.strings */,
+				002BD766F6E54BD7404C7FE4 /* MainMenu.xib */,
+				084A4C5955960C1873E1F912 /* Preferences.strings */,
+				639D0504284E0BC2BEF532C1 /* TreeMap.xib */,
+				963C731E4D9418B1535A4052 /* TreeMapPreferencesPage.xib */,
+				787816960D9E8B1C4F8CE23C /* VolumesPanel.xib */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		85780B5BE9BA18F171E9B925 /* Products */ = {
@@ -311,124 +402,31 @@
 				4203D8F52B03912BFF8A00E1 /* ZoomInfo.h */,
 				0FE1E7B07E52794858E8C165 /* ZoomInfo.m */,
 			);
-			name = TreeMapView;
 			path = TreeMapView;
 			sourceTree = "<group>";
 		};
-		B1EC96435EC1F47E12ACFD1F /* Foundation Extensions */ = {
+		A3AFCB32517B115B6765D922 /* CocoaTech-Depreciated */ = {
 			isa = PBXGroup;
 			children = (
-				B760C840214D458B4E3DCB2D /* NSFileManager-Extensions.h */,
-				F2D890B3BDBE8F0489E1F6E7 /* NSFileManager-Extensions.m */,
+				B3E32B5CBF9C022910E197DE /* NTFilePasteboardSource.h */,
+				0F6C8234B6DD02C9C6133451 /* NTFilePasteboardSource.m */,
+				C052D6DDAA9B0A3FA89BAEEE /* NTInfoView.h */,
+				47235EAF92ABE6E558236345 /* NTInfoView.m */,
+				5BF7B10CE000E75FD4F207C4 /* NTTitledInfoPair.h */,
+				AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */,
+				384880679E6B6091469CFCF5 /* NTTitledInfoView.h */,
+				F772DAB3AD69181A3905E983 /* NTTitledInfoView.m */,
 			);
-			path = "Foundation Extensions";
+			path = "CocoaTech-Depreciated";
 			sourceTree = "<group>";
 		};
-		"TEMP_7526B04E-BB0A-4575-AAEF-26EFCB178B74" /* Resources */ = {
+		E7E5BCD7D4F75156990B4841 /* Foundation Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				"TEMP_86A66873-9FFA-4768-A778-526F10812371" /* VolumeNameTransformer.h */,
-				"TEMP_32237D80-13A2-484D-8B92-BD3ACB905911" /* SelectionListController.h */,
-				"TEMP_79ACB985-876A-4180-87A0-55A16505C0F3" /* FilesOutlineViewController.h */,
-				"TEMP_C984D513-63D2-49A4-A8DE-62B3B6CA93E1" /* MainWindow.h */,
-				"TEMP_16A7992F-1E9F-475D-8826-832F7032F5AC" /* TreeMapPrefPage.m */,
-				"TEMP_72C5D5B8-914F-4038-9AFE-6961BFBB5FDD" /* ToolbarWindowController.h */,
-				"TEMP_8948CA06-B5FD-40F1-8879-2C9742EFB198" /* FSItemIndex.h */,
-				"TEMP_963C577D-0DDB-409C-9957-97370A1A003C" /* PrefsPanelController.h */,
-				"TEMP_E4164301-C343-4C90-9543-E8539DBCA6F3" /* FSItem-Utilities.m */,
-				"TEMP_EAE50F3B-313B-49B6-93C4-9BDB17F07699" /* LoadingPanelController.m */,
-				"TEMP_9FF2BF7B-B048-42ED-B628-DB8A1B6933FA" /* DIXOutlineView.m */,
-				"TEMP_5B60559D-5572-43CA-AAD9-899AD36825C2" /* VolumeUsageTransformer.h */,
-				"TEMP_855C1191-92C2-4AE8-83BC-35A20164A1A2" /* TreeMapViewController.h */,
-				"TEMP_7B885235-D148-4CF4-84CF-A26947901801" /* FileSizeFormatter.m */,
-				"TEMP_FCD1A71E-AAFB-4C8F-BC19-A2DE50BA141B" /* Timing.h */,
-				"TEMP_EBA65CFC-CD51-4131-B57F-48BC41D03A15" /* FileSystemDoc.h */,
-				"TEMP_4B61B2A0-0656-4DF4-A7B5-4698DE4782FD" /* FileSizeTransformer.m */,
-				"TEMP_F66A6F03-1345-42EB-B506-B3B03E095516" /* NSURL-Extensions.m */,
-				"TEMP_E1CC17DB-6C37-4C2D-ABBA-FE9E769A357F" /* PrefsPageBase.m */,
-				"TEMP_606894FB-4FAC-4AD8-871A-22D95E2E3B5F" /* FileKindsPopupController.h */,
-				"TEMP_0F26D493-4032-4FB8-8968-DDCB732FEA74" /* InfoPanelController.m */,
-				"TEMP_2B32EB1C-544A-4C7E-AA30-DA7723F25824" /* DIXFileInfoView.m */,
-				"TEMP_E0892315-9202-4B36-83A0-2D7F526BE7A7" /* ImageAndTextCell.h */,
-				"TEMP_ED747A3C-08F4-4211-BDB6-367256BF5D3C" /* FileTypeColors.m */,
-				"TEMP_F53144DC-8781-4EE9-8ACF-B8F43670B7CF" /* Preferences.m */,
-				"TEMP_B72D3062-E847-4BF3-8F28-BBA2BE1BDE36" /* FileKindsTableController.m */,
-				"TEMP_5731E9A6-D1E1-4FFA-A457-3B09252EEC0A" /* SelectionListTableController.m */,
-				"TEMP_BB416F13-554D-4D88-9E21-5EB65A3626DE" /* MainWindowController.h */,
-				"TEMP_F13CE94A-78EA-452F-B4A4-FB88144A6706" /* GenericArrayController.m */,
-				"TEMP_9E8B90B2-19A5-4829-AC51-62833C5378CF" /* DIXTableView.m */,
-				"TEMP_12E96A5D-6BA5-4CB2-B93B-69C2BDD60178" /* AppsForItem.m */,
-				"TEMP_1E641A84-6774-4E43-8E56-3E4EBC19375A" /* MyDocumentController.m */,
-				"TEMP_271C63AD-FA2B-4A18-ADFF-CBBF184651B0" /* FSItem.m */,
-				"TEMP_1BAB5D05-2EB3-44EA-A558-96CFA29CF287" /* GeneralPrefPage.m */,
-				"TEMP_6DD8F325-48EC-41B6-9CF8-1BC1C8B87A02" /* DrivesPanelController.m */,
-				"TEMP_17912757-8CD3-42BD-9967-A289750D6670" /* PrefsPanelController.m */,
-				"TEMP_E8D385ED-E0F3-4459-B3CF-95FE400E6A98" /* FSItemIndex.m */,
-				"TEMP_96757215-B4F2-4887-9364-582247C2BE5C" /* ToolbarWindowController.m */,
-				"TEMP_FE6E744A-CDFC-475C-9D66-A84268E2E68C" /* MainWindow.m */,
-				"TEMP_1AE70916-9E64-4117-BBE1-396C03027218" /* TreeMapPrefPage.h */,
-				"TEMP_568A296A-F9DB-45D7-A346-6D80B77AF53A" /* FilesOutlineViewController.m */,
-				"TEMP_B0B57BC2-0BC0-4D42-9FB6-C4E1B38D3933" /* VolumeNameTransformer.m */,
-				"TEMP_3BDEB263-9A21-46F6-87B6-582B7CA6AAB1" /* SelectionListController.m */,
-				"TEMP_DA91E54B-07D8-466B-9229-A01F70EAD5B2" /* main.m */,
-				"TEMP_B2325F2B-724B-4E19-A0FC-FC35F71D904A" /* InfoPanelController.h */,
-				"TEMP_3B6D1AD4-4B62-4FA8-8621-2045FFB5FEE1" /* FileKindsPopupController.m */,
-				"TEMP_ACC18630-F34B-4FDD-8423-751489BC8AC7" /* PrefsPageBase.h */,
-				"TEMP_C3AB1188-7F88-4B6A-BC3E-7AFF81E7713B" /* NSURL-Extensions.h */,
-				"TEMP_2F453DF5-38E7-4686-8A56-92A147C5B160" /* FileSizeTransformer.h */,
-				"TEMP_580D4B28-956D-44A6-B02F-EABCB29B0082" /* Timing.c */,
-				"TEMP_01665791-1A5D-4861-942B-EB6583DD306B" /* FileSystemDoc.m */,
-				"TEMP_6781A691-34CD-49B2-B304-3218B3A7C09C" /* TreeMapViewController.m */,
-				"TEMP_F31E4242-0B3D-49C5-9D7E-EFFFEE75F110" /* FileSizeFormatter.h */,
-				"TEMP_84E8E9C4-2153-40B9-81A0-F99D67B758BD" /* VolumeUsageTransformer.m */,
-				"TEMP_DB63B5CC-D9EB-4DF8-A8BE-F6452B2A152D" /* DIXOutlineView.h */,
-				"TEMP_518A67F2-013C-4755-BD1D-2C0226D4D839" /* FSItem-Utilities.h */,
-				"TEMP_265BE403-F6A2-40F2-BEC8-73FD5C2F61A6" /* LoadingPanelController.h */,
-				"TEMP_2D945D08-A028-47F3-ABAD-30368BED2DFD" /* ImageAndTextCell.m */,
-				"TEMP_FD112E68-619F-4290-9815-E5E88FE3C519" /* DIXFileInfoView.h */,
-				"TEMP_0DE3AFB8-998C-40E7-8AD0-BF3DAA939D2A" /* DrivesPanelController.h */,
-				"TEMP_BE26C3E9-E885-42B7-84D9-BA7580C643A5" /* FSItem.h */,
-				"TEMP_B82F927B-48F8-4952-9D40-DD9786247379" /* GeneralPrefPage.h */,
-				"TEMP_42A3CCAB-B07A-4DCA-954F-D1042FE2255C" /* MyDocumentController.h */,
-				"TEMP_A2D386AC-A931-4179-B528-ED42908B6DD0" /* AppsForItem.h */,
-				"TEMP_ACCDAA40-EB9A-407C-A1D5-5DCB6D5D5CFF" /* DIXTableView.h */,
-				"TEMP_BEBEB345-72CA-44F8-B5D7-536BE88C24EF" /* GenericArrayController.h */,
-				"TEMP_02C3743C-D906-458C-9CA8-40D8FBBACDC8" /* MainWindowController.m */,
-				"TEMP_F60A9608-FCFC-4139-9F1F-E340212E4FB1" /* SelectionListTableController.h */,
-				"TEMP_4FC5A4D5-F899-499F-886F-9E9EB5430586" /* FileKindsTableController.h */,
-				"TEMP_6B7A128B-9000-4EC0-9264-6EBCFC30C7A3" /* FileTypeColors.h */,
-				"TEMP_186488FF-35C4-4576-B4B6-D761A1090E9B" /* Preferences.h */,
-				B1EC96435EC1F47E12ACFD1F /* Foundation Extensions */,
-				1443F34B3026883A1C1A7E71 /* CocoaTech-Depreciated */,
-				"TEMP_974889FC-5FA2-4C82-AB23-F2CD989F9C4F" /* TreeMapPreferences.tiff */,
-				"TEMP_F7B58757-C001-4F2B-A0B7-D263C5637516" /* MoveToTrash.png */,
-				"TEMP_B2EBD097-A479-4ABE-8094-EA649B2D5296" /* RefreshSelection.png */,
-				"TEMP_A60E2659-3068-41A4-A8AB-C44066AC746F" /* GeneralPreferences.tiff */,
-				"TEMP_1699C290-2AA8-4D8B-9C6E-E01AE96A2C18" /* RefreshAll.png */,
-				"TEMP_85FED90C-8BC7-416D-950E-181FD6E5524B" /* ShowPackageContentsClosed.png */,
-				"TEMP_71DC165D-74E2-4820-AA1E-98CE12F66994" /* ZoomOut.tiff */,
-				"TEMP_69725C75-C414-474B-A7DD-D0F68EBD535B" /* RevealInFinder.png */,
-				"TEMP_E1F9A3A9-9571-4CF0-84DC-265D2899D5E7" /* Inspector.tiff */,
-				"TEMP_61C9C68C-9C65-45BF-87AD-B09F2231D5C5" /* Preferences.tiff */,
-				"TEMP_8CAB50DA-BD68-45BA-8D97-F503F284A0DB" /* KindsStatisticDrawer.tiff */,
-				"TEMP_83547AA2-F3D6-4815-AC52-2E336B136149" /* ShowPackageContentsOpen.png */,
-				"TEMP_89B997E0-DA91-4B42-B45D-4ED1D8774BBA" /* ZoomIn.tiff */,
-				"TEMP_42DA06F8-C8D9-4327-87B2-8D498C19C236" /* Credits.rtf */,
-				"TEMP_7960D137-EE8C-4442-9159-8967FF7EBF8D" /* DonationPanel.xib */,
-				"TEMP_31C3A08B-3BE0-4799-A966-74E4A6331B0D" /* GeneralPreferencesPage.xib */,
-				"TEMP_774E50FB-99DD-40B3-8F53-6813C34F6DDC" /* Help */,
-				"TEMP_BD9E229E-4D34-467E-9BE4-2D7FA347230E" /* InfoPanel.xib */,
-				"TEMP_E0CE947C-82DA-4AF2-8B11-340C887B8856" /* InfoPlist.strings */,
-				"TEMP_A1C17E85-7F7D-4EB3-AAA3-4002DBD2E698" /* LoadingPanel.xib */,
-				"TEMP_4F3A2A41-17BC-4886-B53D-11494ED31BC9" /* Localizable.strings */,
-				"TEMP_AFD2834F-5FB0-46DC-9586-3663C2F5DF50" /* MainMenu.xib */,
-				"TEMP_EB61B945-2FAC-4E83-8C78-8A437CD763A4" /* Preferences.strings */,
-				"TEMP_72583CE3-9557-44A4-9331-FB7F6778B94C" /* TreeMap.xib */,
-				"TEMP_77F30240-B68E-477E-B1A9-17C0BCFD718A" /* TreeMapPreferencesPage.xib */,
-				"TEMP_F535AEE5-B585-4421-9C0F-A84E70CE69A3" /* VolumesPanel.xib */,
+				704FCC7E176B3EBCBE3FC94C /* NSFileManager-Extensions.h */,
+				9749B1EBB6026A3B1987BC1D /* NSFileManager-Extensions.m */,
 			);
-			name = Resources;
-			path = .;
+			path = "Foundation Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +437,7 @@
 			buildConfigurationList = A4D24B3D34A6A72BFA218D77 /* Build configuration list for PBXNativeTarget "Disk Inventory X" */;
 			buildPhases = (
 				3F69501DAF5D3EE1E6BDB642 /* Sources */,
+				BF4F25B4369EED27442F80C4 /* Copy Help Books */,
 				2B86963EE94DB0EFE4B77765 /* Resources */,
 			);
 			buildRules = (
@@ -493,239 +492,260 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1B92927A3F2BD70DC565AF /* Credits.rtf in Resources */,
-				1A6EAB4BEEE8C87C99C1B7B4 /* Defaults.plist in Resources */,
-				820A34EAE4224B507B115A0A /* DonationPanel.xib in Resources */,
-				21052AB88B1304CBD5C7F40A /* GeneralPreferences.tiff in Resources */,
-				33B9E19DFF66E091198BA9B4 /* GeneralPreferencesPage.xib in Resources */,
-				A67C15B9963252F447FE4835 /* Help in Resources */,
-				E45D2786F3ED566FBFFC5F0D /* Images.xcassets in Resources */,
-				56A1BBBE3DA4C1A5BC07E1DE /* InfoPanel.xib in Resources */,
-				7E87BD88FD325013CA8AA2DC /* InfoPlist.strings in Resources */,
-				42459D58D5FF0D6846F4565E /* Inspector.tiff in Resources */,
-				4E54E3E586338A5183AF03BF /* KindsStatisticDrawer.tiff in Resources */,
-				928B0AD024AB0B5AF09BEE3E /* LoadingPanel.xib in Resources */,
-				C2BC5CC692202C2B2026DCBC /* Localizable.strings in Resources */,
-				5C82BACDE16D518A82F3F4B8 /* MainMenu.xib in Resources */,
-				8A31B8681683F9CEF52DBAA9 /* MainWindowToolbar.toolbar in Resources */,
-				7242651458463292DC73542C /* MoveToTrash.png in Resources */,
-				CB426BDC47DCC3D7F0D4C9FC /* Preferences.strings in Resources */,
-				7BCAE4FFCBD592B393A187D0 /* Preferences.tiff in Resources */,
-				AEE88E11140A469C7B587F96 /* RefreshAll.png in Resources */,
-				41C8426C3B3EE1F7F0B05284 /* RefreshSelection.png in Resources */,
-				F131F9718596E7A68BCCBEBD /* RevealInFinder.png in Resources */,
-				BC600408CF26537D52A3E8A6 /* ShowPackageContentsClosed.png in Resources */,
-				DAB8F2B67AD9E9260F027040 /* ShowPackageContentsOpen.png in Resources */,
-				278BFFEFA39C7EEDA8F2A272 /* TreeMap.xib in Resources */,
-				B162316CD29F9C7C772EDFC8 /* TreeMapPreferences.tiff in Resources */,
-				B601EB8773D0E0FDD7205066 /* TreeMapPreferencesPage.xib in Resources */,
-				828EB16D449C6E817866E3E7 /* VolumesPanel.xib in Resources */,
-				AA16AD406C49DA408655E121 /* ZoomIn.tiff in Resources */,
-				A3BCE55797C281300A6B9F10 /* ZoomOut.tiff in Resources */,
+				F50EC5EC17E2FD126DC39A0D /* Credits.rtf in Resources */,
+				3D14EE5B2BFA45119943FADC /* Defaults.plist in Resources */,
+				A92B5E738FEDA17490B71FDD /* DonationPanel.xib in Resources */,
+				34B074839183017CDFAB273B /* GeneralPreferences.tiff in Resources */,
+				D5F4F4949D2D2D9E4B8D90BB /* GeneralPreferencesPage.xib in Resources */,
+				DEB6B4731D5D16764EE8D49C /* Images.xcassets in Resources */,
+				6274E7B067CE74FA65F2E985 /* InfoPanel.xib in Resources */,
+				88802D398F9EE444E5404FEB /* InfoPlist.strings in Resources */,
+				BDA60F993BCFA89979C25875 /* Inspector.tiff in Resources */,
+				2F4688CCFBA433D25BE04114 /* KindsStatisticDrawer.tiff in Resources */,
+				30BBF186820AEB354B729347 /* LoadingPanel.xib in Resources */,
+				B1C1B29743232AF53EB7EE48 /* Localizable.strings in Resources */,
+				D912CE59ADD4054D640BDD25 /* MainMenu.xib in Resources */,
+				2C600AC3925793E78ABF187D /* MainWindowToolbar.toolbar in Resources */,
+				EBD11F20000AC83FEBF55062 /* MoveToTrash.png in Resources */,
+				B5447C88E59C2AC634ADF6D6 /* Preferences.strings in Resources */,
+				8AF8C6C163CF0EBBC323A69F /* Preferences.tiff in Resources */,
+				D84F4004E1008F3C29EB211F /* RefreshAll.png in Resources */,
+				A9BC06F5A175E91B35D52E20 /* RefreshSelection.png in Resources */,
+				EA8F7498B02F6039FCF6E112 /* RevealInFinder.png in Resources */,
+				A417DBF7D122249D671EE6FE /* ShowPackageContentsClosed.png in Resources */,
+				C91BF51EC616D289F2831083 /* ShowPackageContentsOpen.png in Resources */,
+				9A257E9A517F55B58EA92E59 /* TreeMap.xib in Resources */,
+				6F8583E6A7842BE3F6BACA39 /* TreeMapPreferences.tiff in Resources */,
+				82C5388C36B3D2290FC3E777 /* TreeMapPreferencesPage.xib in Resources */,
+				15D70C880DE4DE551AB0E494 /* VolumesPanel.xib in Resources */,
+				96D5B1CDD6EFA0270E86EC87 /* ZoomIn.tiff in Resources */,
+				2A069423D1FCDA78DECB5FA8 /* ZoomOut.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF4F25B4369EED27442F80C4 /* Copy Help Books */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Help Books";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nfor dir in \"${SRCROOT}\"/DiskInventoryX/Resources/*.lproj/Help; do\n  lproj=$(basename \"$(dirname \"$dir\")\")\n  dest=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${lproj}\"\n  mkdir -p \"$dest\"\n  rsync -a --delete \"$dir/\" \"$dest/Help/\"\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F69501DAF5D3EE1E6BDB642 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C32BD1FC5C7DF896E16663 /* AppsForItem.m in Sources */,
-				A841F7982948DCD0B66F268D /* DIXFileInfoView.m in Sources */,
-				70506F01F19C49B6A2D7CFE2 /* DIXOutlineView.m in Sources */,
-				2AE62825F81D04977813A1C9 /* DIXTableView.m in Sources */,
-				7B13060B62A51D4EFF94F934 /* DrivesPanelController.m in Sources */,
-				15D76E1799CA4F05E7696A86 /* FSItem-Utilities.m in Sources */,
-				FFE8ED415D366432423505BE /* FSItem.m in Sources */,
-				D5EB5F74F196276EFD028DCC /* FSItemIndex.m in Sources */,
-				393C4F48A92B45AF23EC726B /* FileKindsPopupController.m in Sources */,
-				EF7449250F436592D0E4A099 /* FileKindsTableController.m in Sources */,
-				3A8F4BF04754E8FB191CF578 /* FileSizeFormatter.m in Sources */,
-				A86DE2F966F666D616260AA2 /* FileSizeTransformer.m in Sources */,
-				D602EC2DD8C23AD75804A18B /* FileSystemDoc.m in Sources */,
-				ED19A4397398847AE7F6307A /* FileTypeColors.m in Sources */,
-				89D88785F30DC66646CCCABD /* FilesOutlineViewController.m in Sources */,
-				4056697FCB2ECEA216CE47D4 /* GeneralPrefPage.m in Sources */,
-				2BCD557F017A2B9611E54FDD /* GenericArrayController.m in Sources */,
-				85C0BC026BD2870A7AD3C39E /* ImageAndTextCell.m in Sources */,
-				0C358583A1610416B03C1380 /* InfoPanelController.m in Sources */,
-				A1ED1E5F2E9549249A79BE69 /* LoadingPanelController.m in Sources */,
-				D3388F98310C8F1DDECAE6DA /* MainWindow.m in Sources */,
-				89D646FEBB4D23D805E2D767 /* MainWindowController.m in Sources */,
-				6175034A7A35AA43444620B3 /* MyDocumentController.m in Sources */,
+				0D5F18FD0480BD4C936C496F /* AppsForItem.m in Sources */,
+				493A7DE1E0A3DD46ACECBA06 /* DIXFileInfoView.m in Sources */,
+				01C507D739001DA8CEB42E6A /* DIXOutlineView.m in Sources */,
+				537DC3F2708A7EC76F4038B4 /* DIXTableView.m in Sources */,
+				8F595C368183ABFD33CD7204 /* DrivesPanelController.m in Sources */,
+				05BAAE4B8BD75508E2EE9FAC /* FSItem-Utilities.m in Sources */,
+				B5E1879D0D6F5414200BAFF0 /* FSItem.m in Sources */,
+				D4E61790D23CBA651FF9913E /* FSItemIndex.m in Sources */,
+				80A8A4080CB1D46933E15A56 /* FileKindsPopupController.m in Sources */,
+				77F8E151A0CB126F62413DC3 /* FileKindsTableController.m in Sources */,
+				1AE7B14E21F7E17D5A5D111C /* FileSizeFormatter.m in Sources */,
+				EADA8F85CD647920A664EB3B /* FileSizeTransformer.m in Sources */,
+				BF75B5F3A8C5D51DDFF255AD /* FileSystemDoc.m in Sources */,
+				F8500F66A3E2C6991C043F4F /* FileTypeColors.m in Sources */,
+				C45F9ED3B65F620A0B81D6D9 /* FilesOutlineViewController.m in Sources */,
+				89D35C6A39A73AFFF8890356 /* GeneralPrefPage.m in Sources */,
+				DB8C39CDA4E287C43105B0F4 /* GenericArrayController.m in Sources */,
+				C2C1C7D63E0C01AD90E9D5FB /* ImageAndTextCell.m in Sources */,
+				222EEC82C6EC941367125097 /* InfoPanelController.m in Sources */,
+				9E9CCBBD30DED1024FBE0034 /* LoadingPanelController.m in Sources */,
+				E33BA08D1AD56F332B4969E5 /* MainWindow.m in Sources */,
+				46F66801BF8CCCE52170BBE1 /* MainWindowController.m in Sources */,
+				2C9FA0C877860C5EC2E87AD6 /* MyDocumentController.m in Sources */,
 				EB89AEE4A3DE9E35ACF58346 /* NSBitmapImageRep-CreationExtensions.m in Sources */,
-				21F2B9DFA2EEDE15EF29203C /* NSFileManager-Extensions.m in Sources */,
-				B2EEEDA111174C3FECFF937D /* NSURL-Extensions.m in Sources */,
+				3F3B9DA761B6246C179EFD1C /* NSFileManager-Extensions.m in Sources */,
+				FBE7FE2074FD59595AC62D7A /* NSURL-Extensions.m in Sources */,
 				E0A7400BC92ACC214B336C59 /* NSView-BackingCoordsHelpers.m in Sources */,
-				15E10975082CB3DAA242724F /* NTFilePasteboardSource.m in Sources */,
-				1337A336C4A8B344F2ED34DB /* NTInfoView.m in Sources */,
-				FEF5FA58FE380B0CF5C4EF8C /* NTTitledInfoPair.m in Sources */,
-				0B9E76470BF384926C5E0DB8 /* NTTitledInfoView.m in Sources */,
-				2CC3D00F658AC25EC097CC61 /* Preferences.m in Sources */,
-				F83266C65095053B2FE83315 /* PrefsPageBase.m in Sources */,
-				E9DA7D011C94EB5F9FAA51C5 /* PrefsPanelController.m in Sources */,
-				D0C4882A5668DB26636B4DBA /* SelectionListController.m in Sources */,
-				B4E2B4DF19347D1178D6BDF5 /* SelectionListTableController.m in Sources */,
+				DEAA16E159F771D4AAC23BF4 /* NTFilePasteboardSource.m in Sources */,
+				C7D58CD4B33B9A6FAB025A93 /* NTInfoView.m in Sources */,
+				9AE93DC5AD2F61513941022E /* NTTitledInfoPair.m in Sources */,
+				34BC2DF7FE51C66DB6BECE9B /* NTTitledInfoView.m in Sources */,
+				D0C0853D7A929B8DCA3DF5B0 /* Preferences.m in Sources */,
+				A164E3EB30BF92E642BF6510 /* PrefsPageBase.m in Sources */,
+				5D40C99B0A575C649C61AFBB /* PrefsPanelController.m in Sources */,
+				D1F99A5ADAFED352CA478DFB /* SelectionListController.m in Sources */,
+				1E1E5A09949211B7D106A4F4 /* SelectionListTableController.m in Sources */,
 				993EB42329537E6C80B1127F /* TMVCushionRenderer.m in Sources */,
 				B45170ED803EA1360A5AF7CC /* TMVItem.m in Sources */,
-				688016472D877C299516DBBE /* Timing.c in Sources */,
-				F534A338C23DB934E0D6C1B3 /* ToolbarWindowController.m in Sources */,
-				34997A3FB58A33BBA6CBF9EF /* TreeMapPrefPage.m in Sources */,
+				D50A28F190F3F3750C4A4F5A /* Timing.c in Sources */,
+				E49FEBD2BFACBE302DCFD640 /* ToolbarWindowController.m in Sources */,
+				0617A0A4C52333DB2B9C6E2D /* TreeMapPrefPage.m in Sources */,
 				3C6AD07896169886C77FE4FB /* TreeMapView.m in Sources */,
-				E4BC2A1462324FC9389CE16D /* TreeMapViewController.m in Sources */,
-				C8F35C7B5A86D6CC110B859F /* VolumeNameTransformer.m in Sources */,
-				FC60621BDA5F00520924E006 /* VolumeUsageTransformer.m in Sources */,
+				E99116BAE876AA2A399608B2 /* TreeMapViewController.m in Sources */,
+				796BB37DD7BEEA7D74F9ED64 /* VolumeNameTransformer.m in Sources */,
+				663EBDADAF73FE781090F87C /* VolumeUsageTransformer.m in Sources */,
 				891CD86A644339D8EEEDC188 /* ZoomInfo.m in Sources */,
-				CD91BE1329FD9A77B07E02BA /* main.m in Sources */,
+				021B34E569085213194E68D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		"TEMP_31C3A08B-3BE0-4799-A966-74E4A6331B0D" /* GeneralPreferencesPage.xib */ = {
+		002BD766F6E54BD7404C7FE4 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				"TEMP_806F1C43-19E8-4CEA-8CD5-60378F8510F3" /* de */,
-				"TEMP_70CEEBF6-C66A-4311-A985-5381A3E782D9" /* en */,
-				"TEMP_9D33EBA1-C2D9-46FF-8DB3-15C4EF431114" /* es */,
-				"TEMP_205891F8-FF9F-4357-8B33-71020048013B" /* fr */,
-			);
-			name = GeneralPreferencesPage.xib;
-			sourceTree = "<group>";
-		};
-		"TEMP_42DA06F8-C8D9-4327-87B2-8D498C19C236" /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_A78A3FE4-D3F8-4390-8504-C9A64D134B3E" /* de */,
-				"TEMP_74C85F01-EC35-429E-BBD3-C6D7FE1686C2" /* en */,
-				"TEMP_958158F6-58FC-43B0-9C67-77D888118609" /* es */,
-				"TEMP_4682104C-33B3-4F2B-A0E9-95DB0CF70147" /* fr */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		"TEMP_4F3A2A41-17BC-4886-B53D-11494ED31BC9" /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_FF91AFE1-5C7D-41FF-90F7-919DC95C416E" /* de */,
-				"TEMP_322923C5-BF0E-4A78-BE6E-DB5AAEA56E8F" /* en */,
-				"TEMP_0EE421CC-70C4-4BD1-ADF4-8F45BA5566EB" /* es */,
-				"TEMP_D72926B9-F292-4015-B71C-E0909493201E" /* fr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		"TEMP_72583CE3-9557-44A4-9331-FB7F6778B94C" /* TreeMap.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_36FBB675-E537-45B3-95EC-F9D54B3F5C00" /* de */,
-				"TEMP_8ADA646B-94FD-4E87-97E2-7AC666EC908F" /* en */,
-				"TEMP_05BE4C57-A2B4-4DAD-89AD-0BA595E6376B" /* es */,
-				"TEMP_462FEB3F-9EA0-4F87-B94C-FDE1EB0B43B4" /* fr */,
-			);
-			name = TreeMap.xib;
-			sourceTree = "<group>";
-		};
-		"TEMP_774E50FB-99DD-40B3-8F53-6813C34F6DDC" /* Help */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_86312283-C1D0-4E31-B9CA-7F17F36EE89E" /* de */,
-				"TEMP_D5B7FC0D-05D5-4C60-9DCB-1E1D55E497DE" /* en */,
-				"TEMP_5E8D5B7C-0847-4C38-8CE2-BBC08D0D613C" /* es */,
-				"TEMP_40B0771A-75D5-4254-8EF7-81E571BA10EC" /* fr */,
-			);
-			name = Help;
-			sourceTree = "<group>";
-		};
-		"TEMP_77F30240-B68E-477E-B1A9-17C0BCFD718A" /* TreeMapPreferencesPage.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_73E8DBB3-8CA0-4D13-A052-89AB85981049" /* de */,
-				"TEMP_07C816CF-5FB5-4E0C-8919-BE7798563785" /* en */,
-				"TEMP_E0416914-8DBA-49E7-8327-D591E971EE57" /* es */,
-				"TEMP_C55E470B-6F3E-42AC-80B1-2C6C7714197D" /* fr */,
-			);
-			name = TreeMapPreferencesPage.xib;
-			sourceTree = "<group>";
-		};
-		"TEMP_7960D137-EE8C-4442-9159-8967FF7EBF8D" /* DonationPanel.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_71DB92C7-25E5-4AEF-B2FF-6F108ABB5BDA" /* de */,
-				"TEMP_62457075-71AF-4DA4-AAD1-8DAAF811328E" /* en */,
-				"TEMP_127D3433-A515-4E83-84D6-0AAA60A03BB0" /* es */,
-				"TEMP_854EC534-AC10-4C70-A242-DC940EF25578" /* fr */,
-			);
-			name = DonationPanel.xib;
-			sourceTree = "<group>";
-		};
-		"TEMP_A1C17E85-7F7D-4EB3-AAA3-4002DBD2E698" /* LoadingPanel.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_ADEB5C4D-5CD4-41BF-B3A0-51C2F86FECCF" /* de */,
-				"TEMP_50972411-CFFB-4012-B352-8F70ADD14A00" /* en */,
-				"TEMP_5F252414-427F-4E35-B286-F3C364EE9A95" /* es */,
-				"TEMP_FF64528C-F69D-4CF9-B9A2-815D01E67232" /* fr */,
-			);
-			name = LoadingPanel.xib;
-			sourceTree = "<group>";
-		};
-		"TEMP_AFD2834F-5FB0-46DC-9586-3663C2F5DF50" /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_66E2CF3D-616D-4845-A7AF-2244E350C550" /* de */,
-				"TEMP_CB4F3D33-C64E-4FF4-A620-D5F2D6C6FC5B" /* en */,
-				"TEMP_56D1572B-8DA9-4A7A-992F-2ED35A159203" /* es */,
-				"TEMP_14B036F9-6098-4FEA-BA1E-D5853CF5F576" /* fr */,
+				6B272A03294994196AB8058E /* de */,
+				0046D75782B98451F2957628 /* en */,
+				0EE34B295A2FF38622E62296 /* es */,
+				2BA84BBF693A920EA6A8C357 /* fr */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		"TEMP_BD9E229E-4D34-467E-9BE4-2D7FA347230E" /* InfoPanel.xib */ = {
+		084A4C5955960C1873E1F912 /* Preferences.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				"TEMP_F3DADFC3-5D9D-439E-B1C5-439C3E7F4A0F" /* de */,
-				"TEMP_D7D021FD-E8FC-4523-9565-0B0D9FF5C88E" /* en */,
-				"TEMP_86A59508-9878-49ED-AA25-4D98CA925AD8" /* es */,
-				"TEMP_69329DD8-A5AE-4BD3-9DAC-6FEEC57C13CD" /* fr */,
-			);
-			name = InfoPanel.xib;
-			sourceTree = "<group>";
-		};
-		"TEMP_E0CE947C-82DA-4AF2-8B11-340C887B8856" /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_172F1C8B-3E4E-45BE-9991-71D694D897C4" /* de */,
-				"TEMP_9BBFF88B-4CEC-4A52-AF66-7ABB59A00DC2" /* en */,
-				"TEMP_126BDC67-A11F-48B4-B790-D60305D98AA2" /* es */,
-				"TEMP_EDFB9845-3A00-4B24-A24A-74309DF32FD7" /* fr */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		"TEMP_EB61B945-2FAC-4E83-8C78-8A437CD763A4" /* Preferences.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				"TEMP_CE2EC216-FF33-48E2-A3EF-D18B46F479D7" /* de */,
-				"TEMP_A7F9D221-A92D-44E9-8B3C-7169AF29A6E9" /* en */,
-				"TEMP_3A19904C-40B6-4C4D-AF79-AE7A0D208A22" /* es */,
-				"TEMP_2682B7FC-7C60-4595-A718-1A780BDB945F" /* fr */,
+				C60CEDD1F87AD98A0A91B654 /* de */,
+				9F29E1AFEB09619BCEA23AF0 /* en */,
+				5F62D8DFB43515CF108634A5 /* es */,
+				C50084C62B1C90749826E66F /* fr */,
 			);
 			name = Preferences.strings;
 			sourceTree = "<group>";
 		};
-		"TEMP_F535AEE5-B585-4421-9C0F-A84E70CE69A3" /* VolumesPanel.xib */ = {
+		39A436E3A8EB3B12C5591CFF /* DonationPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				"TEMP_06084E52-9A8D-483E-814F-3D3ED77BB41D" /* de */,
-				"TEMP_482E6524-A0BF-4423-92A7-E1FD4DB61E9C" /* en */,
-				"TEMP_3FBA907A-DE0B-40EB-9A12-9D31CA524D74" /* es */,
-				"TEMP_A069B385-60D1-4B25-8057-F2FADCA32246" /* fr */,
+				5E5B269EEAF6B5F61F4D66A1 /* de */,
+				AE79E51C77252460BDEA7F1C /* en */,
+				D1FBD52350178D880029C614 /* es */,
+				085FEF866D0C9992CCFA356B /* fr */,
+			);
+			name = DonationPanel.xib;
+			sourceTree = "<group>";
+		};
+		402941E395B3B5D0B8617830 /* InfoPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE657C53A361F891A4B2B7F3 /* de */,
+				C62D7EF3CDC2512918A53920 /* en */,
+				78638CB3FF93C1750200E67E /* es */,
+				C8E9AA728B2ADD95BCF67216 /* fr */,
+			);
+			name = InfoPanel.xib;
+			sourceTree = "<group>";
+		};
+		639D0504284E0BC2BEF532C1 /* TreeMap.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7143C6F94B85FD6658A3B816 /* de */,
+				75CB3A1A6A875814175E824B /* en */,
+				87801528576A9448A4DBA7AC /* es */,
+				0E2E0564DB5C57D2EBA19DE2 /* fr */,
+			);
+			name = TreeMap.xib;
+			sourceTree = "<group>";
+		};
+		73E95BC550CF96FB3F2F90E6 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1CE9076569E5E13F13F3A38 /* de */,
+				FAD0D8A3091B7A9EF672FF09 /* en */,
+				42C6A097EDC8912AC19B5F08 /* es */,
+				4620111FE4A55A3CCC00DED8 /* fr */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		787816960D9E8B1C4F8CE23C /* VolumesPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED84F3FF6C093269FD656C30 /* de */,
+				8FEB4966A330ED5FD3EABE57 /* en */,
+				B6D5D6261B91E600C2F3807F /* es */,
+				8C9C0795E73C03E2084E8D86 /* fr */,
 			);
 			name = VolumesPanel.xib;
+			sourceTree = "<group>";
+		};
+		872D6C6834D88A3458F8D072 /* LoadingPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A124B1B82C9CC94291135294 /* de */,
+				E8E06E39683DEF2D4C0C7D62 /* en */,
+				135E3B3472E166B45AEC653E /* es */,
+				13783A78DDCF0D5D3FAD3218 /* fr */,
+			);
+			name = LoadingPanel.xib;
+			sourceTree = "<group>";
+		};
+		963C731E4D9418B1535A4052 /* TreeMapPreferencesPage.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E413C0F8729DEA0970B0E973 /* de */,
+				98E051BFE04E811987801183 /* en */,
+				900EAD19803C0D56076D741D /* es */,
+				5D221962B63A06C295CA903A /* fr */,
+			);
+			name = TreeMapPreferencesPage.xib;
+			sourceTree = "<group>";
+		};
+		9D33735FFEE3855BC8DCE4C8 /* GeneralPreferencesPage.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFE6111133A691E6644148F9 /* de */,
+				4E6C302938D0B2CD9076880B /* en */,
+				1EBC9B816F802FFA05DB4128 /* es */,
+				06205F726B0E5463603112DA /* fr */,
+			);
+			name = GeneralPreferencesPage.xib;
+			sourceTree = "<group>";
+		};
+		BFEF25C54DBDDB75CE3373FD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DA4218583AE81935A754296 /* de */,
+				7E6977CE55D162D4EA22D9DF /* en */,
+				0E9D903834E797B03E1855A2 /* es */,
+				05D0824DA969FEA58707AA55 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C75BB0F8DBEFD95B88625057 /* Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AB608FACDA8746F21B68CE7 /* de */,
+				7B5C8C6988B484D476E7C969 /* en */,
+				8DB27781960B0AC5CF66BA03 /* es */,
+				AACB08D77F697A6386B73712 /* fr */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		C79F5E083C04A7E7327CF96B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB3256A06CC80D9CCA35C989 /* de */,
+				3B6B946DF982783D41E77E86 /* en */,
+				2C6EF8B3C90E48908A387549 /* es */,
+				BE3501F6C3B7CCD30A8DE111 /* fr */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -735,15 +755,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Disk Inventory X.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DiskInventoryX/Disk Inventory X.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)",
+					"$(SRCROOT)/DiskInventoryX",
+					"$(SRCROOT)/DiskInventoryX/CocoaTech-Depreciated",
+					"$(SRCROOT)/DiskInventoryX/Foundation Extensions",
 					"$(SRCROOT)/TreeMapView",
-					"$(SRCROOT)/CocoaTech-Depreciated",
-					"$(SRCROOT)/Foundation Extensions",
 				);
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = DiskInventoryX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -797,10 +817,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Disk Inventory X_Prefix.pch";
+				GCC_PREFIX_HEADER = "DiskInventoryX/Disk Inventory X_Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -823,15 +844,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Disk Inventory X.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DiskInventoryX/Disk Inventory X.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)",
+					"$(SRCROOT)/DiskInventoryX",
+					"$(SRCROOT)/DiskInventoryX/CocoaTech-Depreciated",
+					"$(SRCROOT)/DiskInventoryX/Foundation Extensions",
 					"$(SRCROOT)/TreeMapView",
-					"$(SRCROOT)/CocoaTech-Depreciated",
-					"$(SRCROOT)/Foundation Extensions",
 				);
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = DiskInventoryX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -885,12 +906,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Disk Inventory X_Prefix.pch";
+				GCC_PREFIX_HEADER = "DiskInventoryX/Disk Inventory X_Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",

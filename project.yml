@@ -17,11 +17,12 @@ settings:
     CLANG_ENABLE_OBJC_WEAK: YES
     ALWAYS_SEARCH_USER_PATHS: NO
     GCC_PRECOMPILE_PREFIX_HEADER: YES
-    GCC_PREFIX_HEADER: "Disk Inventory X_Prefix.pch"
+    GCC_PREFIX_HEADER: "DiskInventoryX/Disk Inventory X_Prefix.pch"
     ENABLE_HARDENED_RUNTIME: YES
     CODE_SIGN_STYLE: Automatic
     CODE_SIGN_IDENTITY: "-"
     DEAD_CODE_STRIPPING: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
   configs:
     Debug:
       GCC_PREPROCESSOR_DEFINITIONS: ["DEBUG=1", "$(inherited)"]
@@ -34,40 +35,30 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.jerryrt.DiskInventoryX
         PRODUCT_NAME: Disk Inventory X
-        INFOPLIST_FILE: Info.plist
-        CODE_SIGN_ENTITLEMENTS: Disk Inventory X.entitlements
+        INFOPLIST_FILE: DiskInventoryX/Info.plist
+        CODE_SIGN_ENTITLEMENTS: DiskInventoryX/Disk Inventory X.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        HEADER_SEARCH_PATHS: ["$(SRCROOT)", "$(SRCROOT)/TreeMapView", "$(SRCROOT)/CocoaTech-Depreciated", "$(SRCROOT)/Foundation Extensions"]
+        HEADER_SEARCH_PATHS: ["$(SRCROOT)/DiskInventoryX", "$(SRCROOT)/DiskInventoryX/CocoaTech-Depreciated", "$(SRCROOT)/DiskInventoryX/Foundation Extensions", "$(SRCROOT)/TreeMapView"]
     sources:
-      - path: .
-        name: Sources
-        includes:
-          - "*.h"
-          - "*.m"
-          - "*.c"
-          - "CocoaTech-Depreciated/*"
-          - "Foundation Extensions/*"
+      - path: DiskInventoryX
         excludes:
+          - "Info.plist"
+          - "*.entitlements"
           - "CocoaTech-Depreciated/NTID3Helper.*"
       - path: TreeMapView
-        name: TreeMapView
         includes:
           - "*.h"
           - "*.m"
-      - path: Disk Inventory X/Images.xcassets
-      - path: MainWindowToolbar.toolbar
-        buildPhase: resources
-      - path: Defaults.plist
-        buildPhase: resources
-      - path: .
-        name: Resources
-        includes:
-          - "*.tiff"
-          - "*.png"
-          - "en.lproj/**"
-          - "de.lproj/**"
-          - "es.lproj/**"
-          - "fr.lproj/**"
-        excludes:
-          - "Disk Inventory Icon.png"
-        buildPhase: resources
+    postCompileScripts:
+      # XcodeGen does not add folders inside .lproj directories to the
+      # resources, so copy the localized help books explicitly.
+      - name: Copy Help Books
+        basedOnDependencyAnalysis: false
+        script: |
+          set -e
+          for dir in "${SRCROOT}"/DiskInventoryX/Resources/*.lproj/Help; do
+            lproj=$(basename "$(dirname "$dir")")
+            dest="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${lproj}"
+            mkdir -p "$dest"
+            rsync -a --delete "$dir/" "$dest/Help/"
+          done
