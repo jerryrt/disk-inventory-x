@@ -112,6 +112,15 @@ BOOL g_EnableLogging;
 	//[[OAPreferenceController sharedPreferenceController] showPreferencesPanel: self];
 }
 
+//Help Viewer no longer shows folder based help books, so open the
+//localized help page in the default browser
+- (IBAction) showHelpPage: (id) sender
+{
+	NSURL *helpURL = [[NSBundle mainBundle] URLForResource: @"index" withExtension: @"htm" subdirectory: @"Help"];
+	if ( helpURL != nil )
+		[[NSWorkspace sharedWorkspace] openURL: helpURL];
+}
+
 - (IBAction) gotoHomepage: (id) sender
 {
 	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: @"http://www.derlien.com"]];

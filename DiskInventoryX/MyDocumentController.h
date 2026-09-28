@@ -25,6 +25,7 @@
 }
 
 - (IBAction) showPreferencesPanel: (id) sender;
+- (IBAction) showHelpPage: (id) sender;
 - (IBAction) gotoHomepage: (id) sender;
 - (IBAction) closeDonationPanel: (id) sender;
 

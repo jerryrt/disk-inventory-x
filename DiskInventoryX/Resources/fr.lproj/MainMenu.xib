@@ -328,7 +328,7 @@ CA
                         <items>
                             <menuItem title="Aide Disk Inventory X" keyEquivalent="?" id="316">
                                 <connections>
-                                    <action selector="showHelp:" target="-1" id="317"/>
+                                    <action selector="showHelpPage:" target="-1" id="317"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Visiter le site Disk Inventory X" id="111">
