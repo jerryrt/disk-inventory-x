@@ -1,0 +1,12 @@
+// Code signing. The committed defaults sign ad hoc so that anyone can
+// build the project. To sign with your own team, create
+// Config/Local.xcconfig (ignored by git) with for example:
+//
+//   DEVELOPMENT_TEAM = ABCDE12345
+//   CODE_SIGN_IDENTITY = Apple Development
+
+CODE_SIGN_STYLE = Automatic
+CODE_SIGN_IDENTITY = -
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

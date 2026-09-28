@@ -105,6 +105,7 @@
 		159FD1F5C8C9A4F06DA54021 /* DrivesPanelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrivesPanelController.m; sourceTree = "<group>"; };
 		1607A7C78740A39BD630CDE4 /* NSView-BackingCoordsHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSView-BackingCoordsHelpers.h"; sourceTree = "<group>"; };
 		181C0355B5782EEE280466D5 /* FSItem-Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSItem-Utilities.h"; sourceTree = "<group>"; };
+		186B438EB4D30A016A7D6812 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		1871FEE5D4F41A364BF24A76 /* Preferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		1D4092F39AEE80AF1AF6670A /* ShowPackageContentsClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowPackageContentsClosed.png; sourceTree = "<group>"; };
 		1DA4218583AE81935A754296 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -254,6 +255,7 @@
 		50D193E21922E502F14E78F5 = {
 			isa = PBXGroup;
 			children = (
+				742A0A7FF56602028B353780 /* Config */,
 				65D85F8226BCC70F1DF698E8 /* DiskInventoryX */,
 				9713FC999587FF3643457691 /* TreeMapView */,
 				85780B5BE9BA18F171E9B925 /* Products */,
@@ -340,6 +342,14 @@
 				79366FEAC11367D4DFE140E7 /* Resources */,
 			);
 			path = DiskInventoryX;
+			sourceTree = "<group>";
+		};
+		742A0A7FF56602028B353780 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				186B438EB4D30A016A7D6812 /* Signing.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		79366FEAC11367D4DFE140E7 /* Resources */ = {
@@ -461,6 +471,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					EB6FDB35376587AE7ABDC7F6 = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -753,6 +764,7 @@
 /* Begin XCBuildConfiguration section */
 		328C684F1CABCEE287C540A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 186B438EB4D30A016A7D6812 /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "DiskInventoryX/Disk Inventory X.entitlements";
@@ -808,8 +820,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -842,6 +852,7 @@
 		};
 		95006E045049FFEBFE5C5E4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 186B438EB4D30A016A7D6812 /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "DiskInventoryX/Disk Inventory X.entitlements";
@@ -897,8 +908,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;

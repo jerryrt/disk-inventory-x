@@ -19,8 +19,6 @@ settings:
     GCC_PRECOMPILE_PREFIX_HEADER: YES
     GCC_PREFIX_HEADER: "DiskInventoryX/Disk Inventory X_Prefix.pch"
     ENABLE_HARDENED_RUNTIME: YES
-    CODE_SIGN_STYLE: Automatic
-    CODE_SIGN_IDENTITY: "-"
     DEAD_CODE_STRIPPING: YES
     ENABLE_USER_SCRIPT_SANDBOXING: NO
   configs:
@@ -31,6 +29,9 @@ targets:
   Disk Inventory X:
     type: application
     platform: macOS
+    configFiles:
+      Debug: Config/Signing.xcconfig
+      Release: Config/Signing.xcconfig
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.jerryrt.DiskInventoryX
