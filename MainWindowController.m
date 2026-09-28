@@ -17,11 +17,10 @@
 #import "MainWindowController.h"
 #import "InfoPanelController.h"
 #import "Timing.h"
-#import <TreeMapView/TreeMapView.h>
+#import "TreeMapView.h"
 #import "FSItem-Utilities.h"
 #import "FileSizeTransformer.h"
 #import "AppsForItem.h"
-#import <OmniFoundation/NSString-OFExtensions.h>
 #import "NSURL-Extensions.h"
 
 @interface MainWindowController(Private)
@@ -107,7 +106,7 @@
 		[_splitter setVertical: NO];		
 	}
 	
-	[_splitter setPositionAutosaveName: @"MainWindowSplitter"];
+	[_splitter setAutosaveName: @"MainWindowSplitter"];
 	
     [_kindsDrawer toggle: self];
 	//[_selectionListDrawer toggle: self];
@@ -137,7 +136,7 @@
 
 - (IBAction) openFile:(id)sender
 {
-	OBPRECONDITION( [sender isKindOfClass: [NSMenuItem class]] );
+	NSAssert( [sender isKindOfClass: [NSMenuItem class]], @"precondition failed" );
 	NSMenuItem *menuItem = (NSMenuItem*) sender;
 	
 	FSItem *selectedItem = [(FileSystemDoc*)[self document] selectedItem];
@@ -182,8 +181,8 @@
     FileSystemDoc *doc = [self document];
 	FSItem *item = [sender representedObject];
 	
-	OBPRECONDITION( [doc rootItem] == [item root] );
-	OBPRECONDITION( [[doc zoomStack] indexOfObjectIdenticalTo: item] != NSNotFound );
+	NSAssert( [doc rootItem] == [item root], @"precondition failed" );
+	NSAssert( [[doc zoomStack] indexOfObjectIdenticalTo: item] != NSNotFound, @"precondition failed" );
 	
     FSItem *currentZoomedItem = [doc zoomedItem];
 		
@@ -466,7 +465,7 @@
 
 #pragma mark -----------------Toolbar support---------------------
 
-//used by OAToolbarWindowController to load the toolbar configuration file (.toolbar)
+//used by ToolbarWindowController to load the toolbar configuration file (.toolbar)
 - (NSString *)toolbarConfigurationName;
 {
     return @"MainWindowToolbar";
@@ -501,7 +500,7 @@
 //populates the "Open With" sub menu which the default and additional applications which can open the selected file
 - (void) menuNeedsUpdate: (NSMenu*) menu
 {	
-	OBPRECONDITION( _openWithSubMenu == menu );
+	NSAssert( _openWithSubMenu == menu, @"precondition failed" );
 	
     FSItem *selectedItem = [(FileSystemDoc*)[self document] selectedItem];
 	if ( selectedItem == nil )
@@ -573,7 +572,7 @@
 	
     if ( selectedItem != nil
 		 && ![selectedItem isSpecialItem]
-		 && [NSString isEmptyString: returnType] //we don't accept any input, so returnType must be emty
+		 && [returnType length] == 0 //we don't accept any input, so returnType must be emty
 		 && [selectedItem exists]
 		 && [selectedItem supportsPasteboardType: sendType] )
 	{
