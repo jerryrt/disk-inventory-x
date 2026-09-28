@@ -1,0 +1,73 @@
+# Xcode project definition. Regenerate the .xcodeproj with:
+#   xcodegen generate
+name: Disk Inventory X
+options:
+  bundleIdPrefix: io.github.jerryrt
+  deploymentTarget:
+    macOS: "15.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+
+settings:
+  base:
+    MARKETING_VERSION: "1.4"
+    CURRENT_PROJECT_VERSION: "1"
+    ARCHS: arm64
+    CLANG_ENABLE_OBJC_ARC: NO
+    CLANG_ENABLE_OBJC_WEAK: YES
+    ALWAYS_SEARCH_USER_PATHS: NO
+    GCC_PRECOMPILE_PREFIX_HEADER: YES
+    GCC_PREFIX_HEADER: "Disk Inventory X_Prefix.pch"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "-"
+    DEAD_CODE_STRIPPING: YES
+  configs:
+    Debug:
+      GCC_PREPROCESSOR_DEFINITIONS: ["DEBUG=1", "$(inherited)"]
+
+targets:
+  Disk Inventory X:
+    type: application
+    platform: macOS
+    info:
+      path: Info.plist
+    entitlements:
+      path: Disk Inventory X.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.jerryrt.DiskInventoryX
+        PRODUCT_NAME: Disk Inventory X
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        HEADER_SEARCH_PATHS: ["$(SRCROOT)/TreeMapView"]
+    sources:
+      - path: .
+        name: Sources
+        includes:
+          - "*.h"
+          - "*.m"
+          - "*.c"
+          - "CocoaTech-Depreciated/*"
+          - "Foundation Extensions/*"
+        excludes:
+          - "CocoaTech-Depreciated/NTID3Helper.*"
+      - path: TreeMapView
+        name: TreeMapView
+        includes:
+          - "*.h"
+          - "*.m"
+      - path: Disk Inventory X/Images.xcassets
+      - path: MainWindowToolbar.toolbar
+        buildPhase: resources
+      - path: .
+        name: Resources
+        includes:
+          - "*.tiff"
+          - "*.png"
+          - "en.lproj/**"
+          - "de.lproj/**"
+          - "es.lproj/**"
+          - "fr.lproj/**"
+        excludes:
+          - "Disk Inventory Icon.png"
+        buildPhase: resources
