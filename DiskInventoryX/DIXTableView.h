@@ -28,7 +28,4 @@
 - (NSMenu*) tableView: (NSTableView *) tableView menuForTableColumn: (NSTableColumn*) column row: (int) row;
 	//delegate will be asked what menu to show (if not implemented by delegate [self menu] is used)
 
-//- (NSDragOperation) draggingSourceOperationMaskForLocal:(BOOL)isLocal;
-	//ask the delegate which drag operations are supported (if TableView is the dragging source);
-	//as this selector is already part of the NSDraggingSource category, we don't need to re-declare it here
 @end

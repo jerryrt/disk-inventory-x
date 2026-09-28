@@ -36,6 +36,10 @@
 {
 	FileSystemDoc *doc = [self document];
 	
+	//drag&drop within the application is not supported
+	[_outlineView setDraggingSourceOperationMask: NSDragOperationNone forLocal: YES];
+	[_outlineView setDraggingSourceOperationMask: NSDragOperationLink | NSDragOperationCopy forLocal: NO];
+	
 	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 	
     [center addObserver: self
@@ -127,22 +131,11 @@ objectValueForTableColumn: (NSTableColumn *) tableColumn
 	return [fsItem valueForKey: columnTag];
 }
 
-- (BOOL) outlineView: (NSOutlineView *) outlineView
-          writeItems: (NSArray*) items
-        toPasteboard: (NSPasteboard*) pboard
+- (id<NSPasteboardWriting>) outlineView: (NSOutlineView *) outlineView pasteboardWriterForItem: (id) item
 {
-	//currently, we only support single selection
-	NSAssert( [items count] == 1, @"only first item will be written to the pasteboard" );
-	FSItem *item = [items objectAtIndex: 0];
+	FSItem *fsItem = item;
 	
-	if ( ![item isSpecialItem] && [item exists] )
-	{
-		[item writeToPasteboard: pboard];
-		
-		return YES;
-	}
-	else
-		return NO;
+	return ( ![fsItem isSpecialItem] && [fsItem exists] ) ? [fsItem pasteboardWriter] : nil;
 }
 
 #pragma mark --------NSOutlineView delegate-----------------
@@ -163,15 +156,6 @@ objectValueForTableColumn: (NSTableColumn *) tableColumn
 - (NSMenu*) outlineView: (NSOutlineView *) outlineView menuForTableColumn: (NSTableColumn*) column item: (id) item
 {	
 	return _contextMenu;
-}
-
-- (NSDragOperation) draggingSourceOperationMaskForLocal:(BOOL)isLocal
-{
-	//this selector is normally sent to the view itself, but DIXOutlineView forwards this decision to
-	//it's delagate (like it should be)
-	
-	//drag&drop within the application is not supported
-	return isLocal ? NSDragOperationNone : (NSDragOperationLink | NSDragOperationCopy );
 }
 
 #pragma mark --------NSOutlineView notifications-----------------

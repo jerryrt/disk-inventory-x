@@ -59,19 +59,6 @@
         return NULL;
 }
 
-//ask the delegate which drag operations are supported (if we are the dragging source) 
-- (NSDragOperation) draggingSourceOperationMaskForLocal:(BOOL)isLocal
-{
-    id delegate = [self delegate];
-	
-	//forward to our delegate, if possible
-	if ( [delegate  respondsToSelector:@selector(draggingSourceOperationMaskForLocal:)] )
-		return [delegate draggingSourceOperationMaskForLocal: isLocal];
-	else
-		//NSOutlineView implements draggingSourceOperationMaskForLocal 
-		return [super draggingSourceOperationMaskForLocal: isLocal];
-}
-
 //@@test
 - (NSCell*) preparedCellAtColumn: (NSInteger) col row: (NSInteger) row
 {

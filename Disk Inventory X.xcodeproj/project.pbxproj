@@ -71,7 +71,6 @@
 		D84F4004E1008F3C29EB211F /* RefreshAll.png in Resources */ = {isa = PBXBuildFile; fileRef = FC38F1BBF84E6E6EC55942F8 /* RefreshAll.png */; };
 		D912CE59ADD4054D640BDD25 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002BD766F6E54BD7404C7FE4 /* MainMenu.xib */; };
 		DB8C39CDA4E287C43105B0F4 /* GenericArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5FE5058F27A625C9B760D1 /* GenericArrayController.m */; };
-		DEAA16E159F771D4AAC23BF4 /* NTFilePasteboardSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C8234B6DD02C9C6133451 /* NTFilePasteboardSource.m */; };
 		DEB6B4731D5D16764EE8D49C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A174904601F3B0EBBA42BD3 /* Images.xcassets */; };
 		E0A7400BC92ACC214B336C59 /* NSView-BackingCoordsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E05C14DDDCA495A92E952E /* NSView-BackingCoordsHelpers.m */; };
 		E33BA08D1AD56F332B4969E5 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 562FDB77BF399F81FD53377E /* MainWindow.m */; };
@@ -98,7 +97,6 @@
 		0E9D903834E797B03E1855A2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0EE34B295A2FF38622E62296 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0F5CA1594093D83D9CCA7DAE /* ZoomIn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ZoomIn.tiff; sourceTree = "<group>"; };
-		0F6C8234B6DD02C9C6133451 /* NTFilePasteboardSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTFilePasteboardSource.m; sourceTree = "<group>"; };
 		0FE1E7B07E52794858E8C165 /* ZoomInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomInfo.m; sourceTree = "<group>"; };
 		115B15614CB98A3BD5C9B793 /* DIXTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIXTableView.m; sourceTree = "<group>"; };
 		135E3B3472E166B45AEC653E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/LoadingPanel.xib; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		ACF66F9B358AD3F87AB78B38 /* NSAlert-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAlert-Extensions.h"; sourceTree = "<group>"; };
 		AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTitledInfoPair.m; sourceTree = "<group>"; };
 		AE79E51C77252460BDEA7F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DonationPanel.xib; sourceTree = "<group>"; };
-		B3E32B5CBF9C022910E197DE /* NTFilePasteboardSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTFilePasteboardSource.h; sourceTree = "<group>"; };
 		B3F0B19120FED48A77F8736C /* Timing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timing.h; sourceTree = "<group>"; };
 		B4A583DAC0492F6CCC706FD0 /* FileSizeTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSizeTransformer.h; sourceTree = "<group>"; };
 		B6D5D6261B91E600C2F3807F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/VolumesPanel.xib; sourceTree = "<group>"; };
@@ -428,8 +425,6 @@
 		A3AFCB32517B115B6765D922 /* CocoaTech-Depreciated */ = {
 			isa = PBXGroup;
 			children = (
-				B3E32B5CBF9C022910E197DE /* NTFilePasteboardSource.h */,
-				0F6C8234B6DD02C9C6133451 /* NTFilePasteboardSource.m */,
 				C052D6DDAA9B0A3FA89BAEEE /* NTInfoView.h */,
 				47235EAF92ABE6E558236345 /* NTInfoView.m */,
 				5BF7B10CE000E75FD4F207C4 /* NTTitledInfoPair.h */,
@@ -602,7 +597,6 @@
 				3F3B9DA761B6246C179EFD1C /* NSFileManager-Extensions.m in Sources */,
 				FBE7FE2074FD59595AC62D7A /* NSURL-Extensions.m in Sources */,
 				E0A7400BC92ACC214B336C59 /* NSView-BackingCoordsHelpers.m in Sources */,
-				DEAA16E159F771D4AAC23BF4 /* NTFilePasteboardSource.m in Sources */,
 				C7D58CD4B33B9A6FAB025A93 /* NTInfoView.m in Sources */,
 				9AE93DC5AD2F61513941022E /* NTTitledInfoPair.m in Sources */,
 				34BC2DF7FE51C66DB6BECE9B /* NTTitledInfoView.m in Sources */,

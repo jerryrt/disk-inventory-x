@@ -36,6 +36,10 @@
 - (void) awakeFromNib
 {
 	FileSystemDoc *doc = [self document];
+	
+	//drag&drop within the application is not supported
+	[_tableView setDraggingSourceOperationMask: NSDragOperationNone forLocal: YES];
+	[_tableView setDraggingSourceOperationMask: NSDragOperationCopy forLocal: NO];
 
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	[notificationCenter addObserver: self
@@ -95,36 +99,13 @@
     }
 }
 
-- (NSDragOperation) draggingSourceOperationMaskForLocal:(BOOL)isLocal
-{
-	//this selector is normally sent to the view itself, but DIXOutlineView forwards this decision to
-	//it's delagate (like it should be)
-	
-	//drag&drop within the application is not supported
-	return isLocal ? NSDragOperationNone : (/*NSDragOperationLink |*/ NSDragOperationCopy);
-}
-
 #pragma mark --------NSTableView data source-----------------
 
-- (BOOL) tableView: (NSTableView *) tableView
-writeRowsWithIndexes:(NSIndexSet *)rowIndexes
-	  toPasteboard: (NSPasteboard *)pboard
+- (id<NSPasteboardWriting>) tableView: (NSTableView *) tableView pasteboardWriterForRow: (NSInteger) row
 {
-	//currently, we only support single selection
-	NSAssert( [rowIndexes count] == 1, @"only first item will be written to the pasteboard" );
-	NSUInteger rowIndex = [rowIndexes firstIndex];
+	FSItem* item = [[_selectionListArrayController arrangedObjects] objectAtIndex: row];
 	
-	NSArray *items = [_selectionListArrayController arrangedObjects];
-	FSItem* item = [items objectAtIndex: rowIndex]; 
-	
-	if ( ![item isSpecialItem] && [item exists] )
-	{
-		[item writeToPasteboard: pboard];
-		
-		return YES;
-	}
-	else
-		return NO;
+	return ( ![item isSpecialItem] && [item exists] ) ? [item pasteboardWriter] : nil;
 }
 
 #pragma mark --------NSMenuValidation-----------------

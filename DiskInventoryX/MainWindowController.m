@@ -45,7 +45,7 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
     initialized = YES;
 	
 	//initalize support for the service menu
-    NSArray *sendTypes = [NSArray arrayWithObjects: NSFilenamesPboardType, nil];
+    NSArray *sendTypes = [NSArray arrayWithObjects: NSPasteboardTypeFileURL, nil];
     NSArray *returnTypes = [NSArray array];
 	
 	[NSApp registerServicesMenuSendTypes: sendTypes returnTypes: returnTypes];
@@ -615,7 +615,7 @@ static const CGFloat ContentMinimumSize = 200;
 		 && ![selectedItem isSpecialItem]
 		 && [returnType length] == 0 //we don't accept any input, so returnType must be emty
 		 && [selectedItem exists]
-		 && [selectedItem supportsPasteboardType: sendType] )
+		 && [sendType isEqualToString: NSPasteboardTypeFileURL] )
 	{
 		return self;
     }
@@ -630,8 +630,8 @@ static const CGFloat ContentMinimumSize = 200;
 	
 	if ( item != nil && ![item isSpecialItem] )
 	{
-		[item writeToPasteboard: pboard withTypes: types];
-		return YES;
+		[pboard clearContents];
+		return [pboard writeObjects: @[[item pasteboardWriter]]];
 	}
 	else
 		return NO;

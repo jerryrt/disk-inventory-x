@@ -196,15 +196,6 @@
 
 #pragma mark --------NSOutlineView delegate-----------------
 
-- (NSDragOperation) draggingSourceOperationMaskForLocal:(BOOL)isLocal
-{
-	//this selector is normally sent to the view itself, but DIXTableView forwards this decision to
-	//it's delagate (like it should be)
-	
-	//drag&drop within the application is not supported
-	return isLocal ? NSDragOperationNone : (/*NSDragOperationLink |*/ NSDragOperationCopy);
-}
-
 @end
 
 @implementation SelectionListController(Privat)

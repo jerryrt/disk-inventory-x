@@ -101,10 +101,9 @@ typedef enum
 - (NSComparisonResult) compareSize: (FSItem*) other;
 - (NSComparisonResult) compareDisplayName: (FSItem*) other;
 
-- (NSArray<NSPasteboardType>*) supportedPasteboardTypes;
-- (BOOL) supportsPasteboardType: (NSString*) type;
-- (void) writeToPasteboard: (NSPasteboard*) pasteboard;
-- (void) writeToPasteboard: (NSPasteboard*) pasteboard withTypes: (NSArray*) types;
+// what is written to pasteboards when the item is dragged or passed to a
+// service: its file URL
+- (id<NSPasteboardWriting>) pasteboardWriter;
 
 //- (unsigned) hash;
 @end
