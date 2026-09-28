@@ -118,21 +118,7 @@
 
 - (void)drawRect:(NSRect)rect;
 {
-    NSWindow *viewWindow = [self window];
-    BOOL disabledFlush = NO;
-    
-    // disable window flush for speed
-    if ([viewWindow isFlushWindowDisabled])
-    {
-        disabledFlush = YES;
-        [viewWindow disableFlushWindow];
-    }
-    
     [self doDrawRect:rect];
-    
-    // restore 
-    if (disabledFlush)
-        [viewWindow enableFlushWindow];    
 }
 
 // set to resize automatically for the width
@@ -142,25 +128,11 @@
     {
         _inFrameChanged = YES;
         
-        NSWindow *viewWindow = [self window];
-        BOOL disabledFlush = NO;
-        
-        // disable window flush for speed
-        if ([viewWindow isFlushWindowDisabled])
-        {
-            disabledFlush = YES;
-            [viewWindow disableFlushWindow];
-        }
-        
         // first must set a valid frame
         NSScrollView* scrollView = [self enclosingScrollView];
         [self setFrame:[scrollView documentVisibleRect]];
         
         [self positionViews];
-        
-        // restore 
-        if (disabledFlush)
-            [viewWindow enableFlushWindow];   
         
         _inFrameChanged = NO;
     }

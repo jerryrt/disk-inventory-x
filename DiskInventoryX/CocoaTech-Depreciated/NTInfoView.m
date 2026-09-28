@@ -115,7 +115,6 @@
     [scrollView setBorderType:NSNoBorder];
     [scrollView setScrollsDynamically:YES];
     [scrollView setDrawsBackground:YES];
-    [[scrollView contentView] setCopiesOnScroll:YES];
     
     // set small scrollbars
     if ([scrollView verticalScroller])
@@ -426,18 +425,15 @@
 
     // get mode bits
     // [NSFileManager attributesOfItemAtPath:error:] provides the permission bits ([NSFileAttributes filePosixPermissions]),
-    // but not the complete mode bits; so use the carbon functions instead ...
+    // but not the complete mode bits; so ask the file system directly
+    // (without following a symbolic link, so it is shown as such)
     
-    FSRef ref;
-    if ( FSPathMakeRef((const UInt8*)[URL fileSystemRepresentation], &ref, nil) != noErr )
+    struct stat statInfo;
+    if ( lstat( [URL fileSystemRepresentation], &statInfo ) != 0 )
         return perm;
     
-    FSCatalogInfo catalogInfo;
-    if ( FSGetCatalogInfo(&ref, kFSCatInfoPermissions, &catalogInfo, NULL, NULL, NULL) != noErr )
-        return perm;
-    
-    UInt16 modeBits = catalogInfo.permissions.mode;
-    UInt16 permBits = (modeBits & ACCESSPERMS);
+    mode_t modeBits = statInfo.st_mode;
+    mode_t permBits = (modeBits & ACCESSPERMS);
     
     if (S_ISDIR(modeBits))
         perm = [perm stringByAppendingString:@"d"];
