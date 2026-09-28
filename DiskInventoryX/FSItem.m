@@ -756,9 +756,9 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 	if ( !isFolder )
 	{
 		 if ( usePhysicalSize )
-			[self setSizeValue: [url physicalSize]];
+			[self setSizeValue: [[url physicalSize] unsignedLongLongValue]];
 		 else
-			[self setSizeValue: [url logicalSize]];
+			[self setSizeValue: [[url logicalSize] unsignedLongLongValue]];
 	}
     else
         _childs = [[NSMutableArray<FSItem*> alloc] init];
@@ -972,7 +972,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
     
     [itemStack release];
     
-	[self recalculateSize:YES updateParent:NO];
+	[self recalculateSize: usePhysicalSize updateParent: NO];
 }
 
 //compare the size of 2 FSItems
