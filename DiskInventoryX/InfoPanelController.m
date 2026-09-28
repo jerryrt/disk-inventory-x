@@ -14,6 +14,7 @@
 //
 
 #import "InfoPanelController.h"
+#import "NSBundle-Extensions.h"
 #import "DIXFileInfoView.h"
 
 @implementation InfoPanelController
@@ -33,7 +34,7 @@
 	self = [super init];
 		
 	//load Nib with info panel
-    if ( ![NSBundle loadNibNamed: @"InfoPanel" owner: self] )
+    if ( ![NSBundle loadRetainingNibNamed: @"InfoPanel" owner: self] )
 	{
 		[self release];
 		self = nil;

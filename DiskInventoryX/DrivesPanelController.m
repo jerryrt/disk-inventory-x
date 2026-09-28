@@ -14,6 +14,7 @@
 //
 
 #import "DrivesPanelController.h"
+#import "NSBundle-Extensions.h"
 #import "FileSizeFormatter.h"
 #import "VolumeNameTransformer.h"
 #import "VolumeUsageTransformer.h"
@@ -78,7 +79,7 @@
 	[self rebuildVolumesArray];
 	
 	//load Nib with volume panel
-    if ( ![NSBundle loadNibNamed: @"VolumesPanel" owner: self] )
+    if ( ![NSBundle loadRetainingNibNamed: @"VolumesPanel" owner: self] )
 	{
 		[self release];
 		self = nil;

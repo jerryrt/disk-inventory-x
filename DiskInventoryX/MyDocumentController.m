@@ -15,6 +15,7 @@
 //
 
 #import "MyDocumentController.h"
+#import "NSBundle-Extensions.h"
 #import "DrivesPanelController.h"
 #import "Preferences.h"
 #import "PrefsPanelController.h"
@@ -190,7 +191,7 @@ BOOL g_EnableLogging;
     //show donate message
 	if ( ![[NSUserDefaults standardUserDefaults] boolForKey: DontShowDonationMessage] )
 	{
-		[NSBundle loadNibNamed: @"DonationPanel" owner:self];
+		[NSBundle loadRetainingNibNamed: @"DonationPanel" owner: self];
 		[_donationPanel setWorksWhenModal: YES];
 	}
 	

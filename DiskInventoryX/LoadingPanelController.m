@@ -14,6 +14,7 @@
 //
 
 #import "LoadingPanelController.h"
+#import "NSBundle-Extensions.h"
 #import "Timing.h"
 
 
@@ -24,7 +25,7 @@
 	self = [super init];
 	
     //load Nib with progress panel
-	if ( ![NSBundle loadNibNamed: @"LoadingPanel" owner: self] )
+	if ( ![NSBundle loadRetainingNibNamed: @"LoadingPanel" owner: self] )
 		NSAssert( NO, @"couldn't load LoadingPanel.nib" );
 	
 	[_loadingProgressIndicator setUsesThreadedAnimation: NO];
@@ -46,7 +47,7 @@
 	self = [super init];
 	
     //load Nib with progress panel
-	if ( ![NSBundle loadNibNamed: @"LoadingPanel" owner: self] )
+	if ( ![NSBundle loadRetainingNibNamed: @"LoadingPanel" owner: self] )
 		NSAssert( NO, @"couldn't load LoadingPanel.nib" );
 	
 	[window beginSheet: _loadingPanel completionHandler: nil];
