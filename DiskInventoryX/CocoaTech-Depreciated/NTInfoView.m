@@ -452,74 +452,29 @@
     else
         perm = [perm stringByAppendingString:@" "];  // what is it?
     
-    // Owner
+    // Owner (setuid shown as "s"/"S")
     perm = [perm stringByAppendingString:(permBits & S_IRUSR) ? @"r" : @"-"];
     perm = [perm stringByAppendingString:(permBits & S_IWUSR) ? @"w" : @"-"];
-    
-    if (permBits & S_IXUSR)
-    {
-        if ((S_ISUID & modeBits) || (S_ISGID & modeBits))
-            perm = [perm stringByAppendingString:@"s"];
-        else
-            perm = [perm stringByAppendingString:@"x"];
-    }
+    if (S_ISUID & modeBits)
+        perm = [perm stringByAppendingString:(permBits & S_IXUSR) ? @"s" : @"S"];
     else
-    {
-        if ((S_ISUID & modeBits) || (S_ISGID & modeBits))
-            perm = [perm stringByAppendingString:@"S"];
-        else
-            perm = [perm stringByAppendingString:@"-"];
-    }
+        perm = [perm stringByAppendingString:(permBits & S_IXUSR) ? @"x" : @"-"];
     
-    // Group
+    // Group (setgid shown as "s"/"S")
     perm = [perm stringByAppendingString:(permBits & S_IRGRP) ? @"r" : @"-"];
     perm = [perm stringByAppendingString:(permBits & S_IWGRP) ? @"w" : @"-"];
-    
-    if (permBits & S_IXGRP)
-    {
-        if ((S_ISUID & modeBits) || (S_ISGID & modeBits))
-            perm = [perm stringByAppendingString:@"s"];
-        else
-            perm = [perm stringByAppendingString:@"x"];
-    }
+    if (S_ISGID & modeBits)
+        perm = [perm stringByAppendingString:(permBits & S_IXGRP) ? @"s" : @"S"];
     else
-    {
-        if ((S_ISUID & modeBits) || (S_ISGID & modeBits))
-            perm = [perm stringByAppendingString:@"S"];
-        else
-            perm = [perm stringByAppendingString:@"-"];
-    }
+        perm = [perm stringByAppendingString:(permBits & S_IXGRP) ? @"x" : @"-"];
     
-    // Others
+    // Others (sticky bit shown as "t"/"T")
     perm = [perm stringByAppendingString:(permBits & S_IROTH) ? @"r" : @"-"];
     perm = [perm stringByAppendingString:(permBits & S_IWOTH) ? @"w" : @"-"];
-    
-    if (permBits & S_IXOTH)
-    {
-        if ((S_ISUID & modeBits) || (S_ISGID & modeBits))
-            perm = [perm stringByAppendingString:@"s"];
-        else
-        {
-            // check sticky bit
-            if (S_ISVTX & modeBits)
-                perm = [perm stringByAppendingString:@"t"];
-            else
-                perm = [perm stringByAppendingString:@"x"];
-        }
-    }
+    if (S_ISVTX & modeBits)
+        perm = [perm stringByAppendingString:(permBits & S_IXOTH) ? @"t" : @"T"];
     else
-    {
-        if ((S_ISUID & modeBits) || (S_ISGID & modeBits))
-            perm = [perm stringByAppendingString:@"S"];
-        else
-        {
-            // check sticky bit
-            if (S_ISVTX & modeBits)
-                perm = [perm stringByAppendingString:@"T"];
-            else
-                perm = [perm stringByAppendingString:@"-"];
-        }
-    }
+        perm = [perm stringByAppendingString:(permBits & S_IXOTH) ? @"x" : @"-"];
     
     if (YES/*includeOctal*/)
     {
