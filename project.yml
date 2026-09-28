@@ -30,14 +30,12 @@ targets:
   Disk Inventory X:
     type: application
     platform: macOS
-    info:
-      path: Info.plist
-    entitlements:
-      path: Disk Inventory X.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.jerryrt.DiskInventoryX
         PRODUCT_NAME: Disk Inventory X
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: Disk Inventory X.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         HEADER_SEARCH_PATHS: ["$(SRCROOT)/TreeMapView"]
     sources:
