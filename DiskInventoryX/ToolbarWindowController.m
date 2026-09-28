@@ -49,6 +49,14 @@
 		return [super methodSignatureForSelector: aSelector];
 }
 
+// Menu items change their title to reflect the current state (e.g. "Show ..."
+// and "Hide ..."). NSToolbarItem's own title would appear inside the item's
+// button, so the title goes to the label instead.
+- (void)setTitle:(NSString *)title
+{
+	[_toolbarItem setLabel: title];
+}
+
 - (void)setState:(NSControlStateValue)itemState
 {
 	ToolbarWindowController *controller = (ToolbarWindowController *)[[_toolbarItem toolbar] delegate];
