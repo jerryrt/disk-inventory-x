@@ -38,24 +38,23 @@
 	FileSystemDoc *doc = [self document];
 
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-	NSDrawer *drawer = [_windowController selectionListDrawer];
-	
 	[notificationCenter addObserver: self
 						   selector: @selector(onDrawerClosed:)
-							   name: NSDrawerDidCloseNotification
-							 object: drawer];
+							   name: MainWindowControllerSelectionListDidHideNotification
+							 object: _windowController];
 	[notificationCenter addObserver: self
 						   selector: @selector(onDrawerOpened:)
-							   name: NSDrawerWillOpenNotification
-							 object: drawer];
+							   name: MainWindowControllerSelectionListWillShowNotification
+							 object: _windowController];
 	
     [notificationCenter addObserver: self
 						   selector: @selector(windowWillClose:)
 							   name: NSWindowWillCloseNotification
 							 object: [_windowController window]];
 	
-	if ( [drawer state] == NSDrawerClosedState )
-		[_selectionListArrayController suspendArrangedObjectsUpdates];
+	//the selection list starts hidden; the window controller announces
+	//when it is shown (also when a saved layout shows it at startup)
+	[_selectionListArrayController suspendArrangedObjectsUpdates];
 	
 	//set up KVO
 	[[NSUserDefaultsController sharedUserDefaultsController] addObserver: self

@@ -23,8 +23,14 @@
 #import "AppsForItem.h"
 #import "NSURL-Extensions.h"
 
+NSString *MainWindowControllerSelectionListWillShowNotification = @"MainWindowControllerSelectionListWillShow";
+NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowControllerSelectionListDidHide";
+
 @interface MainWindowController(Private)
 - (void) moveToTrashSheetDidDismiss: (NSWindow*) sheet returnCode: (int) returnCode contextInfo: (void*) contextInfo;
+- (void) setUpPanes;
+- (void) setPane: (NSView*) pane visible: (BOOL) visible;
+- (void) growWindowBy: (CGFloat) delta forPaneInSplitView: (NSSplitView*) splitView;
 @end
 
 @implementation MainWindowController
@@ -55,6 +61,13 @@
 	}
 	
 	return self;
+}
+
+- (void) dealloc
+{
+	[_kindsSplitter release];
+	[_selectionListSplitter release];
+	[super dealloc];
 }
 
 + (FileSystemDoc*) documentForView: (NSView*) view
@@ -107,31 +120,47 @@
 	}
 	
 	[_splitter setAutosaveName: @"MainWindowSplitter"];
+}
+
+- (void) windowDidLoad
+{
+	[super windowDidLoad];
 	
-    [_kindsDrawer toggle: self];
-	//[_selectionListDrawer toggle: self];
+	//done here and not in awakeFromNib, so that all other nib objects are
+	//awake when the selection list's visibility is announced
+	[self setUpPanes];
 }
 
-- (NSDrawer*) kindStatisticsDrawer
+- (BOOL) isKindStatisticsVisible
 {
-	return _kindsDrawer;
+	return ![_kindsView isHidden];
 }
 
-- (NSDrawer*) selectionListDrawer
+- (void) setKindStatisticsVisible: (BOOL) visible
 {
-	return _selectionListDrawer;
+	[self setPane: _kindsView visible: visible];
+}
+
+- (BOOL) isSelectionListVisible
+{
+	return ![_selectionListView isHidden];
+}
+
+- (void) setSelectionListVisible: (BOOL) visible
+{
+	[self setPane: _selectionListView visible: visible];
 }
 
 #pragma mark -----------------menu and toolbar actions-----------------------
 
 - (IBAction)toggleFileKindsDrawer:(id)sender
 {
-    [_kindsDrawer toggle: self];
+	[self setKindStatisticsVisible: ![self isKindStatisticsVisible]];
 }
 
 - (IBAction) toggleSelectionListDrawer:(id)sender
 {
-	[_selectionListDrawer toggle: self];
+	[self setSelectionListVisible: ![self isSelectionListVisible]];
 }
 
 - (IBAction) openFile:(id)sender
@@ -435,12 +464,12 @@
     }
     else if ( menuAction == @selector(toggleFileKindsDrawer:) )
     {
-        SET_TITLE_AND_IMAGE( [_kindsDrawer state] == NSDrawerClosedState,
+        SET_TITLE_AND_IMAGE( ![self isKindStatisticsVisible],
 							 @"Show File Kind Statistics", @"Hide File Kind Statistics" );
     }
     else if ( menuAction == @selector(toggleSelectionListDrawer:) )
     {
-        SET_TITLE( [_selectionListDrawer state] == NSDrawerClosedState,
+        SET_TITLE( ![self isSelectionListVisible],
 							 @"Show Selection List", @"Hide Selection List" );
     }
     else if ( menuAction == @selector(selectParentItem:) )
@@ -493,6 +522,31 @@
 	{
 		[[InfoPanelController sharedController] showPanelWithFSItem: nil];
 	}
+}
+
+#pragma mark -----------------NSSplitView delegates-----------------------
+
+//only used for the split views holding the file kinds and selection list panes
+
+static const CGFloat PaneMinimumSize = 100;
+static const CGFloat ContentMinimumSize = 200;
+
+- (BOOL) splitView: (NSSplitView *) splitView shouldAdjustSizeOfSubview: (NSView *) view
+{
+	return view != _kindsView && view != _selectionListView;
+}
+
+- (CGFloat) splitView: (NSSplitView *) splitView constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex
+{
+	//the kinds pane is the first subview, the selection list the second
+	return splitView == _kindsSplitter ? PaneMinimumSize : ContentMinimumSize;
+}
+
+- (CGFloat) splitView: (NSSplitView *) splitView constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex
+{
+	CGFloat total = [splitView isVertical] ? NSWidth( [splitView bounds] ) : NSHeight( [splitView bounds] );
+	CGFloat trailingMinimum = splitView == _kindsSplitter ? ContentMinimumSize : PaneMinimumSize;
+	return total - trailingMinimum - [splitView dividerThickness];
 }
 
 #pragma mark -----------------NSMenu delegates-----------------------
@@ -599,6 +653,140 @@
 @end
 
 @implementation MainWindowController(Private)
+
+static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
+{
+	NSSplitView *splitView = [[NSSplitView alloc] initWithFrame: frame];
+	[splitView setVertical: vertical];
+	[splitView setDividerStyle: NSSplitViewDividerStyleThin];
+	[splitView setAutoresizingMask: NSViewWidthSizable | NSViewHeightSizable];
+	return splitView;
+}
+
+//The file kinds statistic and the selection list used to live in drawers.
+//They are now panes of two split views wrapped around the files/treemap
+//splitter: the kinds pane on the left, the selection list at the bottom.
+- (void) setUpPanes
+{
+	NSView *contentView = [_splitter superview];
+	NSRect frame = [_splitter frame];
+	CGFloat kindsWidth = NSWidth( [_kindsView frame] );
+	CGFloat selectionListHeight = NSHeight( [_selectionListView frame] );
+	
+	_selectionListSplitter = NewPaneSplitView( NO, frame );
+	_kindsSplitter = NewPaneSplitView( YES, [_selectionListSplitter bounds] );
+	
+	[_splitter retain];
+	[_splitter removeFromSuperview];
+	
+	for ( NSView *view in @[_kindsView, _selectionListView, _splitter] )
+		[view setAutoresizingMask: NSViewWidthSizable | NSViewHeightSizable];
+	
+	[_kindsSplitter addSubview: _kindsView];
+	[_kindsSplitter addSubview: _splitter];
+	[_selectionListSplitter addSubview: _kindsSplitter];
+	[_selectionListSplitter addSubview: _selectionListView];
+	[_splitter release];
+	
+	[contentView addSubview: _selectionListSplitter];
+	
+	//default layout: sizes as designed in the nib, selection list hidden
+	[_kindsSplitter adjustSubviews];
+	[_kindsSplitter setPosition: kindsWidth ofDividerAtIndex: 0];
+	[_selectionListSplitter adjustSubviews];
+	[_selectionListSplitter setPosition: NSHeight( frame ) - selectionListHeight - [_selectionListSplitter dividerThickness]
+					   ofDividerAtIndex: 0];
+	[_selectionListView setHidden: YES];
+	[_selectionListSplitter adjustSubviews];
+	
+	//the panes keep their size when the window is resized (see split view delegate methods)
+	[_kindsSplitter setDelegate: self];
+	[_selectionListSplitter setDelegate: self];
+	
+	//on first launch make room for the kinds pane, like the drawer did
+	//(later the window frame is restored together with the pane layout)
+	NSString *kindsAutosaveName = @"MainWindowKindsSplitter";
+	if ( [[NSUserDefaults standardUserDefaults] objectForKey: [@"NSSplitView Subview Frames " stringByAppendingString: kindsAutosaveName]] == nil )
+		[self growWindowBy: kindsWidth + [_kindsSplitter dividerThickness] forPaneInSplitView: _kindsSplitter];
+	
+	//restore the layout the user left (including which panes are visible)
+	[_kindsSplitter setAutosaveName: kindsAutosaveName];
+	[_selectionListSplitter setAutosaveName: @"MainWindowSelectionListSplitter"];
+	
+	if ( [self isSelectionListVisible] )
+		[[NSNotificationCenter defaultCenter] postNotificationName: MainWindowControllerSelectionListWillShowNotification object: self];
+}
+
+- (void) growWindowBy: (CGFloat) delta forPaneInSplitView: (NSSplitView*) splitView
+{
+	NSWindow *window = [self window];
+	NSRect frame = [window frame];
+	
+	//the kinds pane is on the left and the selection list at the bottom,
+	//so the window grows to the left or downwards
+	if ( [splitView isVertical] )
+	{
+		frame.origin.x -= delta;
+		frame.size.width += delta;
+	}
+	else
+	{
+		frame.origin.y -= delta;
+		frame.size.height += delta;
+	}
+	
+	//keep the window on screen
+	NSRect screenFrame = [[window screen] visibleFrame];
+	if ( !NSIsEmptyRect( screenFrame ) )
+	{
+		frame.size.width = MIN( NSWidth( frame ), NSWidth( screenFrame ) );
+		frame.size.height = MIN( NSHeight( frame ), NSHeight( screenFrame ) );
+		frame.origin.x = MAX( NSMinX( frame ), NSMinX( screenFrame ) );
+		frame.origin.y = MAX( NSMinY( frame ), NSMinY( screenFrame ) );
+		frame.origin.x = MIN( NSMinX( frame ), NSMaxX( screenFrame ) - NSWidth( frame ) );
+		frame.origin.y = MIN( NSMinY( frame ), NSMaxY( screenFrame ) - NSHeight( frame ) );
+	}
+	
+	[window setFrame: frame display: YES animate: [window isVisible]];
+}
+
+- (void) setPane: (NSView*) pane visible: (BOOL) visible
+{
+	if ( visible == ![pane isHidden] )
+		return;
+	
+	NSSplitView *splitView = (NSSplitView*) [pane superview];
+	BOOL isSelectionList = ( pane == _selectionListView );
+	
+	//remember the pane's size as the split view doesn't restore it
+	CGFloat size = [splitView isVertical] ? NSWidth( [pane frame] ) : NSHeight( [pane frame] );
+	if ( size < 50 )
+		size = 200;
+	
+	if ( visible && isSelectionList )
+		[[NSNotificationCenter defaultCenter] postNotificationName: MainWindowControllerSelectionListWillShowNotification object: self];
+	
+	[pane setHidden: !visible];
+	[splitView adjustSubviews];
+	
+	if ( visible )
+	{
+		CGFloat total = [splitView isVertical] ? NSWidth( [splitView bounds] ) : NSHeight( [splitView bounds] );
+		CGFloat position = ( [[splitView subviews] indexOfObjectIdenticalTo: pane] == 0 )
+							? size
+							: total - size - [splitView dividerThickness];
+		[splitView setPosition: position ofDividerAtIndex: 0];
+	}
+	
+	//Like the drawers did, the pane adds to the window instead of taking
+	//space from the files view and the treemap. As the panes keep their size
+	//when the split view is resized, the window's size change goes to them.
+	CGFloat delta = size + [splitView dividerThickness];
+	[self growWindowBy: visible ? delta : -delta forPaneInSplitView: splitView];
+	
+	if ( !visible && isSelectionList )
+		[[NSNotificationCenter defaultCenter] postNotificationName: MainWindowControllerSelectionListDidHideNotification object: self];
+}
 
 - (void) moveToTrashSheetDidDismiss: (NSWindow *) sheet
 						 returnCode: (int) returnCode

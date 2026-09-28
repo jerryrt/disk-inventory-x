@@ -5,10 +5,16 @@
 #import "TreeMapView.h"
 #import "ToolbarWindowController.h"
 
-@interface MainWindowController : ToolbarWindowController
+// posted when the selection list pane is shown or hidden; the object is the window controller
+extern NSString *MainWindowControllerSelectionListWillShowNotification;
+extern NSString *MainWindowControllerSelectionListDidHideNotification;
+
+@interface MainWindowController : ToolbarWindowController <NSSplitViewDelegate>
 {
-    IBOutlet NSDrawer *_kindsDrawer;
-    IBOutlet NSDrawer *_selectionListDrawer;
+    IBOutlet NSView *_kindsView;
+    IBOutlet NSView *_selectionListView;
+	NSSplitView *_kindsSplitter;
+	NSSplitView *_selectionListSplitter;
 	IBOutlet NSSplitView *_splitter;
 	IBOutlet NSOutlineView *_filesOutlineView;
 	IBOutlet TreeMapView *_treeMapView;
@@ -19,8 +25,11 @@
 
 + (void) poofEffectInView: (NSView*)view inRect: (NSRect) rect; //rect in view coords
 
-- (NSDrawer*) kindStatisticsDrawer;
-- (NSDrawer*) selectionListDrawer;
+- (BOOL) isKindStatisticsVisible;
+- (void) setKindStatisticsVisible: (BOOL) visible;
+
+- (BOOL) isSelectionListVisible;
+- (void) setSelectionListVisible: (BOOL) visible;
 
 - (IBAction) openFile:(id)sender;
 - (IBAction) toggleFileKindsDrawer:(id)sender;
