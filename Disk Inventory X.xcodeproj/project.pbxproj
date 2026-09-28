@@ -23,7 +23,7 @@
 		30BBF186820AEB354B729347 /* LoadingPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872D6C6834D88A3458F8D072 /* LoadingPanel.xib */; };
 		34B074839183017CDFAB273B /* GeneralPreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A6694454FF09FBD41F85DFA /* GeneralPreferences.tiff */; };
 		34BC2DF7FE51C66DB6BECE9B /* NTTitledInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F772DAB3AD69181A3905E983 /* NTTitledInfoView.m */; };
-		3C6AD07896169886C77FE4FB /* TreeMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC86D2B525DD2DE78A0057 /* TreeMapView.m */; };
+		3C6AD07896169886C77FE4FB /* TreeMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC86D2B525DD2DE78A0057 /* TreeMapView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3D14EE5B2BFA45119943FADC /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = C85B98C5B4F1CCF64F480DB9 /* Defaults.plist */; };
 		3F3B9DA761B6246C179EFD1C /* NSFileManager-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9749B1EBB6026A3B1987BC1D /* NSFileManager-Extensions.m */; };
 		46F66801BF8CCCE52170BBE1 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C8B3F73F03F8B690A0337A /* MainWindowController.m */; };
@@ -38,13 +38,13 @@
 		80A8A4080CB1D46933E15A56 /* FileKindsPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BDD7EF87459DD2AEB65654 /* FileKindsPopupController.m */; };
 		82C5388C36B3D2290FC3E777 /* TreeMapPreferencesPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963C731E4D9418B1535A4052 /* TreeMapPreferencesPage.xib */; };
 		88802D398F9EE444E5404FEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C79F5E083C04A7E7327CF96B /* InfoPlist.strings */; };
-		891CD86A644339D8EEEDC188 /* ZoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE1E7B07E52794858E8C165 /* ZoomInfo.m */; };
+		891CD86A644339D8EEEDC188 /* ZoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE1E7B07E52794858E8C165 /* ZoomInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		89D35C6A39A73AFFF8890356 /* GeneralPrefPage.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAB9180334198843630150B /* GeneralPrefPage.m */; };
 		8AF8C6C163CF0EBBC323A69F /* Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F077FAE6F5209ACE7F9DFDA8 /* Preferences.tiff */; };
 		8F595C368183ABFD33CD7204 /* DrivesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159FD1F5C8C9A4F06DA54021 /* DrivesPanelController.m */; };
 		96D5B1CDD6EFA0270E86EC87 /* ZoomIn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CA1594093D83D9CCA7DAE /* ZoomIn.tiff */; };
 		982E4FC2BA2F5BB9565BD8D2 /* NSAlert-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA36ED3718B156C2729DD45 /* NSAlert-Extensions.m */; };
-		993EB42329537E6C80B1127F /* TMVCushionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A671861EDEF3E75A5CF7181 /* TMVCushionRenderer.m */; };
+		993EB42329537E6C80B1127F /* TMVCushionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A671861EDEF3E75A5CF7181 /* TMVCushionRenderer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9A257E9A517F55B58EA92E59 /* TreeMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639D0504284E0BC2BEF532C1 /* TreeMap.xib */; };
 		9AE93DC5AD2F61513941022E /* NTTitledInfoPair.m in Sources */ = {isa = PBXBuildFile; fileRef = AD454C1326BC4981A83E4FA6 /* NTTitledInfoPair.m */; };
 		9E9CCBBD30DED1024FBE0034 /* LoadingPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40086F6C5DA460AA6D574881 /* LoadingPanelController.m */; };
@@ -53,7 +53,7 @@
 		A92B5E738FEDA17490B71FDD /* DonationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A436E3A8EB3B12C5591CFF /* DonationPanel.xib */; };
 		A9BC06F5A175E91B35D52E20 /* RefreshSelection.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B0D48301D1585F45838CD1 /* RefreshSelection.png */; };
 		B1C1B29743232AF53EB7EE48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFEF25C54DBDDB75CE3373FD /* Localizable.strings */; };
-		B45170ED803EA1360A5AF7CC /* TMVItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4825AACE3502DDC9B37ADC83 /* TMVItem.m */; };
+		B45170ED803EA1360A5AF7CC /* TMVItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4825AACE3502DDC9B37ADC83 /* TMVItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B5447C88E59C2AC634ADF6D6 /* Preferences.strings in Resources */ = {isa = PBXBuildFile; fileRef = 084A4C5955960C1873E1F912 /* Preferences.strings */; };
 		B5E1879D0D6F5414200BAFF0 /* FSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3540470D54103A57CD9627C7 /* FSItem.m */; };
 		B6BE77A02614134985916ABA /* NSBundle-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFDAFF0C47705EC200F62FC /* NSBundle-Extensions.m */; };
@@ -72,13 +72,13 @@
 		D912CE59ADD4054D640BDD25 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002BD766F6E54BD7404C7FE4 /* MainMenu.xib */; };
 		DB8C39CDA4E287C43105B0F4 /* GenericArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5FE5058F27A625C9B760D1 /* GenericArrayController.m */; };
 		DEB6B4731D5D16764EE8D49C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A174904601F3B0EBBA42BD3 /* Images.xcassets */; };
-		E0A7400BC92ACC214B336C59 /* NSView-BackingCoordsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E05C14DDDCA495A92E952E /* NSView-BackingCoordsHelpers.m */; };
+		E0A7400BC92ACC214B336C59 /* NSView-BackingCoordsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E05C14DDDCA495A92E952E /* NSView-BackingCoordsHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E33BA08D1AD56F332B4969E5 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 562FDB77BF399F81FD53377E /* MainWindow.m */; };
 		E49FEBD2BFACBE302DCFD640 /* ToolbarWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861FB6AE9B50060AFFD51F6A /* ToolbarWindowController.m */; };
 		E99116BAE876AA2A399608B2 /* TreeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA91FED37BC67E336A0EB4 /* TreeMapViewController.m */; };
 		EA8F7498B02F6039FCF6E112 /* RevealInFinder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105FB7613CBC16C3D6CD5C2 /* RevealInFinder.png */; };
 		EADA8F85CD647920A664EB3B /* FileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA4C36C4DD0471E942A2F6 /* FileSizeTransformer.m */; };
-		EB89AEE4A3DE9E35ACF58346 /* NSBitmapImageRep-CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A14A2E39C7615F4E936BD04 /* NSBitmapImageRep-CreationExtensions.m */; };
+		EB89AEE4A3DE9E35ACF58346 /* NSBitmapImageRep-CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A14A2E39C7615F4E936BD04 /* NSBitmapImageRep-CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EBD11F20000AC83FEBF55062 /* MoveToTrash.png in Resources */ = {isa = PBXBuildFile; fileRef = 464F5C36B806CD98E22E2F35 /* MoveToTrash.png */; };
 		F50EC5EC17E2FD126DC39A0D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73E95BC550CF96FB3F2F90E6 /* Credits.rtf */; };
 		F8500F66A3E2C6991C043F4F /* FileTypeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D50E1E3FF0C79586F39888 /* FileTypeColors.m */; };
@@ -802,7 +802,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -890,7 +890,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

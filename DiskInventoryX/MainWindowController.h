@@ -16,9 +16,9 @@ extern NSString *MainWindowControllerSelectionListDidHideNotification;
 	NSSplitView *_kindsSplitter;
 	NSSplitView *_selectionListSplitter;
 	IBOutlet NSSplitView *_splitter;
-	IBOutlet NSOutlineView *_filesOutlineView;
-	IBOutlet TreeMapView *_treeMapView;
-	IBOutlet NSMenu *_openWithSubMenu;
+	__weak IBOutlet NSOutlineView *_filesOutlineView;
+	__weak IBOutlet TreeMapView *_treeMapView;
+	__weak IBOutlet NSMenu *_openWithSubMenu;
 }
 
 + (FileSystemDoc*) documentForView: (NSView*) view;

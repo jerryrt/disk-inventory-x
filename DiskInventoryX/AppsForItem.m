@@ -29,7 +29,7 @@
 {
 	AppsForItem *appsForFile = [[[self class] alloc] initWithItemURL: url];
 		
-	return [appsForFile autorelease];
+	return appsForFile;
 }
 
 - (id) initWithItemURL: (NSURL*) url
@@ -37,31 +37,23 @@
 	self = [super init];
 	if ( self != nil )
 	{
-		_itemURL = [url retain];
+		_itemURL = url;
 	}
 	
 	return self;
 }
 
-- (void) dealloc
-{
-	[_itemURL release];
-	[_defaultAppURL release];
-	[_additionalAppURLs release];
-	
-	[super dealloc];
-}
 
 - (NSURL*) defaultAppURL //may return nil
 {
 	if ( _defaultAppURL == nil )
 	{
-		_defaultAppURL = (id) [NSNull null]; //retain not necessary for NSNull
+		_defaultAppURL = (id) [NSNull null];
 		
 		NSURL *appURL = [[NSWorkspace sharedWorkspace] URLForApplicationToOpenURL: [self itemURL]];
 		
 		if ( [self checkAppURL: appURL checkDefaultApp: NO] )
-			_defaultAppURL = [appURL retain];
+			_defaultAppURL = appURL;
 	}
 	
 	return (_defaultAppURL == (id)[NSNull null]) ? nil : _defaultAppURL;

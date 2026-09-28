@@ -19,8 +19,9 @@
 
 @interface MyDocumentController : NSDocumentController
 {
-	IBOutlet NSMenu* _zoomStackMenu;
-	IBOutlet NSPanel* _donationPanel;
+	NSArray *_nibObjects; //top-level objects of our nib
+	__weak IBOutlet NSMenu* _zoomStackMenu;
+	__weak IBOutlet NSPanel* _donationPanel;
 }
 
 - (IBAction) showPreferencesPanel: (id) sender;

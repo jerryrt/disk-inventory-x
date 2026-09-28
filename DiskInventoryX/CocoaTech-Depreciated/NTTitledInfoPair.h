@@ -12,7 +12,7 @@
     NSString* _info;
     
     SEL _action;
-    id _target;
+    __weak id _target;
 }
 
 // pass nil to edit action if you don't want it editable

@@ -15,10 +15,6 @@
 
 @implementation PrefsPageBase
 
-@synthesize controlBox;
-@synthesize initialFirstResponder;
-@synthesize lastKeyView;
-
 - (instancetype) initWithNibName: (NSString *) nibName
 {
 	self = [super init];
@@ -27,19 +23,12 @@
 		NSArray *topLevelObjects = nil;
 		if ( ![[NSBundle mainBundle] loadNibNamed: nibName owner: self topLevelObjects: &topLevelObjects] )
 		{
-			[self release];
 			return nil;
 		}
-		_topLevelObjects = [topLevelObjects retain];
+		_topLevelObjects = topLevelObjects;
 	}
 	return self;
 }
 
-- (void) dealloc
-{
-	[controlBox release];
-	[_topLevelObjects release];
-	[super dealloc];
-}
 
 @end

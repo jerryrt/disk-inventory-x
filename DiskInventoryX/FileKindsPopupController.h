@@ -31,8 +31,8 @@
 @end
 
 @interface FileKindsPopupController : GenericArrayController {
-	IBOutlet NSPopUpButton *_kindsPopUpButton;
-	IBOutlet id _windowController;
+	__weak IBOutlet NSPopUpButton *_kindsPopUpButton;
+	__weak IBOutlet id _windowController;
 }
 
 - (FileSystemDoc*) document;

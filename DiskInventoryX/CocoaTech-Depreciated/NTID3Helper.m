@@ -13,17 +13,12 @@
     return self;
 }
 
-- (void)dealloc;
-{
-    [_id3 release];
-    [super dealloc];   
-}
 
 + (NTID3Helper*)helperWithPath:(NSString*)path;
 {
     NTID3Helper *result = [[NTID3Helper alloc] initWithPath:path];
     
-    return [result autorelease];
+    return result;
 }
 
 - (NSString*)infoString;

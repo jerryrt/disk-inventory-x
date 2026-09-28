@@ -36,7 +36,6 @@ NSString *CollectFileKindStatisticsCanceledException = @"CollectFileKindStatisti
     self = [super init];
     
     _kindName = [item kindName];
-	[_kindName retain];
 
 	_size = [item sizeValue];
 	
@@ -45,13 +44,6 @@ NSString *CollectFileKindStatisticsCanceledException = @"CollectFileKindStatisti
     return self;
 }
 
-- (void) dealloc
-{
-    [_kindName release];
-	[_items release];
-	
-	[super dealloc];
-}
 
 - (void) addItem: (FSItem* )item
 {
@@ -186,7 +178,7 @@ NSString *OldItem = @"OldItem";
 		[sharedDefsController addObserver: self
 							   forKeyPath: [@"values." stringByAppendingString: ShareKindColors]
 								  options: 0
-								  context: ShareKindColors];		
+								  context: (__bridge void *) ShareKindColors];		
     }
     return self;
 }
@@ -198,17 +190,10 @@ NSString *OldItem = @"OldItem";
 	NSUserDefaultsController *sharedDefsController = [NSUserDefaultsController sharedUserDefaultsController];
 	[sharedDefsController removeObserver: self forKeyPath: [@"values." stringByAppendingString: ShareKindColors]];
 	
-	[_viewOptions release];
-    [_fileKindStatistics release];
-    [_zoomStack release];
 	
-    [_rootItem release];
 	
-	[_directoryStack release];
 
-	[_kindColors release];
 	
-    [super dealloc];
 }
 
 - (void) makeWindowControllers
@@ -216,7 +201,6 @@ NSString *OldItem = @"OldItem";
     // Override method to instantiate controllers for multiple document windows.
     MainWindowController *controller = [[MainWindowController alloc] initWithWindowNibName: [self windowNibName]];
     [self addWindowController:controller];
-    [controller release];
 }
 
 
@@ -252,9 +236,7 @@ NSString *OldItem = @"OldItem";
         _rootItem = [[FSItem alloc] initWithPath: folder];
 		if ( ![[_rootItem fileURL] stillExists] )
 		{
-			[_rootItem release];
 			_rootItem = nil;
-			[_progressController release];
 			_progressController = nil;
 			LOG( @"readFromURL: path '%@' doesn't exits", folder );
 			if ( outError != NULL )
@@ -286,7 +268,6 @@ NSString *OldItem = @"OldItem";
 		LOG (@"file kind statistics time:  %.2f seconds", subtractTime(doneFileKindStatsTime, doneLoadingTime));
 		
 		//the modal session must be ended in the same NS_DURING section (if no exception occured)
-		[_progressController release];
 		_progressController = nil;
     }
     @catch(NSException *localException)
@@ -296,10 +277,8 @@ NSString *OldItem = @"OldItem";
 		// according to the docu, we should not end a modal session explicitly in the case of an exception
         // but this seems to be no longer true at least on Mac OS 10.13 (even not when using NS_DURING, NS_HANDLER, ..)
 		//[_progressController closeNoModalEnd];
-		[_progressController release];
 		_progressController = nil;
 		
-		[_rootItem release];
 		_rootItem = nil;
 
 		if ( outError != NULL )
@@ -324,7 +303,6 @@ NSString *OldItem = @"OldItem";
     }
     @finally
     {
-        [_directoryStack release];
         _directoryStack = nil;
     }
         
@@ -515,7 +493,6 @@ NSString *OldItem = @"OldItem";
 	NSAssert( parent != nil, @"root item shouldn't be deletable" );
 	
 	//retain and autorelease "item", so it will be accessible till all is done
-	[[item retain] autorelease];
 	
 	[parent removeChild: item updateParent: YES];
 	
@@ -601,16 +578,14 @@ NSString *OldItem = @"OldItem";
 			[_progressController startAnimation];
 		}
 		
-		refreshedItem = [[[FSItem alloc] initWithPath: [item path]] autorelease];
+		refreshedItem = [[FSItem alloc] initWithPath: [item path]];
 		[refreshedItem setDelegate: self];
 		if ( [refreshedItem isFolder] )
 			 [refreshedItem loadChildren];
 		
-		[_progressController release];
 		_progressController = nil;
 	NS_HANDLER
 		[_progressController closeNoModalEnd];
-		[_progressController release];
 		_progressController = nil;
 		
 		if ( [[localException name] isEqualToString: FSItemLoadingCanceledException]
@@ -630,12 +605,10 @@ NSString *OldItem = @"OldItem";
 	NS_ENDHANDLER
 	
 	//keep item valid till we are done
-	[[item retain] autorelease];
 	
 	if ( _rootItem == item )
 	{
-		[_rootItem release];
-		_rootItem = [refreshedItem retain];
+		_rootItem = refreshedItem;
 		//rebuild file kind statistics
 		[self refreshFileKindStatistics];
 	}
@@ -717,7 +690,7 @@ NSString *OldItem = @"OldItem";
 {
     if ( [_zoomStack count] > 0 )
     {
-		FSItem *oldZoomedItem = [[[self zoomedItem] retain] autorelease];
+		FSItem *oldZoomedItem = [self zoomedItem];
 		
         [_zoomStack removeLastObject];
         
@@ -741,7 +714,7 @@ NSString *OldItem = @"OldItem";
                        || item == [self rootItem]
                        || [_zoomStack indexOfObjectIdenticalTo: item] != NSNotFound );
     
-	FSItem *oldZoomedItem = [[[self zoomedItem] retain] autorelease];
+	FSItem *oldZoomedItem = [self zoomedItem];
 	
     if ( item == nil || item == [self rootItem] )
     {
@@ -806,7 +779,7 @@ NSString *OldItem = @"OldItem";
 {
     NSString *displayName = [[self zoomedItem] displayName];
 	
-	FileSizeFormatter *sizeFormatter = [[[FileSizeFormatter alloc] init] autorelease];
+	FileSizeFormatter *sizeFormatter = [[FileSizeFormatter alloc] init];
 
     displayName = [displayName stringByAppendingFormat: @" (%@)", [sizeFormatter stringForObjectValue: [[self zoomedItem] size]]];
 
@@ -835,7 +808,7 @@ NSString *OldItem = @"OldItem";
 	if ( _kindColors == nil )
 	{
 		if ( [[NSUserDefaults standardUserDefaults] boolForKey: ShareKindColors] )
-			_kindColors = [[FileTypeColors instance] retain];
+			_kindColors = [FileTypeColors instance];
 		else
 			_kindColors = [[FileTypeColors alloc] init];
 	}
@@ -923,11 +896,10 @@ NSString *OldItem = @"OldItem";
 	LOG( @"FileSystemDoc.observeValueForKeyPath: keyPath: %@, change dict:%@", keyPath, change );
 	
 	//this global preference option is cached in an instance variable for performance reasons
-	if ( context == ShareKindColors )
+	if ( context == (__bridge void *) ShareKindColors )
 	{
 		//if "share colors" was enabled previously, reset the shared colors so we get "fresh" colors the next time it is turned on again
 		[_kindColors reset];
-		[_kindColors release];
 		_kindColors = nil;
 		
 		[self reserveColorsForLargestKinds];
@@ -971,7 +943,6 @@ NSString *OldItem = @"OldItem";
     //if we are called with nil as item, we rebuild the statistic
     if ( item == nil )
     {
-        [_fileKindStatistics release];
 		_fileKindStatistics = [[NSMutableDictionary alloc] init];
         
         item = [self zoomedItem];
@@ -989,7 +960,6 @@ NSString *OldItem = @"OldItem";
                 //we don't have a statistic object for the item's kind yet, so create one
                 kindStatistic = [[FileKindStatistic alloc] initWithItem: item];
                 [_fileKindStatistics setObject: kindStatistic forKey: [item kindName]];
-                [kindStatistic release];
             }
             else
                 [kindStatistic addItem: item];
@@ -1122,7 +1092,6 @@ NSString *OldItem = @"OldItem";
         [[self fileTypeColors] colorForKind: [kindStat kindName]];
     }
 	
-	[kinds release]; //mutableCopy returns a retained object (not autoreleased)
 }
 
 - (void)checkForProtectedFolders:(NSString * _Nonnull)folder
@@ -1134,7 +1103,7 @@ NSString *OldItem = @"OldItem";
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ( ![defaults boolForVersionDependantKey: DontShowPrivacyWarningMessage] )
         {
-            NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+            NSAlert *alert = [[NSAlert alloc] init];
             
             alert.alertStyle = NSAlertStyleInformational;
             
@@ -1159,57 +1128,6 @@ NSString *OldItem = @"OldItem";
         [fileMgr triggerConsentDialogForPrivacyProtectedFolders:protectedFolders];
     }
 }
-
-//@@test
-- (void)canCloseDocumentWithDelegate:(id)delegate
-                 shouldCloseSelector:(nullable SEL)shouldCloseSelector
-                         contextInfo:(nullable void *)contextInfo
-{
-    @try
-    {
-        [super canCloseDocumentWithDelegate:delegate
-                        shouldCloseSelector:shouldCloseSelector
-                                contextInfo:contextInfo];
-    }
-    @catch (NSException *exception)
-    {
-        NSString *msg = [exception reason];
-        
-        NSLog(@"%@ exception catched: %@", [exception className], msg);
-        
-        
-        NSError *error = NULL;
-        NSRegularExpression *regex = [NSRegularExpression
-                                      regularExpressionWithPattern:@"0x([a-f]*\\d*)*(\\w|$)"
-                                      options:NSRegularExpressionCaseInsensitive
-                                      error:&error];
-        
-        [regex enumerateMatchesInString:msg
-                                options:NSMatchingReportCompletion
-                                  range:NSMakeRange(0, [msg length])
-                             usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop)
-         {
-             for (NSUInteger i = 0; i < [match numberOfRanges]; i++)
-             {
-                 NSObject *obj = nil;
-                 NSString *objAddress = [msg substringWithRange:[match rangeAtIndex:i]];
-                 
-                 NSScanner* scanner = [NSScanner scannerWithString:objAddress];
-                 if ( [scanner scanHexLongLong:(unsigned long long*)&objAddress] )
-                 {
-                     NSLog(@"%@: %@", objAddress, [obj className]);
-                 }
-                 else
-                 {
-                     NSLog(@"'%@' could not be parsed as hex string", objAddress);
-                 }
-             }
-         }];
-        
-        @throw exception;
-    }
-}
-
 
 @end
 

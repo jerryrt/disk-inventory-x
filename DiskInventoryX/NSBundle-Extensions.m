@@ -12,16 +12,13 @@
 
 @implementation NSBundle(Extensions)
 
-+ (BOOL) loadRetainingNibNamed: (NSString *) nibName owner: (id) owner
++ (NSArray *) topLevelObjectsOfNibNamed: (NSString *) nibName owner: (id) owner
 {
 	NSArray *topLevelObjects = nil;
 	if ( ![[NSBundle mainBundle] loadNibNamed: nibName owner: owner topLevelObjects: &topLevelObjects] )
-		return NO;
+		return nil;
 	
-	for ( id object in topLevelObjects )
-		[object retain];
-	
-	return YES;
+	return topLevelObjects;
 }
 
 @end

@@ -27,10 +27,10 @@
 
 @interface SelectionListTableController : NSObject <NSMenuItemValidation>
 {
-    IBOutlet NSTableView *_tableView;
-    IBOutlet MainWindowController *_windowController;
-	IBOutlet GenericArrayController *_selectionListArrayController;
-	IBOutlet FileKindsPopupController *_kindStatisticsArrayController;
+    __weak IBOutlet NSTableView *_tableView;
+    __weak IBOutlet MainWindowController *_windowController;
+	__weak IBOutlet GenericArrayController *_selectionListArrayController;
+	__weak IBOutlet FileKindsPopupController *_kindStatisticsArrayController;
 }
 
 - (FileSystemDoc*) document;

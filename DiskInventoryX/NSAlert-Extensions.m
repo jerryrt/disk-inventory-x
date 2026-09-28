@@ -16,7 +16,7 @@
 						   informativeText: (NSString *) informativeText
 								 forWindow: (NSWindow *) window
 {
-	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+	NSAlert *alert = [[NSAlert alloc] init];
 	[alert setAlertStyle: NSAlertStyleInformational];
 	[alert setMessageText: message];
 	if ( informativeText != nil )

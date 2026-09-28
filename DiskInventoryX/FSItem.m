@@ -76,7 +76,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 {
     self = [super init];
     
-    NSURL * url = [[[NSURL alloc] initFileURLWithPath:path] autorelease];
+    NSURL * url = [[NSURL alloc] initFileURLWithPath:path];
     
     return [self initWithURL:url];
 }
@@ -87,7 +87,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
     
     _type = FileFolderItem;
     
-    _fileURL = [url retain];
+    _fileURL = url;
     
     if ( [url isDirectory] )
         _childs = [[NSMutableArray alloc] init];
@@ -144,16 +144,11 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 	if ( _childs != nil )
 	{
 		[_childs makeObjectsPerformSelector: @selector(onParentDealloc)];
-		[_childs release];
 	}
 	
-    [_fileURL release];
-	[_size release];
-	[_icons release];
     
     //_parent and _delegate no release!
 	
-    [super dealloc];
 }
 
 - (FSItemType) type
@@ -178,8 +173,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 {
 	NSAssert( ![self isSpecialItem], @"free and other space items don't habe a NTFileDesc object");
 	
-	[url retain];
-	[_fileURL release];
 	_fileURL = url;
 }
 
@@ -517,13 +510,11 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 		{
 			NSString *typeString = [[NSString alloc] initWithBytes:&type length:sizeof(OSType) encoding:NSMacOSRomanStringEncoding];
 			[kindNameKey appendFormat:@"T:%@ ", typeString];
-			[typeString release];
 		}
 		if (creator != kLSUnknownCreator)
 		{
 			NSString *creatorString = [[NSString alloc] initWithBytes:&creator length:sizeof(OSType) encoding:NSMacOSRomanStringEncoding];
 			[kindNameKey appendFormat:@"C:%@ ", creatorString];
-			[creatorString release];
 		}
 		
 		if (extension)
@@ -534,7 +525,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 	else if ( extension != nil )
 	{
 		askLSCopyKindStringForTypeInfo = YES;
-		kindNameKey = [extension retain];
+		kindNameKey = extension;
 	}
 	else if ( [fileDesc isExecutableBitSet] )
 		kindNameKey = @".UnixExecutable";
@@ -554,7 +545,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 			LSCopyKindStringForTypeInfo( type, creator, (CFStringRef)extension, (CFStringRef*) &kindName);	// kindName is retained
 		
 		if ( kindName == nil )
-			kindName = [[fileDesc kindString] retain];
+			kindName = [fileDesc kindString];
 		
 		if ( kindName != nil )
 		{
@@ -562,20 +553,18 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 			[g_kindNameDictionary setObject: kindName forKey: kindNameKey];Re: DiskInventory X is not compatible with MacOS Catalina (10.15)
 			
 			[fileDesc setKindString: kindName];
-			[kindName release];
 		}
 		else
 			LOG( @"couldn't get kind name for '%@'; will use default kind", [self path]);
 	}
 	
-	[kindNameKey release];
  */
     NSString *uti = [[self fileURL] cachedUTI];
     
     if ( g_kindNameDictionary == nil )
         g_kindNameDictionary = [[NSMutableDictionary alloc] init];
 
-    _kindName = [[g_kindNameDictionary objectForKey: uti] retain];
+    _kindName = [g_kindNameDictionary objectForKey: uti];
 
     if ( _kindName == nil )
     {
@@ -590,7 +579,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
     if ( _kindName == nil )
     {
         _kindName = [[self fileURL] getCachedStringValue: NSURLLocalizedTypeDescriptionKey];
-        [_kindName retain];
     }
     
     //let our childs do the same
@@ -749,7 +737,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
     
     //_hash = 0;	//will be generated on demand (see FSItem.hash)
 	
-    _fileURL = [url retain];
+    _fileURL = url;
 	
 	BOOL isFolder = [_fileURL isDirectory];
 
@@ -803,7 +791,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
         [NSException raise: FSItemLoadingCanceledException format: @""];
     }
 
-    [_childs release];
     _childs = [[NSMutableArray alloc] init];
 
     //should the kind strings of our childs should be set initially?
@@ -956,7 +943,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
         
         lastEnumLevel = [dirEnum level];
         
-        [currentItem release];
     }
  
     // signal exiting of remaining folders
@@ -970,7 +956,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
         }
      }
     
-    [itemStack release];
     
 	[self recalculateSize: usePhysicalSize updateParent: NO];
 }
@@ -996,8 +981,7 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 	
 	if ( _size != newSize )
 	{
-		[_size release];
-		_size = [newSize retain];
+		_size = newSize;
 		
 		_sizeValue = [_size unsignedLongLongValue];
 	}
@@ -1006,7 +990,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 - (void) setSizeValue: (unsigned long long) newSize
 {
 	_sizeValue = newSize;
-	[_size release];
 	_size = nil;
 }
 
@@ -1021,7 +1004,6 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 	unsigned long long myNewSize = myOldSize - oldSize + newSize;
 	
 	//child will be released by "removeChild", so prevent it from beeing freed
-	[[child retain] autorelease];
 	
 	//keep childs array sorted
 	[self removeChild: child updateParent: NO];

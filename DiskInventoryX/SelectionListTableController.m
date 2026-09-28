@@ -64,7 +64,7 @@
 	[[NSUserDefaultsController sharedUserDefaultsController] addObserver: self
 															  forKeyPath: [@"values." stringByAppendingString: UseSmallFontInSelectionList]
 																 options: 0
-																 context: UseSmallFontInSelectionList];
+																 context: (__bridge void *) UseSmallFontInSelectionList];
 
 	[doc addObserver: self forKeyPath: DocKeySelectedItem options: 0 context: nil];
 	[_selectionListArrayController addObserver: self forKeyPath: @"selection" options: 0 context: nil];
@@ -136,7 +136,7 @@
 						change:(NSDictionary*)change
 					   context:(void*)context
 {
-	if ( context == UseSmallFontInSelectionList )
+	if ( context == (__bridge void *) UseSmallFontInSelectionList )
 	{
 		[self setTableViewFont];
 	}

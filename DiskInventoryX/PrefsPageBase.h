@@ -18,15 +18,12 @@
 // controller.
 @interface PrefsPageBase : NSObject
 {
-	NSView *controlBox;
-	NSView *initialFirstResponder;
-	NSView *lastKeyView;
 	NSArray *_topLevelObjects;
 }
 
-@property (nonatomic, retain) IBOutlet NSView *controlBox;
-@property (nonatomic, assign) IBOutlet NSView *initialFirstResponder;
-@property (nonatomic, assign) IBOutlet NSView *lastKeyView;
+@property (nonatomic, strong) IBOutlet NSView *controlBox;
+@property (nonatomic, weak) IBOutlet NSView *initialFirstResponder;
+@property (nonatomic, weak) IBOutlet NSView *lastKeyView;
 
 - (instancetype) initWithNibName: (NSString *) nibName;
 

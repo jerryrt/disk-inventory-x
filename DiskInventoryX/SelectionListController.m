@@ -53,13 +53,6 @@
 	[[_searchField cell] setSearchMenuTemplate:[[_searchField cell] searchMenuTemplate]];
 }
 
-- (void) dealloc
-{
-	[_serachString release];
-	[_indexes release];
-	
-	[super dealloc];
-}
 
 - (FileSystemDoc*) document
 {
@@ -124,7 +117,6 @@
 {
     if (_serachString != newSearchString)
 	{
-        [_serachString autorelease];
         _serachString = [newSearchString copy];
     }
 }
@@ -221,7 +213,7 @@
 		NSDictionary *kindStatistics = [kindStatistic isAllFileKindsItem] ? [[self document] kindStatistics] :
 										[NSDictionary dictionaryWithObject: [[self document] kindStatisticForKind: [kindStatistic kindName]]
 																	forKey: [kindStatistic kindName]];
-		index = [[[FSItemIndex alloc] initWithKindStatistics: kindStatistics] autorelease];
+		index = [[FSItemIndex alloc] initWithKindStatistics: kindStatistics];
 		[_indexes setObject: index forKey: indexKey];
 		
 		BOOL startStopPogrInd = ([items count] > 5000) && ![self progressAnimationIsRunning];

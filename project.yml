@@ -13,7 +13,7 @@ settings:
     MARKETING_VERSION: "1.4"
     CURRENT_PROJECT_VERSION: "1"
     ARCHS: arm64
-    CLANG_ENABLE_OBJC_ARC: NO
+    CLANG_ENABLE_OBJC_ARC: YES
     CLANG_ENABLE_OBJC_WEAK: YES
     ALWAYS_SEARCH_USER_PATHS: NO
     GCC_PRECOMPILE_PREFIX_HEADER: YES
@@ -50,6 +50,8 @@ targets:
         includes:
           - "*.h"
           - "*.m"
+        # the TreeMapView sources use manual reference counting
+        compilerFlags: ["-fno-objc-arc"]
     postCompileScripts:
       # XcodeGen does not add folders inside .lproj directories to the
       # resources, so copy the localized help books explicitly.

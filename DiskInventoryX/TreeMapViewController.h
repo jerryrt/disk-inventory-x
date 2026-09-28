@@ -5,10 +5,10 @@
 
 @interface TreeMapViewController : NSObject
 {
-    IBOutlet id _fileNameTextField;
-    IBOutlet id _fileSizeTextField;
-    IBOutlet id _treeMapView;
-    IBOutlet FileSystemDoc *_document;
+    __weak IBOutlet id _fileNameTextField;
+    __weak IBOutlet id _fileSizeTextField;
+    __weak IBOutlet id _treeMapView;
+    __weak IBOutlet FileSystemDoc *_document;
 	
 	FSItem *_otherSpaceItem;
 	FSItem *_freeSpaceItem;

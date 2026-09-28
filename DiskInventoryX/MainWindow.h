@@ -11,7 +11,7 @@
 
 @interface MainWindow : NSWindow {
 	
-IBOutlet NSView *_treeMapView;
+__weak IBOutlet NSView *_treeMapView;
 
 }
 

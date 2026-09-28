@@ -18,12 +18,13 @@
 
 @interface DrivesPanelController : NSObject
 {
+	NSArray *_nibObjects; //top-level objects of our nib
 	NSMutableArray *_volumes;
 	NSMutableArray *_progressIndicators;
-	IBOutlet NSTableView* _volumesTableView;
-	IBOutlet NSWindow* _volumesPanel;
-	IBOutlet NSButton* _openVolumeButton;
-	IBOutlet NSArrayController *_volumesController;
+	__weak IBOutlet NSTableView* _volumesTableView;
+	__weak IBOutlet NSWindow* _volumesPanel;
+	__weak IBOutlet NSButton* _openVolumeButton;
+	__weak IBOutlet NSArrayController *_volumesController;
     
     unsigned long long _maxVolumeSize; // size of largest volumes
 }

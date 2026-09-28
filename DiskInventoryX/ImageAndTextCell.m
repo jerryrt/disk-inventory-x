@@ -51,28 +51,30 @@
 
 + (id) cell
 {
-	return [[[[self class] alloc] init] autorelease];
+	return [[[self class] alloc] init];
 }
 
 - (void)dealloc
 {
-    [_image release];
     _image = nil;
-    [super dealloc];
 }
 
 - copyWithZone:(NSZone *)zone
 {
     ImageAndTextCell *cell = (ImageAndTextCell *)[super copyWithZone:zone];
-    cell->_image = [_image retain];
+    
+    //NSCell copies instance variables bitwise, so the copy holds our image
+    //pointer without owning it. Clear it without releasing, then assign.
+    *(__unsafe_unretained id *)(void *)&cell->_image = nil;
+    cell->_image = _image;
+    
     return cell;
 }
 
 - (void)setImage:(NSImage *)anImage {
     if (anImage != _image)
 	{
-        [_image release];
-        _image = [anImage retain];
+        _image = anImage;
     }
 }
 
@@ -131,7 +133,7 @@
         else
         {
             // Create copy that will be the returned result
-            NSMutableString *truncatedString = [[string mutableCopy] autorelease];
+            NSMutableString *truncatedString = [string mutableCopy];
 
             // Get range for last character in string
             NSRange range = {truncatedString.length - 1, 1};

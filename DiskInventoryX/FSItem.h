@@ -30,7 +30,7 @@ typedef enum
 
 @interface FSItem : NSObject {
 	NSURL *_fileURL;
-    FSItem *_parent;	//only valid for non-root items
+    __unsafe_unretained FSItem *_parent;	//only valid for non-root items; the parent owns its children
 	NSMutableDictionary *_icons; //holds icons in various sizes (see iconWithSize:)
 	FSItemType _type;
     NSNumber *_size;
@@ -38,7 +38,7 @@ typedef enum
     NSString *_kindName;
     //unsigned _hash;
     NSMutableArray<FSItem*> *_childs;
-	id _delegate;
+	__weak id _delegate;
 }
 
 - (id) initWithPath: (NSString *) path;

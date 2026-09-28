@@ -25,10 +25,10 @@
 
 @interface SelectionListController : GenericArrayController <NSMenuItemValidation>
 {
-	IBOutlet NSProgressIndicator *_progressIndicator;
-	IBOutlet NSWindowController *_windowController;
-	IBOutlet GenericArrayController *_kindsPopupController;
-	IBOutlet NSSearchField *_searchField;
+	__weak IBOutlet NSProgressIndicator *_progressIndicator;
+	__weak IBOutlet NSWindowController *_windowController;
+	__weak IBOutlet GenericArrayController *_kindsPopupController;
+	__weak IBOutlet NSSearchField *_searchField;
     NSString *_serachString;
 	NSMutableDictionary *_indexes;
 	FSItemIndexType _indexToSearch;

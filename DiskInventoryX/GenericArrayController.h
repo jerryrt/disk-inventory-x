@@ -20,7 +20,7 @@
 	NSArray *_cachedObjects;
 	NSMutableIndexSet *_mySelectionIndexes;
 	
-	id _model;
+	__weak id _model; //the bound object (not owned)
 	NSString *_collectionKeyPath;
 	
 	struct

@@ -20,10 +20,11 @@
 
 @interface InfoPanelController : NSObject
 {
-	IBOutlet DIXFileInfoView *_infoView;
-	IBOutlet NSWindow* _infoPanel;
-	IBOutlet NSTextField* _displayNameTextField;
-	IBOutlet NSImageView* _iconImageView;
+	NSArray *_nibObjects; //top-level objects of our nib
+	__weak IBOutlet DIXFileInfoView *_infoView;
+	__weak IBOutlet NSWindow* _infoPanel;
+	__weak IBOutlet NSTextField* _displayNameTextField;
+	__weak IBOutlet NSImageView* _iconImageView;
 }
 
 + (InfoPanelController*) sharedController;

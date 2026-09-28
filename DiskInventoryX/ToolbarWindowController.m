@@ -17,16 +17,9 @@
 
 @implementation NSToolbarItemValidationAdapter
 
-- (void) dealloc
-{
-	[_toolbarItem release];
-	[super dealloc];
-}
 
 - (void) setToolbarItem: (NSToolbarItem*) toolbarItem
 {
-	[toolbarItem retain];
-	[_toolbarItem release];
 	_toolbarItem = toolbarItem;
 }
 
@@ -114,11 +107,6 @@ static NSMutableDictionary *g_toolbatStateImages = nil;
 	g_toolbatStateImages = [[NSMutableDictionary alloc] init];
 }
 
-- (void) dealloc
-{
-	[_toolbarConfiguration release];
-	[super dealloc];
-}
 
 - (NSString *) toolbarConfigurationName
 {
@@ -151,7 +139,6 @@ static NSMutableDictionary *g_toolbatStateImages = nil;
 
 	[[self window] setToolbarStyle: NSWindowToolbarStyleExpanded];
 	[[self window] setToolbar: toolbar];
-	[toolbar release];
 }
 
 // Identifiers of standard items which AppKit no longer supports.
@@ -309,7 +296,7 @@ static BOOL IsObsoleteToolbarItemIdentifier( NSString *identifier )
 	if ( itemInfo == nil )
 		return nil;
 
-	NSToolbarItem *toolbarItem = [[[ControllerValidatedToolbarItem alloc] initWithItemIdentifier: itemIdentifier] autorelease];
+	NSToolbarItem *toolbarItem = [[ControllerValidatedToolbarItem alloc] initWithItemIdentifier: itemIdentifier];
 
 	NSString *string = [itemInfo objectForKey: @"label"];
 	if ( string != nil )

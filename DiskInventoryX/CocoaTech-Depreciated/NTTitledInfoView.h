@@ -10,7 +10,7 @@
 
 @interface NTTitledInfoView : NSView
 {
-    id _target;
+    __weak id _target;
     
     NSMutableArray* _pairs;
     NSMutableArray* _titleViews;

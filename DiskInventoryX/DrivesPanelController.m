@@ -80,9 +80,8 @@
 	[self rebuildVolumesArray];
 	
 	//load Nib with volume panel
-    if ( ![NSBundle loadRetainingNibNamed: @"VolumesPanel" owner: self] )
+    if ( (_nibObjects = [NSBundle topLevelObjectsOfNibNamed: @"VolumesPanel" owner: self]) == nil )
 	{
-		[self release];
 		self = nil;
 	}
 	else
@@ -91,7 +90,7 @@
 		[_volumesTableView setDoubleAction: @selector(openVolume:)];
 		
 		//set FileSizeFormatter for the columns displaying sizes (capacity, free)
-		FileSizeFormatter *sizeFormatter = [[[FileSizeFormatter alloc] init] autorelease];
+		FileSizeFormatter *sizeFormatter = [[FileSizeFormatter alloc] init];
 		[[[_volumesTableView tableColumnWithIdentifier: @"totalSize"] dataCell] setFormatter: sizeFormatter];
 		[[[_volumesTableView tableColumnWithIdentifier: @"freeBytes"] dataCell] setFormatter: sizeFormatter];
 	}
@@ -105,10 +104,7 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
 
-    [_volumes release];
-	[_progressIndicators release];
 	
-    [super dealloc];
 }
 
 - (NSArray*) volumes
@@ -179,7 +175,6 @@
     [self willChangeValueForKey: @"volumes"];
     
     NS_DURING
-    [_volumes release];
     _volumes = [[NSMutableArray alloc] initWithCapacity: [vols count]];
     
     for ( NSURL *volumeURL in vols )
@@ -221,7 +216,7 @@
 		NSProgressIndicator *progrInd = nil;
 		if ( i >= [_progressIndicators count] )
 		{
-			progrInd = [[[NSProgressIndicator alloc] init] autorelease];
+			progrInd = [[NSProgressIndicator alloc] init];
 			[progrInd setStyle: NSProgressIndicatorStyleBar];
 			[progrInd setIndeterminate: NO];
 			

@@ -18,14 +18,15 @@
 
 @interface LoadingPanelController : NSObject
 {
+	NSArray *_nibObjects; //top-level objects of our nib
 	NSModalSession _loadingPanelModalSession;
 	uint64_t _lastEventLoopRun;
 	BOOL _cancelPressed;
 	NSString *_message;
-    IBOutlet NSTextField* _loadingTextField;
-    IBOutlet NSPanel* _loadingPanel;
-    IBOutlet NSProgressIndicator* _loadingProgressIndicator;
-    IBOutlet NSButton* _loadingCancelButton;
+    __weak IBOutlet NSTextField* _loadingTextField;
+    __weak IBOutlet NSPanel* _loadingPanel;
+    __weak IBOutlet NSProgressIndicator* _loadingProgressIndicator;
+    __weak IBOutlet NSButton* _loadingCancelButton;
 }
 
 - (id) init; //will start modal session immediately

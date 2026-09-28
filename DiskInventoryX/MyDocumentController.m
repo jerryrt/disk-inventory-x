@@ -149,7 +149,7 @@ BOOL g_EnableLogging;
     //show donate message
 	if ( ![[NSUserDefaults standardUserDefaults] boolForKey: DontShowDonationMessage] )
 	{
-		[NSBundle loadRetainingNibNamed: @"DonationPanel" owner: self];
+		_nibObjects = [NSBundle topLevelObjectsOfNibNamed: @"DonationPanel" owner: self];
 		[_donationPanel setWorksWhenModal: YES];
 	}
 	
@@ -178,7 +178,7 @@ BOOL g_EnableLogging;
 			fsItem = [zoomStack objectAtIndex: i-1];
 		
 		if ( i >= ((unsigned) [zoomStackMenu numberOfItems]) )
-			[zoomStackMenu addItem: [[[NSMenuItem alloc] init] autorelease]];
+			[zoomStackMenu addItem: [[NSMenuItem alloc] init]];
 		
 		NSMenuItem *menuItem = [zoomStackMenu itemAtIndex: i];
 		

@@ -64,12 +64,6 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 	return self;
 }
 
-- (void) dealloc
-{
-	[_kindsSplitter release];
-	[_selectionListSplitter release];
-	[super dealloc];
-}
 
 + (FileSystemDoc*) documentForView: (NSView*) view
 {
@@ -244,7 +238,7 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
 		NSString *msg = [NSString stringWithFormat: NSLocalizedString(@"The item \"%@\" could not be moved to the trash.",@""),
 													[selectedItem displayName]];
 
-		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle: NSAlertStyleWarning];
 		[alert setMessageText: msg];
 		[alert setInformativeText: NSLocalizedString(@"Would you like to delete it immediately?",@"")];
@@ -556,7 +550,7 @@ static const CGFloat ContentMinimumSize = 200;
 		//the first and second menu item is the default app and a serperator item
 		if ( [_openWithSubMenu numberOfItems] == 0 )
 		{
-			[_openWithSubMenu addItem: [[[NSMenuItem alloc] init] autorelease]];
+			[_openWithSubMenu addItem: [[NSMenuItem alloc] init]];
 			[_openWithSubMenu addItem: [NSMenuItem separatorItem]];
 		}
 
@@ -579,7 +573,7 @@ static const CGFloat ContentMinimumSize = 200;
 		{
 			unsigned menuItemIndex = i+2;
 			if ( menuItemIndex >= ((unsigned) [_openWithSubMenu numberOfItems]) )
-				[_openWithSubMenu addItem: [[[NSMenuItem alloc] init] autorelease]];
+				[_openWithSubMenu addItem: [[NSMenuItem alloc] init]];
 			
 			menuItem = [_openWithSubMenu itemAtIndex: menuItemIndex];
 			appURL = [appURLs objectAtIndex: i];
@@ -679,7 +673,6 @@ static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
 	_selectionListSplitter = NewPaneSplitView( NO, frame );
 	_kindsSplitter = NewPaneSplitView( YES, [_selectionListSplitter bounds] );
 	
-	[_splitter retain];
 	[_splitter removeFromSuperview];
 	
 	for ( NSView *view in @[_kindsView, _selectionListView, _splitter] )
@@ -689,7 +682,6 @@ static NSSplitView *NewPaneSplitView( BOOL vertical, NSRect frame )
 	[_kindsSplitter addSubview: _splitter];
 	[_selectionListSplitter addSubview: _kindsSplitter];
 	[_selectionListSplitter addSubview: _selectionListView];
-	[_splitter release];
 	
 	[contentView addSubview: _selectionListSplitter];
 	

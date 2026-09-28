@@ -47,11 +47,10 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 	[window setReleasedWhenClosed: NO];
 	
 	self = [super initWithWindow: window];
-	[window release];
 	
 	if ( self != nil )
 	{
-		_pageDescriptions = [@[
+		_pageDescriptions = @[
 			@{ PageIdentifierKey: @"GeneralPrefPage",
 			   PageClassKey: @"GeneralPrefPage",
 			   PageNibKey: @"GeneralPreferencesPage",
@@ -62,7 +61,7 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 			   PageNibKey: @"TreeMapPreferencesPage",
 			   PageIconKey: @"TreeMapPreferences",
 			   PageTitleKey: @"Treemap" },
-		] retain];
+		];
 		_pages = [[NSMutableDictionary alloc] init];
 		
 		NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier: @"PreferencesToolbar"];
@@ -70,7 +69,6 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 		[toolbar setAllowsUserCustomization: NO];
 		[window setToolbarStyle: NSWindowToolbarStylePreference];
 		[window setToolbar: toolbar];
-		[toolbar release];
 		
 		NSString *selected = [[NSUserDefaults standardUserDefaults] stringForKey: SelectedPageDefaultsKey];
 		if ( [self descriptionForPage: selected] == nil )
@@ -82,12 +80,6 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 	return self;
 }
 
-- (void) dealloc
-{
-	[_pageDescriptions release];
-	[_pages release];
-	[super dealloc];
-}
 
 - (IBAction) showPreferencesPanel: (id) sender
 {
@@ -139,7 +131,7 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 	
 	NSString *title = NSLocalizedStringFromTable( [description objectForKey: PageTitleKey], @"Preferences", @"" );
 	
-	NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier: identifier] autorelease];
+	NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier: identifier];
 	[item setLabel: title];
 	[item setPaletteLabel: title];
 	[item setImage: [NSImage imageNamed: [description objectForKey: PageIconKey]]];
@@ -162,7 +154,7 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 	if ( page == nil )
 	{
 		Class pageClass = NSClassFromString( [description objectForKey: PageClassKey] );
-		page = [[[pageClass alloc] initWithNibName: [description objectForKey: PageNibKey]] autorelease];
+		page = [[pageClass alloc] initWithNibName: [description objectForKey: PageNibKey]];
 		NSAssert1( page != nil, @"couldn't load preference page '%@'", identifier );
 		[_pages setObject: page forKey: identifier];
 	}
@@ -182,7 +174,7 @@ static NSString *SelectedPageDefaultsKey = @"PreferencesSelectedPage";
 	frame.origin.x = NSMinX( oldFrame );
 	frame.origin.y = NSMaxY( oldFrame ) - NSHeight( frame );
 	
-	[window setContentView: [[[NSView alloc] initWithFrame: NSZeroRect] autorelease]];
+	[window setContentView: [[NSView alloc] initWithFrame: NSZeroRect]];
 	[window setFrame: frame display: YES animate: [window isVisible]];
 	[window setContentView: view];
 	

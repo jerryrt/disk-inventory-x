@@ -7,10 +7,10 @@
 
 @interface FileKindsTableController : NSObject
 {
-    IBOutlet NSTableView *_tableView;
-    IBOutlet MainWindowController *_windowController;
-	IBOutlet NSArrayController *_kindsPopupArrayController;
-	IBOutlet NSArrayController *_kindsTableArrayController;
+    __weak IBOutlet NSTableView *_tableView;
+    __weak IBOutlet MainWindowController *_windowController;
+	__weak IBOutlet NSArrayController *_kindsPopupArrayController;
+	__weak IBOutlet NSArrayController *_kindsTableArrayController;
 
     NSMutableDictionary *_cushionImages;
 }

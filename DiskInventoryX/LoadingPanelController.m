@@ -25,7 +25,7 @@
 	self = [super init];
 	
     //load Nib with progress panel
-	if ( ![NSBundle loadRetainingNibNamed: @"LoadingPanel" owner: self] )
+	if ( (_nibObjects = [NSBundle topLevelObjectsOfNibNamed: @"LoadingPanel" owner: self]) == nil )
 		NSAssert( NO, @"couldn't load LoadingPanel.nib" );
 	
 	[_loadingProgressIndicator setUsesThreadedAnimation: NO];
@@ -47,7 +47,7 @@
 	self = [super init];
 	
     //load Nib with progress panel
-	if ( ![NSBundle loadRetainingNibNamed: @"LoadingPanel" owner: self] )
+	if ( (_nibObjects = [NSBundle topLevelObjectsOfNibNamed: @"LoadingPanel" owner: self]) == nil )
 		NSAssert( NO, @"couldn't load LoadingPanel.nib" );
 	
 	[window beginSheet: _loadingPanel completionHandler: nil];
@@ -72,7 +72,6 @@
 	if ( _loadingPanel != nil )
 		[self close];
 	
-	[super dealloc];
 }
 
 - (void) close
@@ -135,8 +134,6 @@
 
 - (void) setMessageText: (NSString*) msg
 {
-	[msg retain];
-	[_message release];
 	_message = msg;
 }
 

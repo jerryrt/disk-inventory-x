@@ -8,9 +8,9 @@
 
 @interface FilesOutlineViewController : NSObject
 {
-    IBOutlet FileSystemDoc *_document;
-    IBOutlet DIXOutlineView *_outlineView;
-    IBOutlet NSMenu *_contextMenu;
+    __weak IBOutlet FileSystemDoc *_document;
+    __weak IBOutlet DIXOutlineView *_outlineView;
+    __weak IBOutlet NSMenu *_contextMenu;
 }
 
 - (FileSystemDoc*) document;

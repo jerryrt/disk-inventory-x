@@ -14,11 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle(Extensions)
 
-// Loads a nib from the main bundle with the ownership rules of the
-// deprecated +loadNibNamed:owner:, i.e. every top-level object is retained
-// once on behalf of the owner. Code written for that method (e.g. panels
-// which release themselves when closed) keeps working unchanged.
-+ (BOOL) loadRetainingNibNamed: (NSString *) nibName owner: (id) owner;
+// Loads a nib from the main bundle and returns its top-level objects, or nil
+// if it could not be loaded. The caller keeps the returned array for as long
+// as it needs the nib's objects.
++ (nullable NSArray *) topLevelObjectsOfNibNamed: (NSString *) nibName owner: (id) owner;
 
 @end
 
