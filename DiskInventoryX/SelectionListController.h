@@ -23,7 +23,7 @@
 #import "FileSystemDoc.h"
 #import "FSItemIndex.h"
 
-@interface SelectionListController : GenericArrayController
+@interface SelectionListController : GenericArrayController <NSMenuItemValidation>
 {
 	IBOutlet NSProgressIndicator *_progressIndicator;
 	IBOutlet NSWindowController *_windowController;

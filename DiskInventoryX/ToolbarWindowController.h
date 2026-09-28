@@ -35,7 +35,7 @@
 // "imageNameOffState", "imageNameMixedState", "label", "paletteLabel" and
 // "toolTip". Missing labels and tool tips are taken from the main menu item
 // with the same action.
-@interface ToolbarWindowController : NSWindowController <NSToolbarDelegate>
+@interface ToolbarWindowController : NSWindowController <NSToolbarDelegate, NSMenuItemValidation>
 {
 	NSDictionary *_toolbarConfiguration;
 }
