@@ -15,6 +15,7 @@
 //
 
 #import "FSItem.h"
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import "NSURL-Extensions.h"
 
 //for debugging and logging purposes
@@ -578,7 +579,8 @@ NSString* FSItemLoadingFailedException = @"FSItemLoadingFailedException";
 
     if ( _kindName == nil )
     {
-        _kindName = (NSString*) UTTypeCopyDescription((CFStringRef)uti);
+        if ( uti != nil )
+            _kindName = [[[UTType typeWithIdentifier: uti] localizedDescription] copy];
         
         //remember kind name for similar files
         if ( _kindName != nil )
