@@ -15,6 +15,7 @@
 //
 
 #import "MyDocumentController.h"
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import "NSBundle-Extensions.h"
 #import "DrivesPanelController.h"
 #import "Preferences.h"
@@ -35,48 +36,18 @@ BOOL g_EnableLogging;
     [openPanel setCanChooseFiles: NO];
     [openPanel setTreatsFilePackagesAsDirectories: YES];
 	
-//	if ( ![[DrivesPanelController sharedController] panelIsVisible] )
-	{
-		//volumes panel isn't (yet) loaded, so show the open panel the normal way (as a modal window)
-		return [openPanel runModal];
-	}
-/*	else
-	{
-		//the volumes panel is loaded, so display the open panel as a nice sheet
-		
-		[openPanel beginSheetForDirectory: nil
-									 file: nil
-						   modalForWindow: [[DrivesPanelController sharedController] panel]
-							modalDelegate: self
-						   didEndSelector: @selector(openPanelDidEnd:returnCode:contextInfo:)
-							  contextInfo: nil];
-		
-		//we will be called back after the sheet is closed, so return "Cancel" for now
-		return NSCancelButton;
-	}
-	*/
+	return [openPanel runModal];
 }
 
-- (void) openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+- (void) openFolderAtURL: (NSURL*) url
 {
-	if ( returnCode == NSModalResponseOK )
-	{
-		//open selected folders
-		for ( NSURL *fileURL in [sheet URLs] )
-		{
-			//defer it till the next loop cycle to let the sheet closes itself first
-			[[NSRunLoop currentRunLoop] performSelector:@selector(openDocumentWithContentsOfFile:)
-												 target: self
-                                               argument: [fileURL path]
-												  order: 1
-												  modes: [NSArray arrayWithObject: NSDefaultRunLoopMode]];
-		}
-	}
-}
-
-- (void) openDocumentWithContentsOfFile: (NSString*) fileName
-{
-	[self openDocumentWithContentsOfFile: fileName display: [self shouldCreateUI]];
+	[self openDocumentWithContentsOfURL: url
+								display: YES
+					  completionHandler: ^(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error) {
+		//a canceled scan is reported as NSUserCancelledError, which isn't shown
+		if ( document == nil && error != nil )
+			[self presentError: error];
+	}];
 }
 
 - (BOOL) applicationShouldOpenUntitledFile: (NSApplication*) sender
@@ -85,18 +56,15 @@ BOOL g_EnableLogging;
     return NO;
 }
 
-- (id)makeDocumentWithContentsOfFile:(NSString *)fileName ofType:(NSString *)docType
+//every directory (folder, package or volume) is opened as a document of the
+//type declared in Info.plist (document types declared by UTI are named by it)
+- (NSString *) typeForContentsOfURL: (NSURL *) url error: (NSError **) outError
 {
-	//check whether "fileName" is a folder
-	NSDictionary *attribs = [[NSFileManager defaultManager] fileAttributesAtPath: fileName traverseLink: NO];
-    if ( attribs != nil )
-	{
-		NSString *type = [attribs fileType];
-		if ( type != nil && [type isEqualToString: NSFileTypeDirectory] )
-			return [super makeDocumentWithContentsOfFile:fileName ofType: @"Folder"];
-	}
+	NSNumber *isDirectory = nil;
+	if ( [url getResourceValue: &isDirectory forKey: NSURLIsDirectoryKey error: NULL] && [isDirectory boolValue] )
+		return UTTypeDirectory.identifier;
 	
-	return nil;
+	return [super typeForContentsOfURL: url error: outError];
 }
 
 //"Open..." menu handler
@@ -110,9 +78,7 @@ BOOL g_EnableLogging;
 		return; //cancel pressed in open panel
 	
 	for ( NSURL *dir in fileNames )
-	{
-		[self openDocumentWithContentsOfFile: [dir path] display: YES];
-	}
+		[self openFolderAtURL: dir];
 }
 
 + (void)restoreWindowWithIdentifier:(NSUserInterfaceItemIdentifier)identifier
@@ -133,19 +99,10 @@ BOOL g_EnableLogging;
     if ( attribs == nil || ![[attribs fileType] isEqualToString: NSFileTypeDirectory] )
 		return NO;
 
-	[self openDocumentWithContentsOfFile: fileName];
+	[self openFolderAtURL: [NSURL fileURLWithPath: fileName]];
 	
 	//return TRUE to avoid nasty message if user canceled loading
 	return TRUE;
-}
-
-- (NSString *)typeFromFileExtension:(NSString *)fileExtensionOrHFSFileType
-{
-	OSType type = NSHFSTypeCodeFromFileType(fileExtensionOrHFSFileType);
-	if ( type == 0 )
-		return @"Folder";
-	else	
-		return [super typeFromFileExtension: fileExtensionOrHFSFileType];
 }
 
 - (IBAction) showPreferencesPanel: (id) sender

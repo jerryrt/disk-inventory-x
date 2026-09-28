@@ -126,12 +126,10 @@
 		NSURL *volume = [[_volumes objectAtIndex: index] objectForKey: @"volume"];
         if ( [volume stillExists] )
         {
-            NSString *path = [volume path];
-            
             //defer it till the next loop cycle (otherwise the "Open Volume" button stays in "pressed" mode during the loading)
-            [[NSRunLoop currentRunLoop] performSelector: @selector(openDocumentWithContentsOfFile:)
+            [[NSRunLoop currentRunLoop] performSelector: @selector(openFolderAtURL:)
                                                  target: [NSDocumentController sharedDocumentController]
-                                               argument: path
+                                               argument: volume
                                                   order: 1
                                                   modes: [NSArray arrayWithObject: NSDefaultRunLoopMode]];
         }

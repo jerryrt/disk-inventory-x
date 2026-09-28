@@ -233,8 +233,10 @@ NSString *OldItem = @"OldItem";
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
 }
 
-- (BOOL) readFromFile: (NSString *) folder ofType: (NSString *) docType
+- (BOOL) readFromURL: (NSURL *) url ofType: (NSString *) docType error: (NSError **) outError
 {
+    NSString *folder = [url path];
+    
     [self checkForProtectedFolders:folder];
     
     //now the real work: loading the folder contents
@@ -254,7 +256,11 @@ NSString *OldItem = @"OldItem";
 			_rootItem = nil;
 			[_progressController release];
 			_progressController = nil;
-			LOG( @"readFromFile: path '%@' doesn't exits", folder );
+			LOG( @"readFromURL: path '%@' doesn't exits", folder );
+			if ( outError != NULL )
+				*outError = [NSError errorWithDomain: NSCocoaErrorDomain
+												code: NSFileReadNoSuchFileError
+											userInfo: @{ NSURLErrorKey: url }];
 			return NO;
 		}
 		
@@ -296,15 +302,22 @@ NSString *OldItem = @"OldItem";
 		[_rootItem release];
 		_rootItem = nil;
 
-		if ( [[localException name] isEqualToString: FSItemLoadingCanceledException]
-			 || [[localException name] isEqualToString: CollectFileKindStatisticsCanceledException] )
+		if ( outError != NULL )
 		{
-			//loading canceled by user
-		}
-		else
-		{
-			//error
-			NSRunInformationalAlertPanel( NSLocalizedString( @"The folder's content could not be loaded.", @""), @"%@", nil, nil, nil, [localException reason]);
+			if ( [[localException name] isEqualToString: FSItemLoadingCanceledException]
+				 || [[localException name] isEqualToString: CollectFileKindStatisticsCanceledException] )
+			{
+				//loading canceled by user (the document controller doesn't report this error)
+				*outError = [NSError errorWithDomain: NSCocoaErrorDomain code: NSUserCancelledError userInfo: nil];
+			}
+			else
+			{
+				*outError = [NSError errorWithDomain: NSCocoaErrorDomain
+												code: NSFileReadUnknownError
+											userInfo: @{ NSLocalizedDescriptionKey: NSLocalizedString( @"The folder's content could not be loaded.", @""),
+														 NSLocalizedFailureReasonErrorKey: [localException reason] ?: @"",
+														 NSURLErrorKey: url }];
+			}
 		}
 		
         return NO;
@@ -787,13 +800,6 @@ NSString *OldItem = @"OldItem";
 	//keep info panel in sync
 	if ( [[InfoPanelController sharedController] panelIsVisible] )
 		[[InfoPanelController sharedController] showPanelWithFSItem: _selectedItem];
-}
-
-- (NSString *)fileName
-{
-    //we should override this method so the window controller will display
-    //the icon of the currently zoomed item (or of the root item) in the window's title bar
-    return [[self zoomedItem] path];
 }
 
 - (NSString *)displayName

@@ -108,7 +108,10 @@
 
 + (void) openItemURL: (NSURL*) itemURL withAppURL: (NSURL*) appURL
 {
-	[[NSWorkspace sharedWorkspace] openFile: [itemURL path] withApplication: [appURL path]];
+	[[NSWorkspace sharedWorkspace] openURLs: @[itemURL]
+						withApplicationAtURL: appURL
+							   configuration: [NSWorkspaceOpenConfiguration configuration]
+						   completionHandler: nil];
 }
 
 @end

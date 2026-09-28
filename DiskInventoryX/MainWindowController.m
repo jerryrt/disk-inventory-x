@@ -475,6 +475,18 @@ NSString *MainWindowControllerSelectionListDidHideNotification = @"MainWindowCon
     return @"MainWindowToolbar";
 }
 
+#pragma mark -----------------window title-----------------------
+
+- (void) synchronizeWindowTitleWithDocumentName
+{
+	[super synchronizeWindowTitleWithDocumentName];
+	
+	//show the icon of the zoomed folder (not of the document's root folder) in the title bar
+	NSURL *zoomedURL = [[(FileSystemDoc*)[self document] zoomedItem] fileURL];
+	if ( zoomedURL != nil )
+		[[self window] setRepresentedURL: zoomedURL];
+}
+
 #pragma mark -----------------NSWindow delegates-----------------------
 
 - (void)windowDidBecomeMain:(NSNotification *)aNotification

@@ -7,60 +7,16 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeIconFile</key>
-			<string></string>
 			<key>CFBundleTypeName</key>
 			<string>Folder</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>fold</string>
-			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
-			<key>NSDocumentClass</key>
-			<string>FileSystemDoc</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Folder</string>
-			<key>CFBundleTypeOSTypes</key>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
 			<array>
-				<string>disk</string>
+				<string>public.directory</string>
 			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>NSDocumentClass</key>
-			<string>FileSystemDoc</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>app</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>App</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>APPL</string>
-			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>NSDocumentClass</key>
-			<string>FileSystemDoc</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>plugin</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>Plugin</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>BNDL</string>
-			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
 			<key>NSDocumentClass</key>
 			<string>FileSystemDoc</string>
 		</dict>

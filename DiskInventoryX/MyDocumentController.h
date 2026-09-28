@@ -27,5 +27,6 @@
 - (IBAction) gotoHomepage: (id) sender;
 - (IBAction) closeDonationPanel: (id) sender;
 
-- (void) openDocumentWithContentsOfFile: (NSString*) fileName; //calls "openDocumentWithContentsOfFile: fileName display: [self shouldCreateUI]"
+// opens a folder, package or volume, reporting errors (but not a canceled scan)
+- (void) openFolderAtURL: (NSURL*) url;
 @end
